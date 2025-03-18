@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>WP/ Hr/ Polegoda M. V.</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+  <!-- Header -->
+  <header>
+    <div class="container">
+      <nav>
+        <div class="logo">
+          <img src="./logo.png" alt="School Logo">
+          <div>
+            <div class="logo-text" id="logo-text">WP/ Hr/ Polegoda M. V.</div>
+            <div class=" motto" id="logo-motto">Vidya Dadathi Vinayan</div>
+          </div>
+        </div>
+        <ul class="nav-links" id="navLinks">
+          <li><a href="#" id="home-nav">Home</a></li>
+          <li><a href="#principal" id="principal-nav">Principal</a></li>
+          <li><a href="#teachers" id="teachers-nav">Teachers</a></li>
+          <li><a href="#history" id="history-nav">History</a></li>
+          <li><a href="#programs" id="programs-nav">Programs</a></li>
+          <li><a href="#office-hours" id="office-nav">Office Hours</a></li>
+          <li><a href="#contact" id="contact-nav">Contact</a></li>
+          <li class="language-switch">
+            <button id="en-btn" class="active">EN</button>
+            <button id="si-btn">සිං</button>
+          </li>
+        </ul>
+        <div class="mobile-menu" id="mobileMenuBtn">
+          <i class="fas fa-bars"></i>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero Banner -->
+  <section class="hero">
+    <div class="hero-content">
+      <h1 id="hero-title"></h1>
+      <p id="hero-subtitle"></p>
+      <a href="#principal" class="btn" id="learn-more-btn">Learn More</a>
+    </div>
+  </section>
+
+  <!-- Principal Section -->
+  <section class="principal-section" id="principal">
+    <div class="container">
+      <div class="section-title animate-fade-up">
+        <h2 id="principal-section-title">Principal's Message</h2>
+      </div>
+      <div class="principal-content">
+        <div class="principal-img animate-fade-right">
+          <img src="./madam.jpg" alt="Principal">
+        </div>
+        <div class="principal-text animate-fade-left">
+          <h3 id="principal-name">Mrs. W.D.D.M.Premathilaka</h3>
+          <p id="principal-message">It is with great pleasure that I welcome you to the PW/ Hr/ Polegoda M. V. website.
+            Our school is committed to providing a supportive and enriching environment where students can achieve their
+            full potential. We believe in nurturing not just academic excellence, but also character, creativity, and
+            social responsibility.</p>
+          <p id="principal-message-2">Our dedicated team of teachers and staff work tirelessly to ensure that each
+            student receives the guidance and support they need to succeed. We pride ourselves on our strong partnership
+            with parents and the wider community, as we believe that education is a collaborative process.</p>
+          <p id="principal-quote">"Education is the most powerful weapon which you can use to change the world." -
+            Nelson Mandela</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Teachers Section -->
+  <section class="teachers-section" id="teachers">
+    <div class="container">
+      <div class="section-title animate-fade-up">
+        <h2 id="teachers-section-title">Deputy Principals</h2>
+      </div>
+      <div class="deputy-principals">
+        <div class="teacher-card animate-fade-up">
+          <div class="teacher-img">
+            <img src="./webhero-01.jpg" alt="Deputy Principal 1">
+          </div>
+          <div class="teacher-info">
+            <h3>Mr. Ruwan P. Kumara</h3>
+            <p>Deputy Principal - Academics</p>
+          </div>
+        </div>
+        <div class="teacher-card animate-fade-up">
+          <div class="teacher-img">
+            <img src="./webhero-01.jpg" alt="Deputy Principal 2">
+          </div>
+          <div class="teacher-info">
+            <h3>Mrs. Dushanthi Duleeka</h3>
+            <p>Deputy Principal - Administration</p>
+          </div>
+        </div>
+      </div>
+      <div class="view-all-teachers animate-fade-up">
+        <a href="teachers.html" class="btn" id="view-all-teachers-btn">View All Teachers</a>
+      </div>
+    </div>
+  </section>
+  
+  <!-- History Section -->
+  <section class="history-section" id="history">
+    <div class="container">
+      <div class="section-title animate-fade-up">
+        <h2 id="history-section-title">Our History</h2>
+      </div>
+      <div class="history-content">
+        <div class="history-text animate-fade-right">
+          <p id="history-excerpt">Expository paragraphs are sections of writing that are used to illustrate the nature of a document or text. These expository paragraphs allow the writer to demonstrate his or her writing style, language use, and method of organizing ideas.</p>
+          <p id="history-excerpt-2">Expository paragraphs come in many forms, and can be descriptive, narrative, argumentative, or comparative. These paragraphs allow the reader to gain some insight into the writer's writing skills and method of expressing ideas. Creating expository paragraphs requires a good understanding and a deep knowledge of the language.</p>
+          <a href="history.html" class="btn" id="read-more-history-btn">Read More</a>
+        </div>
+        <div class="audio-player animate-fade-left">
+          <h3 id="listen-history-title">Listen to Our History (Si)</h3>
+          <div>
+            <i class="fas fa-headphones" style="font-size: 48px;"></i>
+          </div>
+          <div class="audio-controls">
+            <button id="playBtn"><i class="fas fa-play"></i></button>
+            <button id="pauseBtn"><i class="fas fa-pause"></i></button>
+            <button id="stopBtn"><i class="fas fa-stop"></i></button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Programs & Events -->
+  <section class="programs-section" id="programs">
+    <div class="container">
+      <div class="section-title animate-fade-up">
+        <h2 id="programs-section-title">Programs & Events</h2>
+      </div>
+      <div class="programs-tabs animate-fade-up">
+        <button class="tab-btn active" data-tab="past" id="past-events-tab">Past Events</button>
+        <button class="tab-btn" data-tab="upcoming" id="upcoming-events-tab">Upcoming Events</button>
+      </div>
+      <div class="carousel-container animate-fade-up">
+        <div class="carousel" id="eventsCarousel">
+          <div class="carousel-item">
+            <img src="./webhero-01.jpg" alt="Annual Sports Meet">
+            <div class="carousel-caption">
+              <h3>What's NEW</h3>
+              <p>Update Your Vision..</p>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <img src="./webhero-01.jpg" alt="Science Exhibition">
+            <div class="carousel-caption">
+              <h3>What's NEW</h3>
+              <p>Update Your Vision..</p>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <img src="./webhero-01.jpg" alt="Cultural Day">
+            <div class="carousel-caption">
+              <h3>What's NEW</h3>
+              <p>Update Your Vision..</p>
+            </div>
+          </div>
+        </div>
+        <div class="carousel-controls">
+          <button class="prev-btn" id="prevBtn"><i class="fas fa-chevron-left"></i></button>
+          <button class="next-btn" id="nextBtn"><i class="fas fa-chevron-right"></i></button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Office Hours -->
+  <section class="office-hours" id="office-hours">
+    <div class="container">
+      <div class="section-title animate-fade-up">
+        <h2 id="office-hours-title">Office Hours</h2>
+      </div>
+      <div class="hours-card animate-fade-up">
+        <h3 id="office-services-title">Administrative Services</h3>
+        <ul class="hours-list">
+          <li>
+            <span class="day" id="monday">Monday</span>
+            <span class="time">7:30 AM - 1:30 PM</span>
+          </li>
+          <li>
+            <span class="day" id="tuesday">Tuesday</span>
+            <span class="time">7:30 AM - 1:30 PM</span>
+          </li>
+          <li>
+            <span class="day" id="wednesday">Wednesday</span>
+            <span class="time">7:30 AM - 1:30 PM</span>
+          </li>
+          <li>
+            <span class="day" id="thursday">Thursday</span>
+            <span class="time">7:30 AM - 1:30 PM</span>
+          </li>
+          <li>
+            <span class="day" id="friday">Friday</span>
+            <span class="time">7:30 AM - 1:30 PM</span>
+          </li>
+          <li>
+            <span class="day" id="weekend">Weekends & Holidays</span>
+            <span class="time">Closed</span>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer id="contact">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-column">
+          <h3 id="contact-us-title">Contact Us</h3>
+          <p><i class="fas fa-map-marker-alt"></i> <span id="address">Polegoda Road, Polegoda</span></p>
+          <p><i class="fas fa-phone"></i> <span id="phone">+94 123 456 789</span></p>
+          <p><i class="fas fa-envelope"></i> <span id="email">info@polegodamv.edu.lk</span></p>
+        </div>
+        <div class="footer-column">
+          <h3 id="quick-links-title">Quick Links</h3>
+          <ul>
+            <li><a href="#" id="home-link">Home</a></li>
+            <li><a href="#principal" id="about-link">About Us</a></li>
+            <li><a href="#teachers" id="faculty-link">Faculty</a></li>
+            <li><a href="#programs" id="events-link">Events</a></li>
+            <li><a href="history.html" id="full-history-link">Full History</a></li>
+          </ul>
+        </div>
+        <div class="footer-column">
+          <h3 id="connect-title">Connect With Us</h3>
+          <div class="social-links">
+            <a href="#"><i class="fab fa-facebook-f"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-youtube"></i></a>
+          </div>
+          <div class="map-container">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d4004.7423199213104!2d80.16255857504082!3d6.590050393403649!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ae3cbbf80b2d27f%3A0x395e9c183e86775e!2sPolegoda%20National%20School!5e1!3m2!1sen!2slk!4v1742298886545!5m2!1sen!2slk" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+          </div>
+        </div>
+      </div>
+      <div class="copyright">
+        <p id="copyright-text">&copy; 2025 WP/ Hr/ Polegoda M. V. All Rights Reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+
+</html>
