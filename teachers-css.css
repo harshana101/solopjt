@@ -1,0 +1,369 @@
+/* Global Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+  background-color: #f5f5f5;
+  color: #333;
+  line-height: 1.6;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 30px;
+  color: #2c3e50;
+  font-size: 2.5rem;
+  position: relative;
+  padding-bottom: 10px;
+}
+
+h1:after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100px;
+  height: 3px;
+  background-color: #3498db;
+}
+
+/* Filter Dropdown Styles */
+.filter-container {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.filter-dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-btn {
+  background-color: #3498db;
+  color: white;
+  padding: 12px 30px;
+  font-size: 16px;
+  border: none;
+  border-radius: 25px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  min-width: 150px;
+}
+
+.dropdown-btn:hover {
+  background-color: #2980b9;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: white;
+  min-width: 200px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+  border-radius: 5px;
+  overflow: hidden;
+  max-height: 0;
+  transition: max-height 0.3s ease-out;
+}
+
+.dropdown-content.show {
+  display: block;
+  max-height: 400px;
+}
+
+.dropdown-content a {
+  color: #333;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  transition: background-color 0.2s;
+}
+
+.dropdown-content a:hover {
+  background-color: #f1f1f1;
+  color: #3498db;
+}
+
+/* Search Container Styles */
+.search-container {
+  margin-bottom: 30px;
+  position: relative;
+}
+
+.search-wrapper {
+  display: flex;
+  justify-content: center;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.search-input {
+  width: 80%;
+  padding: 12px 20px;
+  font-size: 16px;
+  border: 2px solid #ddd;
+  border-radius: 25px 0 0 25px;
+  outline: none;
+  transition: border-color 0.3s;
+}
+
+.search-input:focus {
+  border-color: #3498db;
+}
+
+.search-button {
+  width: 20%;
+  background-color: #3498db;
+  color: white;
+  padding: 12px 20px;
+  font-size: 16px;
+  border: none;
+  border-radius: 0 25px 25px 0;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.search-button:hover {
+  background-color: #2980b9;
+}
+
+/* Recent Searches Styles */
+.recent-searches {
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80%;
+  max-width: 600px;
+  background-color: white;
+  border-radius: 5px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  z-index: 5;
+  margin-top: 5px;
+  display: none;
+}
+
+.search-input:focus + .search-button + .recent-searches,
+.recent-searches:hover {
+  display: block;
+}
+
+.recent-title {
+  padding: 10px 15px;
+  color: #777;
+  font-size: 14px;
+  border-bottom: 1px solid #eee;
+}
+
+.recent-title:empty {
+  display: none;
+}
+
+.recent-title:empty + .recent-searches {
+  display: none;
+}
+
+.recent-title:before {
+  content: "Recent Searches:";
+  font-weight: 500;
+}
+
+.recent-item {
+  padding: 8px 15px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.recent-item:hover {
+  background-color: #f5f5f5;
+  color: #3498db;
+}
+
+/* View All Button Styles */
+.view-all {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.view-all-btn {
+  display: inline-block;
+  background-color: #2c3e50;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 25px;
+  text-decoration: none;
+  transition: background-color 0.3s;
+}
+
+.view-all-btn:hover {
+  background-color: #1a252f;
+}
+
+.view-all-btn i {
+  margin-right: 5px;
+}
+
+/* Teachers Grid Styles */
+.teachers-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 30px;
+}
+
+.teacher-card {
+  background-color: white;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s, box-shadow 0.3s;
+  opacity: 0;
+  animation: fadeIn 0.5s forwards;
+}
+
+.teacher-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+}
+
+.profile-pic {
+  height: 180px;
+  overflow: hidden;
+  position: relative;
+  background-color: #f0f0f0;
+}
+
+.profile-pic img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s;
+}
+
+.teacher-card:hover .profile-pic img {
+  transform: scale(1.05);
+}
+
+.teacher-info {
+  padding: 20px;
+  position: relative;
+}
+
+.teacher-name {
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 5px;
+  color: #2c3e50;
+}
+
+.teacher-position {
+  font-size: 14px;
+  color: #7f8c8d;
+  margin-bottom: 15px;
+}
+
+.about-btn {
+  background-color: transparent;
+  color: #3498db;
+  border: 1px solid #3498db;
+  padding: 8px 15px;
+  border-radius: 20px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.about-btn:hover {
+  background-color: #3498db;
+  color: white;
+}
+
+.categories {
+  margin-top: 15px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+}
+
+.category-tag {
+  font-size: 12px;
+  background-color: #ecf0f1;
+  color: #7f8c8d;
+  padding: 4px 8px;
+  border-radius: 15px;
+  display: inline-block;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Hide Class (for filtering) */
+.hidden {
+  display: none;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .teachers-grid {
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 20px;
+  }
+  
+  .search-wrapper {
+    flex-direction: column;
+  }
+  
+  .search-input {
+    width: 100%;
+    border-radius: 25px;
+    margin-bottom: 10px;
+  }
+  
+  .search-button {
+    width: 100%;
+    border-radius: 25px;
+  }
+  
+  .recent-searches {
+    width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .teachers-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  h1 {
+    font-size: 2rem;
+  }
+  
+  .dropdown-btn {
+    width: 100%;
+  }
+  
+  .dropdown-content {
+    width: 100%;
+  }
+}

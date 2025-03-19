@@ -1,0 +1,504 @@
+/* Global Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: #f5f5f5;
+    color: #333;
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    position: relative;
+    /* Added for positioning the home button */
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 30px;
+    color: #610030;
+    font-size: 2.5rem;
+    position: relative;
+    padding-bottom: 10px;
+}
+
+h1:after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100px;
+    height: 3px;
+    background-color: gold;
+}
+
+/* Back to Home Button - Moved to top left */
+.view-all {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+}
+
+.view-all-btn {
+    display: inline-block;
+    background-color: #2c3e50;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 25px;
+    text-decoration: none;
+    transition: background-color 0.3s;
+    font-size: 14px;
+}
+
+.view-all-btn:hover {
+    background-color: #1a252f;
+}
+
+.view-all-btn i {
+    margin-right: 5px;
+}
+
+/* Combined Filter and Search Container */
+.controls-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+    flex-wrap: wrap;
+}
+
+/* Filter Dropdown Styles */
+.filter-container {
+    flex: 0 0 auto;
+}
+
+.filter-dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-btn {
+    background-color: #610030;
+    border: 2px solid gold;
+    color: white;
+    padding: 12px 30px;
+    font-size: 16px;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    /* transition: background-color 0.3s; */
+    min-width: 150px;
+}
+
+.dropdown-btn:hover {
+    background-color: gold;
+    border: 2px solid #610030;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: white;
+    min-width: 200px;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+    border-radius: 5px;
+    overflow: hidden;
+    max-height: 0;
+    transition: max-height 0.3s ease-out;
+}
+
+.dropdown-content.show {
+    display: block;
+    max-height: 400px;
+}
+
+.dropdown-content a {
+    color: #333;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    transition: background-color 0.2s;
+}
+
+.dropdown-content a:hover {
+    background-color: #f1f1f1;
+    color: gold;
+}
+
+/* Search Container Styles */
+.search-container {
+    flex: 1 1 auto;
+    max-width: 600px;
+    position: relative;
+    margin-left: 20px;
+}
+
+.search-wrapper {
+    display: flex;
+}
+
+.search-input {
+    width: 80%;
+    padding: 12px 20px;
+    font-size: 16px;
+    border: 2px solid #610030;
+    border-radius: 25px 0 0 25px;
+    outline: none;
+    transition: border-color 0.3s;
+}
+
+.search-input:focus {
+    border-color: #610030;
+}
+
+.search-button {
+    width: 20%;
+    background-color: #610030;
+    color: white;
+    padding: 12px 20px;
+    font-size: 16px;
+    border: none;
+    border-radius: 0 25px 25px 0;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    border: 2px solid #610030;
+    border-left: 0;
+    
+}
+
+.search-button:hover {
+    background-color: gold;
+    border: 2px solid #610030;
+    border-left: 0;
+}
+
+/* Recent Searches Styles */
+.recent-searches {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    width: 100%;
+    background-color: white;
+    border-radius: 5px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    z-index: 5;
+    margin-top: 5px;
+    display: none;
+}
+
+.search-input:focus+.search-button+.recent-searches,
+.recent-searches:hover {
+    display: block;
+}
+
+.recent-title {
+    padding: 10px 15px;
+    color: #777;
+    font-size: 14px;
+    border-bottom: 1px solid #eee;
+}
+
+.recent-title:empty {
+    display: none;
+}
+
+.recent-title:empty+.recent-searches {
+    display: none;
+}
+
+.recent-title:before {
+    content: "Recent Searches:";
+    font-weight: 500;
+}
+
+.recent-item {
+    padding: 8px 15px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.recent-item:hover {
+    background-color: #f5f5f5;
+    color: #3498db;
+}
+
+/* Teachers Grid Styles */
+.teachers-grid {
+    margin-top: 12%;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 30px;
+}
+
+.teacher-card {
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+    opacity: 0;
+    animation: fadeIn 0.5s forwards;
+}
+
+.teacher-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+}
+
+.profile-pic {
+    height: 120px;
+    width: 120px;
+    border-radius: 50%;
+    overflow: hidden;
+    position: relative;
+    background-color: #f0f0f0;
+    margin: 20px auto 0;
+    border: 4px solid #610030;
+}
+
+.profile-pic img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s;
+    border-radius: 50%;
+}
+
+.teacher-card:hover .profile-pic img {
+    transform: scale(1.05);
+}
+
+.teacher-info {
+    padding: 20px;
+    position: relative;
+}
+
+.teacher-name {
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 5px;
+    color: #2c3e50;
+}
+
+.teacher-position {
+    font-size: 14px;
+    color: #7f8c8d;
+    margin-bottom: 15px;
+}
+
+.about-btn {
+    background-color: transparent;
+    color: #610030;
+    border: 1px solid #610030;
+    padding: 8px 15px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.about-btn:hover {
+    background-color: #610030;
+    color: white;
+}
+
+.categories {
+    margin-top: 15px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+}
+
+.category-tag {
+    font-size: 12px;
+    background-color: #ecf0f1;
+    color: #7f8c8d;
+    padding: 4px 8px;
+    border-radius: 15px;
+    display: inline-block;
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Hide Class (for filtering) */
+.hidden {
+    display: none;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .controls-container {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .filter-container {
+        margin-bottom: 15px;
+        width: 100%;
+    }
+
+    .search-container {
+        margin-left: 0;
+        width: 100%;
+    }
+
+    .dropdown-btn {
+        width: 100%;
+    }
+
+    .teachers-grid {
+        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+        gap: 20px;
+    }
+
+    .search-wrapper {
+        flex-direction: column;
+    }
+
+    .search-input {
+        width: 100%;
+        border-radius: 25px;
+        margin-bottom: 10px;
+    }
+
+    .search-button {
+        width: 100%;
+        border-radius: 25px;
+    }
+
+    .recent-searches {
+        width: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    .view-all {
+        position: static;
+        margin-bottom: 15px;
+        text-align: center;
+    }
+
+    .teachers-grid {
+        grid-template-columns: 1fr;
+    }
+
+    h1 {
+        font-size: 2rem;
+    }
+}
+
+.teacher-card {
+    --border-width: 2px;
+    --radius: 24px;
+
+    position: relative;
+    border-radius: var(--radius);
+    border: var(--border-width) solid transparent;
+    padding: 1%;
+}
+
+.teacher-card:hover:before {
+    content: " ";
+    position: absolute;
+    inset: calc(var(--border-width) * -1);
+    z-index: -1;
+    border: inherit;
+    border-radius: inherit;
+    background-image: conic-gradient(from var(--angle), #ffffff 80%, #610030 88%, #610030 92%, #ffffff 100%);
+    background-origin: border-box;
+    -webkit-mask:
+        linear-gradient(black, black) content-box,
+        linear-gradient(black, black);
+    mask: linear-gradient(black, black),
+        linear-gradient(black, black);
+    -webkit-mask-clip: content-box, border-box;
+    mask-clip: content-box, border-box;
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    animation: spin 5s linear infinite;
+}
+
+@supports not (background: paint(something)) {
+    .media-object::before {
+        background-image: conic-gradient(#ffffff 80%, #610030 88%, #610030 92%, #ffffff 100%);
+    }
+}
+
+.teacher-card:hover::after {
+    animation-play-state: paused;
+}
+
+@property --angle {
+    syntax: "<angle>";
+    inherits: true;
+    initial-value: 0turn;
+}
+
+@keyframes spin {
+    to {
+        --angle: 1turn;
+    }
+}
+
+/* Language Switcher Styles */
+.lang-switcher {
+    display: flex;
+    gap: 10px;
+    margin-left: 20px;
+  }
+  
+  .lang-btn {
+    background-color: #f5f5f5;
+    border: 2px solid #610030;
+    color: #610030;
+    font-weight: bold;
+    padding: 8px 15px;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: all 0.3s;
+  }
+  
+  .lang-btn:hover {
+    background-color: #610030;
+    color: white;
+  }
+  
+  .lang-btn.active {
+    background-color: #610030;
+    color: white;
+  }
+  
+  /* Responsive adjustments */
+  @media (max-width: 768px) {
+    .controls-container {
+      flex-wrap: wrap;
+    }
+    
+    .lang-switcher {
+      order: -1;
+      margin-bottom: 15px;
+      margin-left: 0;
+      width: 100%;
+      justify-content: center;
+    }
+  }

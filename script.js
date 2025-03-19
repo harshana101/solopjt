@@ -41,10 +41,6 @@ document.addEventListener('DOMContentLoaded', function() {
           name: "දුශාන්ති දුලීකා මිය",
           role: "නියෝජ්‍ය විදුහල්පති - අධ්‍යාපන පරිපාලන"
         },
-        {
-          name: "සාරා විලියම්ස් මහත්මිය",
-          role: "නියෝජ්‍ය විදුහල්පති - සිසු කටයුතු"
-        }
       ]
     },
     
@@ -117,8 +113,8 @@ document.addEventListener('DOMContentLoaded', function() {
   // English translations - adding basic translations that were in the complete-script.js
   const englishTranslations = {
     hero: {
-      title: 'Welcome to PW/ Hr/ Polegoda M. V.',
-      subtitle: 'Nurturing minds, shaping futures, and building character'
+      title: '',
+      subtitle: ''
     }
   };
 
@@ -152,7 +148,7 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // Apply translations to deputy principals
     const teacherInfoElements = document.querySelectorAll('.teacher-info');
-    if (teacherInfoElements.length >= 3) {
+    if (teacherInfoElements.length >= 1) {
       for (let i = 0; i < Math.min(teacherInfoElements.length, translations.teachers.deputyPrincipals.length); i++) {
         const teacherInfo = teacherInfoElements[i];
         const h3 = teacherInfo.querySelector('h3');
