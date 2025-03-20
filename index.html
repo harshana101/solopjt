@@ -43,14 +43,14 @@
 
   <!-- Alert Message -->
   <div class="overlay" id="overlay"></div>
-    
+
   <div class="alert-container" id="alertBox">
-      <div class="alert-icon">⚠️</div>
-      <div class="alert-message">
-          <p class="sinhala">මෙම විශේෂාංගය තවම සම්බන්ධ කර නොමැති බව කරුණාවෙන් සලකන්න..</p>
-          <p class="english">Please note that this feature is not yet Connected..</p>
-      </div>
-      <button class="close-button" onclick="closeAlert()">OK</button>
+    <div class="alert-icon">⚠️</div>
+    <div class="alert-message">
+      <p class="sinhala">මෙම විශේෂාංගය තවම සම්බන්ධ කර නොමැති බව කරුණාවෙන් සලකන්න..</p>
+      <p class="english">Please note that this feature is not yet Connected..</p>
+    </div>
+    <button class="close-button" onclick="closeAlert()">OK</button>
   </div>
 
   <!-- Hero Banner -->
@@ -58,7 +58,9 @@
     <div class="hero-content">
       <h1 id="hero-title"></h1>
       <p id="hero-subtitle"></p>
-      <a href="./whats-new.html" class="btn" id="learn-more-btn" >Learn More</a>
+      <div class="hero-button-container">
+        <a href="./whats-new.html" class="btn" id="learn-more-btn">Learn More</a>
+      </div>
     </div>
   </section>
 
@@ -119,7 +121,7 @@
       </div>
     </div>
   </section>
-  
+
   <!-- History Section -->
   <section class="history-section" id="history">
     <div class="container">
@@ -128,8 +130,13 @@
       </div>
       <div class="history-content">
         <div class="history-text animate-fade-right">
-          <p id="history-excerpt">Expository paragraphs are sections of writing that are used to illustrate the nature of a document or text. These expository paragraphs allow the writer to demonstrate his or her writing style, language use, and method of organizing ideas.</p>
-          <p id="history-excerpt-2">Expository paragraphs come in many forms, and can be descriptive, narrative, argumentative, or comparative. These paragraphs allow the reader to gain some insight into the writer's writing skills and method of expressing ideas. Creating expository paragraphs requires a good understanding and a deep knowledge of the language.</p>
+          <p id="history-excerpt">Expository paragraphs are sections of writing that are used to illustrate the nature
+            of a document or text. These expository paragraphs allow the writer to demonstrate his or her writing style,
+            language use, and method of organizing ideas.</p>
+          <p id="history-excerpt-2">Expository paragraphs come in many forms, and can be descriptive, narrative,
+            argumentative, or comparative. These paragraphs allow the reader to gain some insight into the writer's
+            writing skills and method of expressing ideas. Creating expository paragraphs requires a good understanding
+            and a deep knowledge of the language.</p>
           <a href="./About blank.html" class="btn" id="read-more-history-btn">Read More</a>
         </div>
         <div class="audio-player animate-fade-left">
@@ -238,7 +245,9 @@
           <p onclick="showAlert()"><i class="fas fa-envelope"></i> <span id="email">info@polegodamv.edu.lk</span></p>
           <br>
           <h3>Developed By</h3>
-          <a href="https://harshana101.github.io/T.D.K.H.Premalal/"><p>Kasun Harshana Premalal</p></a>
+          <a href="https://harshana101.github.io/T.D.K.H.Premalal/">
+            <p>Kasun Harshana Premalal</p>
+          </a>
         </div>
         <div class="footer-column">
           <h3 id="quick-links-title">Quick Links</h3>
@@ -259,7 +268,10 @@
             <a href="./About blank.html"><i class="fab fa-twitter"></i></a>
           </div>
           <div class="map-container">
-            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d4004.7423199213104!2d80.16255857504082!3d6.590050393403649!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ae3cbbf80b2d27f%3A0x395e9c183e86775e!2sPolegoda%20National%20School!5e1!3m2!1sen!2slk!4v1742298886545!5m2!1sen!2slk" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d4004.7423199213104!2d80.16255857504082!3d6.590050393403649!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ae3cbbf80b2d27f%3A0x395e9c183e86775e!2sPolegoda%20National%20School!5e1!3m2!1sen!2slk!4v1742298886545!5m2!1sen!2slk"
+              width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"></iframe>
           </div>
         </div>
       </div>
