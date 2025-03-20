@@ -502,3 +502,125 @@ h1:after {
       justify-content: center;
     }
   }
+
+  /* Theme Toggle Styles */
+.theme-toggle {
+    margin-left: 10px;
+  }
+  
+  .theme-btn {
+    background-color: #610030;
+    color: white;
+    border: none;
+    width: 40px;
+    height: 40px;
+    border-radius: 20px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s;
+  }
+  
+  .theme-btn:hover {
+    background-color: gold;
+    color: #610030;
+  }
+  
+  /* Dark Theme Styles */
+  body.dark-theme {
+    background-color: #121212;
+    color: #f5f5f5;
+  }
+  
+  body.dark-theme .teacher-card {
+    background-color: #1e1e1e;
+    color: #f5f5f5;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  }
+  
+  body.dark-theme .teacher-name {
+    color: #f5f5f5;
+  }
+  
+  body.dark-theme .teacher-position {
+    color: #aaaaaa;
+  }
+  
+  body.dark-theme .category-tag {
+    background-color: #333;
+    color: #ddd;
+  }
+  
+  body.dark-theme .about-btn {
+    color: gold;
+    border: 1px solid gold;
+  }
+  
+  body.dark-theme .about-btn:hover {
+    background-color: gold;
+    color: #121212;
+  }
+  
+  body.dark-theme h1 {
+    color: gold;
+  }
+  
+  body.dark-theme .search-input {
+    background-color: #333;
+    color: white;
+    border-color: gold;
+  }
+  
+  body.dark-theme .dropdown-btn,
+  body.dark-theme .search-button {
+    background-color: gold;
+    color: #121212;
+    border-color: gold;
+  }
+  
+  body.dark-theme .dropdown-content {
+    background-color: #333;
+  }
+  
+  body.dark-theme .dropdown-content a {
+    color: #f5f5f5;
+  }
+  
+  body.dark-theme .dropdown-content a:hover {
+    background-color: #444;
+  }
+  
+  body.dark-theme .recent-searches {
+    background-color: #333;
+  }
+  
+  body.dark-theme .recent-item {
+    color: #f5f5f5;
+  }
+  
+  body.dark-theme .recent-item:hover {
+    background-color: #444;
+  }
+  
+  /* Responsive adjustments for theme toggle */
+  @media (max-width: 768px) {
+    .controls-container {
+      flex-wrap: wrap;
+    }
+    
+    .theme-toggle {
+      order: -1;
+      margin-bottom: 15px;
+      margin-left: 0;
+      width: 100%;
+      display: flex;
+      justify-content: center;
+    }
+  }
+  
+  /* Font adjustments for Sinhala */
+  body[lang="si"] {
+    font-family: 'Noto Sans Sinhala', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.8;
+  }

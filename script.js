@@ -1,4 +1,4 @@
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
   // All translations organized by section
   const translations = {
     // Navigation
@@ -11,14 +11,14 @@ document.addEventListener('DOMContentLoaded', function() {
       officeNav: "කාර්යාල වේලාවන්",
       contactNav: "සම්බන්ධ වන්න"
     },
-    
+
     // Hero Section
     hero: {
       title: "",
       subtitle: "",
       learnMoreBtn: "තව දැනගන්න"
     },
-    
+
     // Principal Section
     principal: {
       sectionTitle: "විදුහල්පතිතුමියගේ පණිවිඩය",
@@ -27,14 +27,14 @@ document.addEventListener('DOMContentLoaded', function() {
       message2: "අපගේ කැපවූ ගුරුවරුන් හා කාර්ය මණ්ඩලය සෑම සිසුවෙකුටම ඔවුන්ට සාර්ථක වීමට අවශ්‍ය මඟ පෙන්වීම හා සහාය ලැබෙන බවට සහතික කිරීම සඳහා නොපසුබට වෙහෙසක් දරයි. අධ්‍යාපනය සහයෝගීතා ක්‍රියාවලියක් බව අප විශ්වාස කරන බැවින් දෙමාපියන් සහ පුළුල් ප්‍රජාව සමඟ අපගේ ශක්තිමත් හවුල්කාරිත්වය ගැන අපි ආඩම්බර වෙමු.",
       quote: "\"අධ්‍යාපනය යනු ලෝකය වෙනස් කිරීමට ඔබට භාවිතා කළ හැකි බලවත්ම ආයුධයයි.\" - නෙල්සන් මැන්ඩෙලා"
     },
-    
+
     // Teachers Section
     teachers: {
       sectionTitle: "නියෝජ්‍ය විදුහල්පතිවරුන්",
       viewAllBtn: "සියලුම ගුරුවරුන් බලන්න",
       deputyPrincipals: [
         {
-          name: "රුවන් පී. කුමාර මයාමයා",
+          name: "රුවන් පී. කුමාර මයා",
           role: "නියෝජ්‍ය විදුහල්පති - අධ්‍යාපන සංවර්ධන"
         },
         {
@@ -43,7 +43,7 @@ document.addEventListener('DOMContentLoaded', function() {
         },
       ]
     },
-    
+
     // History Section
     history: {
       sectionTitle: "අපගේ ඉතිහාසය",
@@ -52,7 +52,7 @@ document.addEventListener('DOMContentLoaded', function() {
       readMoreBtn: "තවත් කියවන්න",
       listenTitle: "අපගේ ඉතිහාසය අසන්න"
     },
-    
+
     // Programs & Events Section
     programs: {
       sectionTitle: "වැඩසටහන් සහ උත්සව",
@@ -73,7 +73,7 @@ document.addEventListener('DOMContentLoaded', function() {
         }
       ]
     },
-    
+
     // Office Hours Section
     officeHours: {
       title: "කාර්යාල වේලාවන්",
@@ -92,7 +92,7 @@ document.addEventListener('DOMContentLoaded', function() {
         weekend: "වසා ඇත"
       }
     },
-    
+
     // Footer Section
     footer: {
       contactTitle: "අප අමතන්න",
@@ -129,23 +129,23 @@ document.addEventListener('DOMContentLoaded', function() {
     document.getElementById('programs-nav').textContent = translations.navigation.programsNav;
     document.getElementById('office-nav').textContent = translations.navigation.officeNav;
     document.getElementById('contact-nav').textContent = translations.navigation.contactNav;
-    
+
     // Hero Section
     document.getElementById('hero-title').textContent = translations.hero.title;
     document.getElementById('hero-subtitle').textContent = translations.hero.subtitle;
     document.getElementById('learn-more-btn').textContent = translations.hero.learnMoreBtn;
-    
+
     // Principal Section
     document.getElementById('principal-section-title').textContent = translations.principal.sectionTitle;
     document.getElementById('principal-name').textContent = translations.principal.name;
     document.getElementById('principal-message').textContent = translations.principal.message;
     document.getElementById('principal-message-2').textContent = translations.principal.message2;
     document.getElementById('principal-quote').textContent = translations.principal.quote;
-    
+
     // Teachers Section
     document.getElementById('teachers-section-title').textContent = translations.teachers.sectionTitle;
     document.getElementById('view-all-teachers-btn').textContent = translations.teachers.viewAllBtn;
-    
+
     // Apply translations to deputy principals
     const teacherInfoElements = document.querySelectorAll('.teacher-info');
     if (teacherInfoElements.length >= 1) {
@@ -153,24 +153,24 @@ document.addEventListener('DOMContentLoaded', function() {
         const teacherInfo = teacherInfoElements[i];
         const h3 = teacherInfo.querySelector('h3');
         const p = teacherInfo.querySelector('p');
-        
+
         if (h3) h3.textContent = translations.teachers.deputyPrincipals[i].name;
         if (p) p.textContent = translations.teachers.deputyPrincipals[i].role;
       }
     }
-    
+
     // History Section
     document.getElementById('history-section-title').textContent = translations.history.sectionTitle;
     document.getElementById('history-excerpt').textContent = translations.history.excerpt;
     document.getElementById('history-excerpt-2').textContent = translations.history.excerpt2;
     document.getElementById('read-more-history-btn').textContent = translations.history.readMoreBtn;
     document.getElementById('listen-history-title').textContent = translations.history.listenTitle;
-    
+
     // Programs & Events Section
     document.getElementById('programs-section-title').textContent = translations.programs.sectionTitle;
     document.getElementById('past-events-tab').textContent = translations.programs.pastEventsTab;
     document.getElementById('upcoming-events-tab').textContent = translations.programs.upcomingEventsTab;
-    
+
     // Apply translations to carousel items
     const carouselCaptions = document.querySelectorAll('.carousel-caption');
     if (carouselCaptions.length >= 3) {
@@ -178,12 +178,12 @@ document.addEventListener('DOMContentLoaded', function() {
         const caption = carouselCaptions[i];
         const h3 = caption.querySelector('h3');
         const p = caption.querySelector('p');
-        
+
         if (h3) h3.textContent = translations.programs.events[i].title;
         if (p) p.textContent = translations.programs.events[i].description;
       }
     }
-    
+
     // Office Hours Section
     document.getElementById('office-hours-title').textContent = translations.officeHours.title;
     document.getElementById('office-services-title').textContent = translations.officeHours.servicesTitle;
@@ -193,7 +193,7 @@ document.addEventListener('DOMContentLoaded', function() {
     document.getElementById('thursday').textContent = translations.officeHours.days.thursday;
     document.getElementById('friday').textContent = translations.officeHours.days.friday;
     document.getElementById('weekend').textContent = translations.officeHours.days.weekend;
-    
+
     // Update office hours times
     const timeElements = document.querySelectorAll('.hours-list li .time');
     if (timeElements.length >= 6) {
@@ -203,7 +203,7 @@ document.addEventListener('DOMContentLoaded', function() {
       timeElements[4].textContent = translations.officeHours.times.friday; // Friday
       timeElements[5].textContent = translations.officeHours.times.weekend; // Weekend
     }
-    
+
     // Footer Section
     document.getElementById('contact-us-title').textContent = translations.footer.contactTitle;
     document.getElementById('address').textContent = translations.footer.address;
@@ -230,7 +230,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
   // Animation on scroll
   const animatedElements = document.querySelectorAll('.animate-fade-up, .animate-fade-right, .animate-fade-left');
-  
+
   const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
@@ -238,19 +238,19 @@ document.addEventListener('DOMContentLoaded', function() {
       }
     });
   }, { threshold: 0.2 });
-  
+
   animatedElements.forEach(el => {
     observer.observe(el);
   });
-  
+
   // Mobile menu toggle
   const mobileMenuBtn = document.getElementById('mobileMenuBtn');
   const navLinks = document.getElementById('navLinks');
-  
+
   if (mobileMenuBtn && navLinks) {
-    mobileMenuBtn.addEventListener('click', function() {
+    mobileMenuBtn.addEventListener('click', function () {
       navLinks.classList.toggle('active');
-      
+
       if (navLinks.classList.contains('active')) {
         mobileMenuBtn.innerHTML = '<i class="fas fa-times"></i>';
       } else {
@@ -258,66 +258,66 @@ document.addEventListener('DOMContentLoaded', function() {
       }
     });
   }
-  
+
   // Carousel functionality
   const carousel = document.getElementById('eventsCarousel');
   const prevBtn = document.getElementById('prevBtn');
   const nextBtn = document.getElementById('nextBtn');
-  
+
   if (carousel && prevBtn && nextBtn) {
     const carouselItems = carousel.querySelectorAll('.carousel-item');
     let currentIndex = 0;
     const totalItems = carouselItems.length;
-    
+
     function updateCarousel() {
       carousel.style.transform = `translateX(-${currentIndex * 100}%)`;
     }
-    
-    prevBtn.addEventListener('click', function() {
+
+    prevBtn.addEventListener('click', function () {
       currentIndex = (currentIndex > 0) ? currentIndex - 1 : totalItems - 1;
       updateCarousel();
     });
-    
-    nextBtn.addEventListener('click', function() {
+
+    nextBtn.addEventListener('click', function () {
       currentIndex = (currentIndex < totalItems - 1) ? currentIndex + 1 : 0;
       updateCarousel();
     });
-    
+
     // Auto slide every 5 seconds
-    let autoSlide = setInterval(function() {
+    let autoSlide = setInterval(function () {
       currentIndex = (currentIndex < totalItems - 1) ? currentIndex + 1 : 0;
       updateCarousel();
     }, 5000);
-    
+
     // Stop auto slide on hover
-    carousel.addEventListener('mouseenter', function() {
+    carousel.addEventListener('mouseenter', function () {
       clearInterval(autoSlide);
     });
-    
+
     // Resume auto slide when mouse leaves
-    carousel.addEventListener('mouseleave', function() {
-      autoSlide = setInterval(function() {
+    carousel.addEventListener('mouseleave', function () {
+      autoSlide = setInterval(function () {
         currentIndex = (currentIndex < totalItems - 1) ? currentIndex + 1 : 0;
         updateCarousel();
       }, 5000);
     });
   }
-  
+
   // Tab functionality for Programs & Events section
   const tabBtns = document.querySelectorAll('.tab-btn');
-  
+
   if (tabBtns.length > 0) {
     tabBtns.forEach(btn => {
-      btn.addEventListener('click', function() {
+      btn.addEventListener('click', function () {
         // Remove active class from all tabs
         tabBtns.forEach(tab => tab.classList.remove('active'));
-        
+
         // Add active class to clicked tab
         this.classList.add('active');
-        
+
         // You can add content switching logic here
         const tabType = this.dataset.tab;
-        
+
         // Example: If you have different content for past and upcoming events
         if (tabType === 'past') {
           // Show past events content
@@ -328,49 +328,49 @@ document.addEventListener('DOMContentLoaded', function() {
       });
     });
   }
-  
+
   // Audio player functionality
   const playBtn = document.getElementById('playBtn');
   const pauseBtn = document.getElementById('pauseBtn');
   const stopBtn = document.getElementById('stopBtn');
-  
+
   // Create an audio element
   const audioElement = new Audio('');
-  
+
   if (playBtn && pauseBtn && stopBtn) {
-    playBtn.addEventListener('click', function() {
+    playBtn.addEventListener('click', function () {
       audioElement.play();
     });
-    
-    pauseBtn.addEventListener('click', function() {
+
+    pauseBtn.addEventListener('click', function () {
       audioElement.pause();
     });
-    
-    stopBtn.addEventListener('click', function() {
+
+    stopBtn.addEventListener('click', function () {
       audioElement.pause();
       audioElement.currentTime = 0;
     });
   }
-  
+
   // Smooth scrolling for navigation links
   const navScrollLinks = document.querySelectorAll('a[href^="#"]');
-  
+
   navScrollLinks.forEach(link => {
-    link.addEventListener('click', function(e) {
+    link.addEventListener('click', function (e) {
       const targetId = this.getAttribute('href');
-      
+
       if (targetId !== '#') {
         e.preventDefault();
-        
+
         const targetElement = document.querySelector(targetId);
-        
+
         if (targetElement) {
           // Close mobile menu if open
           if (navLinks && navLinks.classList.contains('active')) {
             navLinks.classList.remove('active');
             mobileMenuBtn.innerHTML = '<i class="fas fa-bars"></i>';
           }
-          
+
           // Scroll to the target element
           window.scrollTo({
             top: targetElement.offsetTop - 80, // Accounting for fixed header
@@ -380,28 +380,44 @@ document.addEventListener('DOMContentLoaded', function() {
       }
     });
   });
-  
+
   // Language switcher
   const enBtn = document.getElementById('en-btn');
   const siBtn = document.getElementById('si-btn');
-  
+
   if (enBtn && siBtn) {
     // English button functionality
-    enBtn.addEventListener('click', function() {
+    enBtn.addEventListener('click', function () {
       enBtn.classList.add('active');
       siBtn.classList.remove('active');
-      
+
       // Apply English translations
       applyEnglishTranslations();
     });
-    
+
     // Sinhala button functionality
-    siBtn.addEventListener('click', function() {
+    siBtn.addEventListener('click', function () {
       siBtn.classList.add('active');
       enBtn.classList.remove('active');
-      
+
       // Apply Sinhala translations
       applySinhalaTranslations();
     });
   }
 });
+
+// Alert Messesage
+// Function to show the alert
+function showAlert() {
+  document.getElementById('alertBox').style.display = 'block';
+  document.getElementById('overlay').style.display = 'block';
+}
+
+// Function to close the alert
+function closeAlert() {
+  document.getElementById('alertBox').style.display = 'none';
+  document.getElementById('overlay').style.display = 'none';
+}
+
+// Close alert when clicking outside
+document.getElementById('overlay').addEventListener('click', closeAlert);
