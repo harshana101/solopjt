@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>What's NEW - School Project</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f5f5f5;
+            color: #333;
+        }
+
+        header {
+            background-color: transparent;
+            color: white;
+            text-align: center;
+            padding: 0;
+            position: relative;
+            height: 300px;
+            overflow: hidden;
+        }
+
+        .header-bg {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: -1;
+        }
+
+        .header-content {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0;
+            position: relative;
+            z-index: 1;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .language-switcher {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            z-index: 10;
+            display: flex;
+            gap: 0.5rem;
+        }
+
+        .lang-btn {
+            background-color: rgba(255, 255, 255, 0.2);
+            border: 1px solid white;
+            color: white;
+            padding: 0.3rem 0.6rem;
+            border-radius: 3px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .lang-btn.active {
+            background-color: white;
+            color: #333;
+        }
+
+        .lang-btn:hover {
+            background-color: rgba(255, 255, 255, 0.4);
+        }
+
+        .lang-btn.active:hover {
+            background-color: white;
+        }
+
+        h1 {
+            font-size: 3rem;
+            margin-bottom: 0.5rem;
+            letter-spacing: 1px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+
+        .motto {
+            font-style: italic;
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 2rem;
+            background-color: white;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .project-info {
+            margin-bottom: 2rem;
+            padding: 1.5rem;
+            background-color: #f9f9f9;
+            border-radius: 5px;
+            border-left: 4px solid #610030;
+        }
+
+        .author-box {
+    display: flex;
+    align-items: center;
+    background-color: #fff0f8;
+    padding: 1rem 1.5rem;
+    border-radius: 5px;
+    margin-top: 2rem;
+    flex-wrap: wrap; /* Add flex-wrap for small screens */
+}
+
+.author-img {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    background-image: url("mypic.JPG");
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 1.5rem;
+    font-size: 2rem;
+    color: #666;
+    min-width: 60px; /* Minimum width */
+    flex-shrink: 0; /* Prevent the image from shrinking too much */
+}
+
+.author-details {
+    flex: 1;
+    min-width: 200px; /* Ensure text has enough space */
+}
+
+/* Add media query for smaller screens */
+@media (max-width: 480px) {
+    .author-box {
+        justify-content: center;
+        text-align: center;
+    }
+    
+    .author-img {
+        margin-right: 0;
+        margin-bottom: 1rem;
+    }
+}        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .feature-card {
+            background-color: white;
+            border-radius: 5px;
+            padding: 1.5rem;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .feature-icon {
+            font-size: 2rem;
+            color: #610030;
+            margin-bottom: 1rem;
+        }
+
+        footer {
+            background-color: #610030;
+            color: white;
+            text-align: center;
+            padding: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .button {
+            display: inline-block;
+            background-color: #610030;
+            color: white;
+            padding: 0.8rem 1.5rem;
+            border-radius: 5px;
+            text-decoration: none;
+            margin-top: 1rem;
+            transition: background-color 0.3s ease;
+        }
+
+        .button:hover {
+            background-color: #610030;
+        }
+
+        .content-en,
+        .content-si {
+            display: none;
+        }
+
+        .content-en.active,
+        .content-si.active {
+            display: block;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <img src="./webhero-01.jpg" alt="What's NEW Header" class="header-bg">
+        <div class="language-switcher">
+            <button class="lang-btn active" onclick="switchLanguage('en')">English</button>
+            <button class="lang-btn" onclick="switchLanguage('si')">සිංහල</button>
+        </div>
+    </header>
+
+    <div class="container">
+        <!-- English Content -->
+        <div class="content-en active">
+            <div class="project-info">
+                <div class="header-content">
+                    <h1>What's NEW</h1>
+                    <div class="motto">"Update your Vision"</div>
+                </div>
+                <h2>About the Project</h2>
+                <p>Welcome to "What's NEW" - a project dedicated to bringing the latest information, trends, and
+                    innovations to our school community. Our aim is to keep everyone informed about what's happening
+                    around us and to encourage students to embrace new knowledge and perspectives.</p>
+                <p>Through this initiative, we hope to inspire curiosity, foster a culture of continuous learning, and
+                    prepare students to adapt to our ever-changing world.</p>
+            </div>
+
+            <div class="features">
+                <div class="feature-card">
+                    <div class="feature-icon">📰</div>
+                    <h3>Latest News</h3>
+                    <p>Stay updated with the most recent happenings in our school and beyond. Never miss important
+                        announcements or events.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">💡</div>
+                    <h3>Innovative Ideas</h3>
+                    <p>Explore cutting-edge concepts and creative solutions that can inspire your own projects and
+                        academic pursuits.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🌟</div>
+                    <h3>Student Spotlights</h3>
+                    <p>Discover the achievements and talents of your peers. Celebrate excellence and learn from success
+                        stories.</p>
+                </div>
+            </div>
+
+            <div class="author-box">
+                <div class="author-img"></div>
+                <div class="author-details">
+                    <h3>Project Creator</h3>
+                    <p><strong>Name:</strong> Kasun Harshana Premalal</p>
+                    <p><strong>Grade:</strong> Arts Section - Advanced Level 2025 Batch</p>
+                    <p><strong>Vision:</strong> To create a platform that connects students with valuable information
+                        and inspires them to broaden their horizons.</p>
+                </div>
+            </div>
+
+            <div style="text-align: center; margin-top: 2rem;">
+                <p>Interested in contributing to our project or have suggestions?</p>
+                <a href="https://wa.me/+94755982430" class="button">Contact Us</a>
+            </div>
+        </div>
+
+        <!-- Sinhala Content -->
+        <div class="content-si">
+            <div class="project-info">
+                <div class="header-content">
+                    <h1>What's NEW</h1>
+                    <div class="motto">"Update your Vision"</div>
+                </div>
+                <h2>ව්‍යාපෘතිය ගැන</h2>
+                <p>"What's NEW" වෙත සාදරයෙන් පිළිගනිමු - අපගේ පාසල් ප්‍රජාවට නවතම තොරතුරු, ප්‍රවණතා සහ නවෝත්පාදන ගෙන ඒමට
+                    කැපවූ ව්‍යාපෘතියකි. අපගේ අරමුණ වන්නේ අප වටා සිදුවන දේ ගැන සැමට දැනුවත් කිරීම සහ සිසුන් නව දැනුම හා
+                    දැක්ම වැළඳ ගැනීමට දිරිමත් කිරීමයි.</p>
+                <p>මෙම මුලපිරීම හරහා, අපි කුතුහලය අවදි කිරීමට, අඛණ්ඩ ඉගෙනුම් සංස්කෘතියක් වර්ධනය කිරීමට සහ නිරන්තරයෙන්
+                    වෙනස් වන ලෝකයට අනුගත වීමට සිසුන් සූදානම් කිරීමට අපේක්ෂා කරමු.</p>
+            </div>
+
+            <div class="features">
+                <div class="feature-card">
+                    <div class="feature-icon">📰</div>
+                    <h3>නවතම පුවත්</h3>
+                    <p>අපගේ පාසල සහ ඉන් ඔබ්බට සිදුවන නවතම සිදුවීම් සමඟ යාවත්කාලීන වන්න. වැදගත් නිවේදන හෝ සිදුවීම්
+                        කිසිවක් මඟ නොහරින්න.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">💡</div>
+                    <h3>නවෝත්පාදන අදහස්</h3>
+                    <p>ඔබගේම ව්‍යාපෘති හා අධ්‍යාපනික කටයුතු සඳහා අභිප්‍රේරණය ලබාදෙන නවතම සංකල්ප හා නිර්මාණාත්මක විසඳුම්
+                        ගවේෂණය කරන්න.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🌟</div>
+                    <h3>සිසු දක්ෂතා</h3>
+                    <p>ඔබේ සගයින්ගේ ජයග්‍රහණ හා දක්ෂතා සොයා ගන්න. විශිෂ්ටත්වය සමරන්න සහ සාර්ථක කතා වලින් ඉගෙන ගන්න.</p>
+                </div>
+            </div>
+
+            <div class="author-box">
+                <div class="author-img">KP</div>
+                <div class="author-details">
+                    <h3>ව්‍යාපෘති නිර්මාතෘ</h3>
+                    <p><strong>නම:</strong> කසුන් හර්ෂණ ප්‍රේමලාල්</p>
+                    <p><strong>ශ්‍රේණිය:</strong> කලා අංශය - උසස් පෙළ 2025 කණ්ඩායම</p>
+                    <p><strong>දැක්ම:</strong> සිසුන් වටිනා තොරතුරු සමඟ සම්බන්ධ කරන සහ ඔවුන්ගේ දැක්ම පුළුල් කිරීමට
+                        උත්තේජනය කරන වේදිකාවක් නිර්මාණය කිරීම.</p>
+                </div>
+            </div>
+
+            <div style="text-align: center; margin-top: 2rem;">
+                <p>අපගේ ව්‍යාපෘතියට දායක වීමට හෝ යෝජනා ඇත්ද?</p>
+                <a href="#" class="button">අප අමතන්න</a>
+            </div>
+        </div>
+    </div>
+
+    <footer class="content-en active">
+        <p>&copy; 2025 What's NEW - School Project | "Update your Vision"</p>
+    </footer>
+
+    <footer class="content-si">
+        <p>&copy; 2025 What's NEW - පාසල් ව්‍යාපෘතිය | "ඔබේ දැක්ම යාවත්කාලීන කරන්න"</p>
+    </footer>
+
+    <script>
+        function switchLanguage(lang) {
+            // Update active button
+            document.querySelectorAll('.lang-btn').forEach(btn => {
+                btn.classList.remove('active');
+            });
+            document.querySelector(`.lang-btn[onclick="switchLanguage('${lang}')"]`).classList.add('active');
+
+            // Update content visibility
+            document.querySelectorAll('.content-en, .content-si').forEach(content => {
+                content.classList.remove('active');
+            });
+            document.querySelectorAll(`.content-${lang}`).forEach(content => {
+                content.classList.add('active');
+            });
+        }
+    </script>
+</body>
+
+</html>
