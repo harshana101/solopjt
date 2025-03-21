@@ -1,6 +1,6 @@
 # What's New
 
-![What's New Banner](https://ibb.co/xSD6mM37)
+![What's New Banner](./webhero-01.jpg)
 
 ## About The Project
 
