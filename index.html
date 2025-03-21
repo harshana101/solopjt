@@ -7,7 +7,7 @@
   <title>WP/ Hr/ Polegoda M. V.</title>
   <link rel="stylesheet" href="styles.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  <meta name="theme-color" content="#610030"></head>
+  <meta name="theme-color" content="#610030">
 </head>
 
 <body>
@@ -161,38 +161,67 @@
       <div class="section-title animate-fade-up">
         <h2 id="programs-section-title">Programs & Events</h2>
       </div>
-      <div class="programs-tabs animate-fade-up">
-        <button class="tab-btn active" data-tab="past" id="past-events-tab">Past Events</button>
-        <button class="tab-btn" data-tab="upcoming" id="upcoming-events-tab">Upcoming Events</button>
+      <div class="hero-slide" id="heroSlide">
+        <!-- Pre-create all background slides in HTML -->
+        <div id="slide-bg-0" class="slide-background active"></div>
+        <div id="slide-bg-1" class="slide-background"></div>
+        <div id="slide-bg-2" class="slide-background"></div>
+        <div id="slide-bg-3" class="slide-background"></div>
+        <div id="slide-bg-4" class="slide-background"></div>
+        <div id="slide-bg-5" class="slide-background"></div>
+
+        <div id="slideOverlay" class="slide-overlay"></div>
+        <div class="slide-content" id="slideContent">
+          <div id="websiteLaunchBadge" class="whats-new-badge" style="display: none;"></div>
+          <h1 class="slide-title" id="slideTitle"></h1>
+          <h2 class="slide-role" id="slideRole"></h2>
+          <p class="slide-description" id="slideDescription"></p>
+          <div class="slide-details" id="slideDetails"></div>
+          <div id="countdownContainer" class="countdown-container" style="display: none;">
+            <div class="countdown-item">
+              <div class="countdown-number" id="daysEl">00</div>
+              <div class="countdown-label">Days</div>
+            </div>
+            <div class="countdown-item">
+              <div class="countdown-number" id="hoursEl">00</div>
+              <div class="countdown-label">Hours</div>
+            </div>
+            <div class="countdown-item">
+              <div class="countdown-number" id="minsEl">00</div>
+              <div class="countdown-label">Minutes</div>
+            </div>
+            <div class="countdown-item">
+              <div class="countdown-number" id="secsEl">00</div>
+              <div class="countdown-label">Seconds</div>
+            </div>
+          </div>
+        </div>
+        <div class="nav-buttons">
+          <button class="nav-button" id="prevButton">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+              stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="15 18 9 12 15 6"></polyline>
+            </svg>
+          </button>
+          <button class="nav-button" id="nextButton">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+              stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="9 18 15 12 9 6"></polyline>
+            </svg>
+          </button>
+          <button class="nav-button" id="playPauseButton">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+              stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" id="playPauseIcon">
+              <rect x="6" y="4" width="4" height="16"></rect>
+              <rect x="14" y="4" width="4" height="16"></rect>
+            </svg>
+          </button>
+        </div>
       </div>
-      <div class="carousel-container animate-fade-up">
-        <div class="carousel" id="eventsCarousel">
-          <div class="carousel-item">
-            <img src="./webhero-01.jpg" alt="Annual Sports Meet">
-            <div class="carousel-caption">
-              <h3>What's NEW</h3>
-              <p>Update Your Vision..</p>
-            </div>
-          </div>
-          <div class="carousel-item">
-            <img src="./webhero-01.jpg" alt="Science Exhibition">
-            <div class="carousel-caption">
-              <h3>What's NEW</h3>
-              <p>Update Your Vision..</p>
-            </div>
-          </div>
-          <div class="carousel-item">
-            <img src="./webhero-01.jpg" alt="Cultural Day">
-            <div class="carousel-caption">
-              <h3>What's NEW</h3>
-              <p>Update Your Vision..</p>
-            </div>
-          </div>
-        </div>
-        <div class="carousel-controls">
-          <button class="prev-btn" id="prevBtn"><i class="fas fa-chevron-left"></i></button>
-          <button class="next-btn" id="nextBtn"><i class="fas fa-chevron-right"></i></button>
-        </div>
+
+      <div class="thumbnails-section">
+        <h3 class="thumbnails-heading">Our Educational Programs</h3>
+        <div class="thumbnails-container" id="thumbnailsContainer"></div>
       </div>
     </div>
   </section>

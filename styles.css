@@ -165,7 +165,7 @@ nav {
 .hero {
   height: 70vh;
   background-size: cover;
-  background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('./webhero-01.jpg');
+  background-image: linear-gradient(rgba(0, 0, 0, 0.118), rgba(0, 0, 0, 0.079)), url('./webhero-01.jpg');
   background-position: center;
   color: var(--white);
   display: flex;
@@ -183,7 +183,7 @@ nav {
 .hero-content h1 {
   font-size: 48px;
   margin-bottom: 20px;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.268);
 }
 
 .hero-content p {
@@ -195,7 +195,7 @@ nav {
 @media screen and (max-width: 768px) {
   .hero {
     height: 30vh;
-    background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('./webhero-01.jpg');
+    background-image: linear-gradient(rgba(0, 0, 0, 0.255), rgba(0, 0, 0, 0.666)), url('./webhero-01.jpg');
     /* Adjust height for mobile screens */
     padding: 0 15px;
     /* Add some padding on the sides */
@@ -892,4 +892,373 @@ footer {
 
 .close-button:hover {
   background-color: #3367d6;
+}
+
+
+/* SlideShow */
+.hero-slide {
+  position: relative;
+  width: 100%;
+  height: 80vh; /* Use viewport height instead of fixed pixels */
+  min-height: 300px; /* Set a minimum height */
+  max-height: 600px; /* Optional: set a maximum height */
+  overflow: hidden;
+}
+
+.slide-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-size: 100% auto;
+  /* Change from cover to contain */
+  background-position: center;
+  background-repeat: no-repeat;
+  opacity: 0;
+  transition: opacity 0.7s ease;
+}
+
+/* Pre-define each slide's background image */
+#slide-bg-0 {
+  background-image: url('./slide-01.jpg');
+}
+
+#slide-bg-1 {
+  background-image: url('./slide-01.jpg');
+}
+
+#slide-bg-2 {
+  background-image: url('./slide-01.jpg');
+}
+
+#slide-bg-3 {
+  background-image: url('./slide-01.jpg');
+}
+
+#slide-bg-4 {
+  background-image: url('./slide-01.jpg');
+}
+
+#slide-bg-5 {
+  background-image: url('./slide-01.jpg');
+}
+
+.slide-background.active {
+  opacity: 1;
+  z-index: 1;
+}
+
+.slide-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, rgb(255, 255, 255) 0%, rgba(255, 255, 255, 0) 100%, transparent 100%);
+  z-index: 5;
+}
+
+/* Special overlay for the website launch slide */
+.slide-overlay.launch-overlay {
+  background: linear-gradient(90deg, rgba(255, 255, 255, 0.8) 0%, rgba(255, 255, 255, 0) 100%, transparent 100%);
+}
+
+.slide-content {
+  position: relative;
+  z-index: 10;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 0 8% 0 5%;
+  max-width: 800px;
+}
+
+.slide-title {
+  font-size: 3rem;
+  font-weight: bold;
+  margin-bottom: 10px;
+  animation: fadeIn 0.8s ease-in-out;
+}
+
+.slide-role {
+  font-size: 1.4rem;
+  color: #e50914;
+  margin-bottom: 16px;
+  animation: fadeIn 0.8s ease-in-out 0.2s forwards;
+  opacity: 0;
+}
+
+.slide-description {
+  font-size: 1.2rem;
+  margin-bottom: 20px;
+  opacity: 0.9;
+  max-width: 600px;
+  animation: fadeIn 0.8s ease-in-out 0.3s forwards;
+  opacity: 0;
+}
+
+.whats-new-badge {
+  background-color: #e50914;
+  color: white;
+  padding: 8px 15px;
+  border-radius: 4px;
+  font-weight: bold;
+  font-size: 0.9rem;
+  display: inline-block;
+  margin-bottom: 20px;
+  animation: fadeIn 0.8s ease-in-out;
+}
+
+.detail-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 8px;
+  animation: slideUp 0.5s ease-out forwards;
+  opacity: 0;
+}
+
+.detail-marker {
+  width: 4px;
+  height: 24px;
+  background-color: #e50914;
+}
+
+.detail-text {
+  font-size: 1rem;
+}
+
+.countdown-container {
+  margin-top: 30px;
+  display: flex;
+  gap: 15px;
+  animation: fadeIn 0.8s ease-in-out 0.5s forwards;
+  opacity: 0;
+}
+
+.countdown-item {
+  background-color: rgba(229, 9, 20, 0.8);
+  padding: 15px;
+  border-radius: 5px;
+  text-align: center;
+  min-width: 80px;
+}
+
+.countdown-number {
+  font-size: 1.8rem;
+  font-weight: bold;
+}
+
+.countdown-label {
+  font-size: 0.8rem;
+  text-transform: uppercase;
+}
+
+.nav-buttons {
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  display: flex;
+  gap: 10px;
+  z-index: 20;
+}
+
+.nav-button {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: rgba(51, 51, 51, 0.5);
+  border: none;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.nav-button:hover {
+  background-color: rgba(77, 77, 77, 0.7);
+}
+
+.thumbnails-section {
+  width: 100%;
+  padding: 30px 5%;
+  background-color: #ffffff;
+}
+
+.thumbnails-heading {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-bottom: 16px;
+  margin-left: 16px;
+  color: #333;
+}
+
+.thumbnails-container {
+  display: flex;
+  overflow-x: auto;
+  gap: 16px;
+  padding-bottom: 16px;
+  scrollbar-width: none;
+  /* Firefox */
+}
+
+.thumbnails-container::-webkit-scrollbar {
+  display: none;
+  /* Chrome, Safari and Opera */
+}
+
+.thumbnail {
+  flex-shrink: 0;
+  width: 200px;
+  position: relative;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.thumbnail:hover {
+  transform: scale(1.05);
+}
+
+.thumbnail.active {
+  border: 2px solid #e50914;
+  transform: scale(1.05);
+}
+
+/* Define thumbnail backgrounds in CSS */
+.thumbnail-0 .thumbnail-image {
+  background-image: url('./slide-01.jpg');
+}
+
+.thumbnail-1 .thumbnail-image {
+  background-image: url('./slide-01.jpg');
+}
+
+.thumbnail-2 .thumbnail-image {
+  background-image: url('./slide-01.jpg');
+}
+
+.thumbnail-3 .thumbnail-image {
+  background-image: url('./slide-01.jpg');
+}
+
+.thumbnail-4 .thumbnail-image {
+  background-image: url('./slide-01.jpg');
+}
+
+.thumbnail-5 .thumbnail-image {
+  background-image: url('./slide-01.jpg');
+}
+
+.thumbnail-image {
+  width: 100%;
+  height: 120px;
+  background-size: cover;
+  background-position: center;
+}
+
+.thumbnail-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: linear-gradient(to top, rgba(255, 255, 255, 0.8), transparent);
+  padding: 10px;
+}
+
+.thumbnail-title {
+  font-size: 0.9rem;
+  font-weight: medium;
+  color: #fff;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideUp {
+  from {
+    transform: translateY(20px);
+    opacity: 0;
+  }
+
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .slide-title {
+    font-size: 2rem;
+  }
+
+  .slide-role {
+    font-size: 1.2rem;
+  }
+
+  .slide-description {
+    font-size: 1rem;
+  }
+
+  .hero-slide {
+    height: 400px;
+  }
+
+  .thumbnail {
+    width: 160px;
+  }
+
+  .thumbnail-image {
+    height: 100px;
+  }
+
+  .countdown-item {
+    min-width: 65px;
+    padding: 10px;
+  }
+
+  .countdown-number {
+    font-size: 1.5rem;
+  }
+}
+
+/* Extra small devices */
+@media screen and (max-width: 480px) {
+  .hero-slide {
+    height: 150vh
+  }
+
+  .hero-content h1 {
+    font-size: 24px;
+  }
+
+  .hero-content p {
+    font-size: 14px;
+    line-height: 1.4;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }

@@ -421,3 +421,314 @@ function closeAlert() {
 
 // Close alert when clicking outside
 document.getElementById('overlay').addEventListener('click', closeAlert);
+
+
+// Programs Section - Added website launch as first item
+const programsData = [
+  {
+    id: 0,
+    name: "Website Launch",
+    role: "A New Digital Experience Coming Soon",
+    description: "Experience our innovative school programs in an interactive digital showcase. Join us for the official launch event and explore our educational excellence online.",
+    details: [
+      "Interactive Program Showcases",
+      "Modern, Responsive Design",
+      "Immersive Educational Content",
+      "Launch Event with Special Presentations"
+    ],
+    isLaunchAnnouncement: true
+  },
+  {
+    id: 1,
+    name: "STEM Excellence Program",
+    role: "Science & Technology",
+    description: "Our STEM Excellence Program provides students with hands-on experience in science, technology, engineering, and mathematics through innovative projects and real-world applications.",
+    details: [
+      "Advanced robotics and coding workshops",
+      "Annual science fair with industry partnerships",
+      "Field trips to research facilities and tech companies",
+      "College-level laboratory experiences"
+    ]
+  },
+  {
+    id: 2,
+    name: "Creative Arts Initiative",
+    role: "Visual & Performing Arts",
+    description: "The Creative Arts Initiative nurtures artistic talent through comprehensive visual arts, music, theater, and dance programs that encourage self-expression and cultural appreciation.",
+    details: [
+      "Professional-grade art studio and gallery space",
+      "Seasonal performances and community showcases",
+      "Artist-in-residence mentorship opportunities",
+      "Digital media and production courses"
+    ]
+  },
+  {
+    id: 3,
+    name: "Global Citizens Program",
+    role: "Languages & Cultural Studies",
+    description: "Students in our Global Citizens Program develop multilingual proficiency and cultural competence through immersive experiences, exchange programs, and internationally-focused curriculum.",
+    details: [
+      "Five language options including Mandarin and Arabic",
+      "International exchange partnerships with 12 countries",
+      "Model UN and global affairs competitions",
+      "Cultural celebration events throughout the year"
+    ]
+  },
+  {
+    id: 4,
+    name: "Leadership Academy",
+    role: "Character & Community Development",
+    description: "The Leadership Academy builds tomorrow's leaders through service learning, ethical development, and practical leadership experiences that prepare students for civic engagement.",
+    details: [
+      "Student government and peer mentoring programs",
+      "Community service requirements with reflection",
+      "Annual leadership retreat and workshops",
+      "Partnerships with local businesses and organizations"
+    ]
+  },
+  {
+    id: 5,
+    name: "College & Career Pathways",
+    role: "Academic & Professional Preparation",
+    description: "Our College & Career Pathways program offers specialized tracks with industry certifications, internships, and college-level coursework to prepare students for their future careers.",
+    details: [
+      "Dual enrollment options with local universities",
+      "Career shadowing and internship placements",
+      "Industry certification opportunities",
+      "Comprehensive college counseling services"
+    ]
+  }
+];
+
+// Variables
+let currentSlideIndex = 0;
+let isPlaying = false;
+let slideInterval;
+const slideIntervalTime = 5000; // 5 seconds between slides
+
+// DOM Elements
+const slideTitle = document.getElementById('slideTitle');
+const slideRole = document.getElementById('slideRole');
+const slideDescription = document.getElementById('slideDescription');
+const slideDetails = document.getElementById('slideDetails');
+const slideOverlay = document.getElementById('slideOverlay');
+const websiteLaunchBadge = document.getElementById('websiteLaunchBadge');
+const countdownContainer = document.getElementById('countdownContainer');
+const thumbnailsContainer = document.getElementById('thumbnailsContainer');
+const prevButton = document.getElementById('prevButton');
+const nextButton = document.getElementById('nextButton');
+const playPauseButton = document.getElementById('playPauseButton');
+const playPauseIcon = document.getElementById('playPauseIcon');
+
+// Function to show a specific slide
+function showSlide(index) {
+  // Update active slide index
+  currentSlideIndex = index;
+
+  // Remove active class from all backgrounds
+  document.querySelectorAll('.slide-background').forEach(bg => {
+    bg.classList.remove('active');
+  });
+
+  // Add active class to current background
+  document.getElementById(`slide-bg-${index}`).classList.add('active');
+
+  // Update slide content
+  const program = programsData[index];
+  slideTitle.textContent = program.name;
+  slideTitle.style.animation = 'none';
+  slideRole.style.animation = 'none';
+  slideDescription.style.animation = 'none';
+
+  // Force reflow to restart animations
+  void slideTitle.offsetWidth;
+  void slideRole.offsetWidth;
+  void slideDescription.offsetWidth;
+
+  slideTitle.style.animation = 'fadeIn 0.8s ease-in-out';
+  slideRole.style.animation = 'fadeIn 0.8s ease-in-out 0.2s forwards';
+  slideDescription.style.animation = 'fadeIn 0.8s ease-in-out 0.3s forwards';
+
+  slideRole.textContent = program.role;
+  slideDescription.textContent = program.description;
+
+  // Show/hide special website launch elements
+  if (program.isLaunchAnnouncement) {
+    websiteLaunchBadge.style.display = 'inline-block';
+    countdownContainer.style.display = 'flex';
+    slideOverlay.classList.add('launch-overlay');
+  } else {
+    websiteLaunchBadge.style.display = 'none';
+    countdownContainer.style.display = 'none';
+    slideOverlay.classList.remove('launch-overlay');
+  }
+
+  // Clear previous details
+  slideDetails.innerHTML = '';
+
+  // Add new details with staggered animation
+  program.details.forEach((detail, i) => {
+    const detailItem = document.createElement('div');
+    detailItem.className = 'detail-item';
+    detailItem.style.animationDelay = `${0.4 + (i * 0.1)}s`;
+
+    const marker = document.createElement('div');
+    marker.className = 'detail-marker';
+
+    const text = document.createElement('div');
+    text.className = 'detail-text';
+    text.textContent = detail;
+
+    detailItem.appendChild(marker);
+    detailItem.appendChild(text);
+    slideDetails.appendChild(detailItem);
+  });
+
+  // Update active thumbnail
+  document.querySelectorAll('.thumbnail').forEach((thumb, i) => {
+    if (i === index) {
+      thumb.classList.add('active');
+    } else {
+      thumb.classList.remove('active');
+    }
+  });
+}
+
+// Function to go to the next slide
+function nextSlide() {
+  let nextIndex = currentSlideIndex + 1;
+  if (nextIndex >= programsData.length) {
+    nextIndex = 0;
+  }
+  showSlide(nextIndex);
+}
+
+// Function to go to the previous slide
+function prevSlide() {
+  let prevIndex = currentSlideIndex - 1;
+  if (prevIndex < 0) {
+    prevIndex = programsData.length - 1;
+  }
+  showSlide(prevIndex);
+}
+
+// Function to toggle autoplay
+function toggleAutoplay() {
+  if (isPlaying) {
+    clearInterval(slideInterval);
+    playPauseIcon.innerHTML = `
+                  <polygon points="5,3 19,12 5,21"></polygon>
+              `;
+  } else {
+    slideInterval = setInterval(nextSlide, slideIntervalTime);
+    playPauseIcon.innerHTML = `
+                  <rect x="6" y="4" width="4" height="16"></rect>
+                  <rect x="14" y="4" width="4" height="16"></rect>
+              `;
+  }
+  isPlaying = !isPlaying;
+}
+
+// Initialize thumbnails
+function initThumbnails() {
+  programsData.forEach((program, index) => {
+    const thumbnail = document.createElement('div');
+    thumbnail.className = `thumbnail thumbnail-${index}`;
+    if (index === currentSlideIndex) {
+      thumbnail.classList.add('active');
+    }
+
+    const thumbnailImage = document.createElement('div');
+    thumbnailImage.className = 'thumbnail-image';
+
+    const overlay = document.createElement('div');
+    overlay.className = 'thumbnail-overlay';
+
+    const title = document.createElement('div');
+    title.className = 'thumbnail-title';
+    title.textContent = program.name;
+
+    overlay.appendChild(title);
+    thumbnail.appendChild(thumbnailImage);
+    thumbnail.appendChild(overlay);
+
+    // Add click event
+    thumbnail.addEventListener('click', () => {
+      showSlide(index);
+      if (isPlaying) {
+        clearInterval(slideInterval);
+        slideInterval = setInterval(nextSlide, slideIntervalTime);
+      }
+    });
+
+    thumbnailsContainer.appendChild(thumbnail);
+  });
+}
+
+// Set up the countdown timer for the website launch
+function setupCountdown() {
+  // Set the countdown date (30 days from now for demo purposes)
+  const countdownDate = new Date();
+  countdownDate.setDate(countdownDate.getDate() + 30);
+
+  // Update the countdown every 1 second
+  const countdownTimer = setInterval(function () {
+    // Get today's date and time
+    const now = new Date().getTime();
+
+    // Find the distance between now and the countdown date
+    const distance = countdownDate - now;
+
+    // Time calculations for days, hours, minutes and seconds
+    const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+    const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+    const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+    // Display the result
+    document.getElementById("daysEl").textContent = days.toString().padStart(2, '0');
+    document.getElementById("hoursEl").textContent = hours.toString().padStart(2, '0');
+    document.getElementById("minsEl").textContent = minutes.toString().padStart(2, '0');
+    document.getElementById("secsEl").textContent = seconds.toString().padStart(2, '0');
+
+    // If the countdown is finished, display expired message
+    if (distance < 0) {
+      clearInterval(countdownTimer);
+      document.getElementById("daysEl").textContent = "00";
+      document.getElementById("hoursEl").textContent = "00";
+      document.getElementById("minsEl").textContent = "00";
+      document.getElementById("secsEl").textContent = "00";
+    }
+  }, 1000);
+}
+
+// Set up event listeners
+prevButton.addEventListener('click', () => {
+  prevSlide();
+  if (isPlaying) {
+    clearInterval(slideInterval);
+    slideInterval = setInterval(nextSlide, slideIntervalTime);
+  }
+});
+
+nextButton.addEventListener('click', () => {
+  nextSlide();
+  if (isPlaying) {
+    clearInterval(slideInterval);
+    slideInterval = setInterval(nextSlide, slideIntervalTime);
+  }
+});
+
+playPauseButton.addEventListener('click', toggleAutoplay);
+
+// Initialize slideshow
+function init() {
+  initThumbnails();
+  setupCountdown();
+  showSlide(0); // Start with the Website Launch slide
+  // Start autoplay by default
+  toggleAutoplay();
+}
+
+// Start the slideshow when the page loads
+window.addEventListener('load', init);
