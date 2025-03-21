@@ -159,72 +159,195 @@
   <section class="programs-section" id="programs">
     <div class="container">
       <div class="section-title animate-fade-up">
-        <h2 id="programs-section-title">Programs & Events</h2>
+        <h2 class="programs-section-title">Programs</h2>
       </div>
-      <div class="hero-slide" id="heroSlide">
-        <!-- Pre-create all background slides in HTML -->
-        <div id="slide-bg-0" class="slide-background active"></div>
-        <div id="slide-bg-1" class="slide-background"></div>
-        <div id="slide-bg-2" class="slide-background"></div>
-        <div id="slide-bg-3" class="slide-background"></div>
-        <div id="slide-bg-4" class="slide-background"></div>
-        <div id="slide-bg-5" class="slide-background"></div>
 
-        <div id="slideOverlay" class="slide-overlay"></div>
-        <div class="slide-content" id="slideContent">
-          <div id="websiteLaunchBadge" class="whats-new-badge" style="display: none;"></div>
-          <h1 class="slide-title" id="slideTitle"></h1>
-          <h2 class="slide-role" id="slideRole"></h2>
-          <p class="slide-description" id="slideDescription"></p>
-          <div class="slide-details" id="slideDetails"></div>
-          <div id="countdownContainer" class="countdown-container" style="display: none;">
-            <div class="countdown-item">
-              <div class="countdown-number" id="daysEl">00</div>
-              <div class="countdown-label">Days</div>
+
+      <div class="slideshow-container">
+        <!-- Language Toggle -->
+        <div class="language-toggle" onclick="toggleLanguage()">
+          <span class="lang-text">English</span> / <span class="lang-text">සිංහල</span>
+        </div>
+
+        <!-- Slide 1: Website Launch (from your HTML) -->
+        <div id="slide1" class="slide active">
+          <div class="slide-overlay"></div>
+          <div class="slide-content">
+            <span class="badge">WHAT'S NEW</span>
+            <h1 class="slide-title">Website Launch</h1>
+            <h2 class="slide-subtitle">A New Digital Experience Coming Soon</h2>
+            <p class="slide-description">Experience our innovative school programs in an interactive digital
+              showcase. Join us for the official launch event and explore our educational excellence online.</p>
+
+            <div class="slide-details">
+              <div class="detail-item" style="animation-delay: 0.4s;">
+                <div class="detail-marker"></div>
+                <div class="detail-text">Interactive Program Showcases</div>
+              </div>
+              <div class="detail-item" style="animation-delay: 0.5s;">
+                <div class="detail-marker"></div>
+                <div class="detail-text">Modern, Responsive Design</div>
+              </div>
+              <div class="detail-item" style="animation-delay: 0.6s;">
+                <div class="detail-marker"></div>
+                <div class="detail-text">Immersive Educational Content</div>
+              </div>
+              <div class="detail-item" style="animation-delay: 0.7s;">
+                <div class="detail-marker"></div>
+                <div class="detail-text">Launch Event with Special Presentations</div>
+              </div>
             </div>
-            <div class="countdown-item">
-              <div class="countdown-number" id="hoursEl">00</div>
-              <div class="countdown-label">Hours</div>
-            </div>
-            <div class="countdown-item">
-              <div class="countdown-number" id="minsEl">00</div>
-              <div class="countdown-label">Minutes</div>
-            </div>
-            <div class="countdown-item">
-              <div class="countdown-number" id="secsEl">00</div>
-              <div class="countdown-label">Seconds</div>
+
+            <div class="countdown-container">
+              <div class="countdown-item">
+                <div class="countdown-number" id="daysEl">00</div>
+                <div class="countdown-label">Days</div>
+              </div>
+              <div class="countdown-item">
+                <div class="countdown-number" id="hoursEl">00</div>
+                <div class="countdown-label">Hours</div>
+              </div>
+              <div class="countdown-item">
+                <div class="countdown-number" id="minsEl">00</div>
+                <div class="countdown-label">Minutes</div>
+              </div>
+              <div class="countdown-item">
+                <div class="countdown-number" id="secsEl">00</div>
+                <div class="countdown-label">Seconds</div>
+              </div>
             </div>
           </div>
         </div>
-        <div class="nav-buttons">
-          <button class="nav-button" id="prevButton">
-            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
-              stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <polyline points="15 18 9 12 15 6"></polyline>
-            </svg>
-          </button>
-          <button class="nav-button" id="nextButton">
-            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
-              stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <polyline points="9 18 15 12 9 6"></polyline>
-            </svg>
-          </button>
-          <button class="nav-button" id="playPauseButton">
-            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
-              stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" id="playPauseIcon">
-              <rect x="6" y="4" width="4" height="16"></rect>
-              <rect x="14" y="4" width="4" height="16"></rect>
-            </svg>
-          </button>
-        </div>
-      </div>
 
-      <div class="thumbnails-section">
-        <h3 class="thumbnails-heading">Our Educational Programs</h3>
-        <div class="thumbnails-container" id="thumbnailsContainer"></div>
+        <!-- Slide 2: PoyaDay Musical Program -->
+        <div id="slide2" class="slide">
+          <div class="slide-overlay"></div>
+          <div class="slide-content">
+            <span class="badge">UPCOMING EVENT</span>
+            <h1 class="slide-title">PoyaDay Musical Program</h1>
+            <h2 class="slide-subtitle">Celebrating Cultural Heritage Through Music</h2>
+            <p class="slide-description">Join us for a special evening of traditional and contemporary music
+              performances by our talented students in celebration of Poya Day. Experience the rich cultural
+              heritage of our community through melodious tunes and rhythmic beats.</p>
+
+            <div class="slide-details">
+              <div class="detail-item">
+                <div class="detail-marker"></div>
+                <div class="detail-text">Traditional Instrumental Performances</div>
+              </div>
+              <div class="detail-item">
+                <div class="detail-marker"></div>
+                <div class="detail-text">Choir Presentations of Buddhist Hymns</div>
+              </div>
+              <div class="detail-item">
+                <div class="detail-marker"></div>
+                <div class="detail-text">Student Solo Performances</div>
+              </div>
+              <div class="detail-item">
+                <div class="detail-marker"></div>
+                <div class="detail-text">Special Moonlight Outdoor Concert</div>
+              </div>
+            </div>
+
+            <div class="countdown-container">
+              <div class="countdown-item">
+                <div class="countdown-number" id="poyadaysEl">39</div>
+                <div class="countdown-label">Days</div>
+              </div>
+              <div class="countdown-item">
+                <div class="countdown-number">00</div>
+                <div class="countdown-label">Hours</div>
+              </div>
+              <div class="countdown-item">
+                <div class="countdown-number">00</div>
+                <div class="countdown-label">Minutes</div>
+              </div>
+              <div class="countdown-item">
+                <div class="countdown-number">00</div>
+                <div class="countdown-label">Seconds</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Slide 3: Annual Science Exhibition -->
+        <div id="slide3" class="slide">
+          <div class="slide-overlay"></div>
+          <div class="slide-content">
+            <span class="badge">ACADEMIC EXCELLENCE</span>
+            <h1 class="slide-title">Annual Science Exhibition</h1>
+            <h2 class="slide-subtitle">Discover, Innovate, Create</h2>
+            <p class="slide-description">Our annual science exhibition showcases student projects spanning robotics,
+              environmental science, biology, and physics. Come witness the brilliant minds of tomorrow as they
+              demonstrate their innovative solutions to real-world problems.</p>
+
+            <div class="slide-details">
+              <div class="detail-item">
+                <div class="detail-marker"></div>
+                <div class="detail-text">Interactive Demonstrations</div>
+              </div>
+              <div class="detail-item">
+                <div class="detail-marker"></div>
+                <div class="detail-text">Student-Led Research Projects</div>
+              </div>
+              <div class="detail-item">
+                <div class="detail-marker"></div>
+                <div class="detail-text">Technology Innovations</div>
+              </div>
+              <div class="detail-item">
+                <div class="detail-marker"></div>
+                <div class="detail-text">Guest Speakers from Leading Universities</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Slide 4: Sports Tournament -->
+        <div id="slide4" class="slide">
+          <div class="slide-overlay"></div>
+          <div class="slide-content">
+            <span class="badge">SPORTS</span>
+            <h1 class="slide-title">Inter-House Sports Tournament</h1>
+            <h2 class="slide-subtitle">Strength, Spirit, Sportsmanship</h2>
+            <p class="slide-description">Our annual inter-house sports tournament brings together students from all
+              grades to compete in various athletic events. From track and field to team sports, witness the
+              determination and team spirit of our young athletes.</p>
+
+            <div class="slide-details">
+              <div class="detail-item">
+                <div class="detail-marker"></div>
+                <div class="detail-text">Track and Field Events</div>
+              </div>
+              <div class="detail-item">
+                <div class="detail-marker"></div>
+                <div class="detail-text">Team Sports Competitions</div>
+              </div>
+              <div class="detail-item">
+                <div class="detail-marker"></div>
+                <div class="detail-text">Swimming Gala</div>
+              </div>
+              <div class="detail-item">
+                <div class="detail-marker"></div>
+                <div class="detail-text">Award Ceremony and Celebrations</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Navigation Buttons -->
+        <button class="prev-btn" onclick="changeSlide(-1)">&#10094;</button>
+        <button class="next-btn" onclick="changeSlide(1)">&#10095;</button>
+
+        <div class="navigation-buttons">
+          <span class="dot active" onclick="currentSlide(1)"></span>
+          <span class="dot" onclick="currentSlide(2)"></span>
+          <span class="dot" onclick="currentSlide(3)"></span>
+          <span class="dot" onclick="currentSlide(4)"></span>
+        </div>
       </div>
     </div>
   </section>
+
 
   <!-- Office Hours -->
   <section class="office-hours" id="office-hours">

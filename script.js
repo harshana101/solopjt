@@ -287,7 +287,7 @@ document.addEventListener('DOMContentLoaded', function () {
     let autoSlide = setInterval(function () {
       currentIndex = (currentIndex < totalItems - 1) ? currentIndex + 1 : 0;
       updateCarousel();
-    }, 5000);
+    }, 4000);
 
     // Stop auto slide on hover
     carousel.addEventListener('mouseenter', function () {
@@ -423,312 +423,292 @@ function closeAlert() {
 document.getElementById('overlay').addEventListener('click', closeAlert);
 
 
-// Programs Section - Added website launch as first item
-const programsData = [
-  {
-    id: 0,
-    name: "Website Launch",
-    role: "A New Digital Experience Coming Soon",
-    description: "Experience our innovative school programs in an interactive digital showcase. Join us for the official launch event and explore our educational excellence online.",
-    details: [
-      "Interactive Program Showcases",
-      "Modern, Responsive Design",
-      "Immersive Educational Content",
-      "Launch Event with Special Presentations"
-    ],
-    isLaunchAnnouncement: true
-  },
-  {
-    id: 1,
-    name: "STEM Excellence Program",
-    role: "Science & Technology",
-    description: "Our STEM Excellence Program provides students with hands-on experience in science, technology, engineering, and mathematics through innovative projects and real-world applications.",
-    details: [
-      "Advanced robotics and coding workshops",
-      "Annual science fair with industry partnerships",
-      "Field trips to research facilities and tech companies",
-      "College-level laboratory experiences"
-    ]
-  },
-  {
-    id: 2,
-    name: "Creative Arts Initiative",
-    role: "Visual & Performing Arts",
-    description: "The Creative Arts Initiative nurtures artistic talent through comprehensive visual arts, music, theater, and dance programs that encourage self-expression and cultural appreciation.",
-    details: [
-      "Professional-grade art studio and gallery space",
-      "Seasonal performances and community showcases",
-      "Artist-in-residence mentorship opportunities",
-      "Digital media and production courses"
-    ]
-  },
-  {
-    id: 3,
-    name: "Global Citizens Program",
-    role: "Languages & Cultural Studies",
-    description: "Students in our Global Citizens Program develop multilingual proficiency and cultural competence through immersive experiences, exchange programs, and internationally-focused curriculum.",
-    details: [
-      "Five language options including Mandarin and Arabic",
-      "International exchange partnerships with 12 countries",
-      "Model UN and global affairs competitions",
-      "Cultural celebration events throughout the year"
-    ]
-  },
-  {
-    id: 4,
-    name: "Leadership Academy",
-    role: "Character & Community Development",
-    description: "The Leadership Academy builds tomorrow's leaders through service learning, ethical development, and practical leadership experiences that prepare students for civic engagement.",
-    details: [
-      "Student government and peer mentoring programs",
-      "Community service requirements with reflection",
-      "Annual leadership retreat and workshops",
-      "Partnerships with local businesses and organizations"
-    ]
-  },
-  {
-    id: 5,
-    name: "College & Career Pathways",
-    role: "Academic & Professional Preparation",
-    description: "Our College & Career Pathways program offers specialized tracks with industry certifications, internships, and college-level coursework to prepare students for their future careers.",
-    details: [
-      "Dual enrollment options with local universities",
-      "Career shadowing and internship placements",
-      "Industry certification opportunities",
-      "Comprehensive college counseling services"
-    ]
-  }
-];
 
-// Variables
-let currentSlideIndex = 0;
-let isPlaying = false;
-let slideInterval;
-const slideIntervalTime = 5000; // 5 seconds between slides
 
-// DOM Elements
-const slideTitle = document.getElementById('slideTitle');
-const slideRole = document.getElementById('slideRole');
-const slideDescription = document.getElementById('slideDescription');
-const slideDetails = document.getElementById('slideDetails');
-const slideOverlay = document.getElementById('slideOverlay');
-const websiteLaunchBadge = document.getElementById('websiteLaunchBadge');
-const countdownContainer = document.getElementById('countdownContainer');
-const thumbnailsContainer = document.getElementById('thumbnailsContainer');
-const prevButton = document.getElementById('prevButton');
-const nextButton = document.getElementById('nextButton');
-const playPauseButton = document.getElementById('playPauseButton');
-const playPauseIcon = document.getElementById('playPauseIcon');
 
-// Function to show a specific slide
-function showSlide(index) {
-  // Update active slide index
-  currentSlideIndex = index;
 
-  // Remove active class from all backgrounds
-  document.querySelectorAll('.slide-background').forEach(bg => {
-    bg.classList.remove('active');
-  });
 
-  // Add active class to current background
-  document.getElementById(`slide-bg-${index}`).classList.add('active');
+// Slideshow functionality
+// Slideshow functionality
+let slideIndex = 1;
+let isEnglish = true;
+const totalSlides = 4;
 
-  // Update slide content
-  const program = programsData[index];
-  slideTitle.textContent = program.name;
-  slideTitle.style.animation = 'none';
-  slideRole.style.animation = 'none';
-  slideDescription.style.animation = 'none';
+// Show the initial slide
+showSlide(slideIndex);
 
-  // Force reflow to restart animations
-  void slideTitle.offsetWidth;
-  void slideRole.offsetWidth;
-  void slideDescription.offsetWidth;
+// Next/previous controls
+function changeSlide(n) {
+  showSlide(slideIndex += n);
+}
 
-  slideTitle.style.animation = 'fadeIn 0.8s ease-in-out';
-  slideRole.style.animation = 'fadeIn 0.8s ease-in-out 0.2s forwards';
-  slideDescription.style.animation = 'fadeIn 0.8s ease-in-out 0.3s forwards';
+// Thumbnail image controls
+function currentSlide(n) {
+  showSlide(slideIndex = n);
+}
 
-  slideRole.textContent = program.role;
-  slideDescription.textContent = program.description;
+function showSlide(n) {
+  const slides = document.getElementsByClassName("slide");
+  const dots = document.getElementsByClassName("dot");
 
-  // Show/hide special website launch elements
-  if (program.isLaunchAnnouncement) {
-    websiteLaunchBadge.style.display = 'inline-block';
-    countdownContainer.style.display = 'flex';
-    slideOverlay.classList.add('launch-overlay');
-  } else {
-    websiteLaunchBadge.style.display = 'none';
-    countdownContainer.style.display = 'none';
-    slideOverlay.classList.remove('launch-overlay');
+  // Loop back to first slide if at the end
+  if (n > slides.length) { slideIndex = 1 }
+
+  // Loop forward to last slide if going before first
+  if (n < 1) { slideIndex = slides.length }
+
+  // Hide all slides
+  for (let i = 0; i < slides.length; i++) {
+    slides[i].classList.remove("active");
   }
 
-  // Clear previous details
-  slideDetails.innerHTML = '';
+  // Remove active class from all dots
+  for (let i = 0; i < dots.length; i++) {
+    dots[i].classList.remove("active");
+  }
 
-  // Add new details with staggered animation
-  program.details.forEach((detail, i) => {
-    const detailItem = document.createElement('div');
-    detailItem.className = 'detail-item';
-    detailItem.style.animationDelay = `${0.4 + (i * 0.1)}s`;
+  // Show the current slide and activate the dot
+  slides[slideIndex - 1].classList.add("active");
+  dots[slideIndex - 1].classList.add("active");
 
-    const marker = document.createElement('div');
-    marker.className = 'detail-marker';
+  // Reset animations for the current slide
+  resetAnimations(slides[slideIndex - 1]);
+}
 
-    const text = document.createElement('div');
-    text.className = 'detail-text';
-    text.textContent = detail;
+// Reset the animations when changing slides
+function resetAnimations(slide) {
+  const animatedElements = slide.querySelectorAll(".slide-subtitle, .slide-description, .detail-item, .countdown-container");
 
-    detailItem.appendChild(marker);
-    detailItem.appendChild(text);
-    slideDetails.appendChild(detailItem);
-  });
+  animatedElements.forEach(element => {
+    element.style.animation = 'none';
+    element.offsetHeight; // Trigger reflow
 
-  // Update active thumbnail
-  document.querySelectorAll('.thumbnail').forEach((thumb, i) => {
-    if (i === index) {
-      thumb.classList.add('active');
-    } else {
-      thumb.classList.remove('active');
+    if (element.classList.contains('slide-subtitle')) {
+      element.style.animation = 'fadeIn 0.8s ease-in-out 0.2s forwards';
+    } else if (element.classList.contains('slide-description')) {
+      element.style.animation = 'fadeIn 0.8s ease-in-out 0.3s forwards';
+    } else if (element.classList.contains('countdown-container')) {
+      element.style.animation = 'fadeIn 0.8s ease-in-out 0.5s forwards';
     }
   });
+
+  // Apply staggered animation to detail items
+  const detailItems = slide.querySelectorAll('.detail-item');
+  detailItems.forEach((item, index) => {
+    item.style.animation = `slideUp 0.5s ease-out ${0.4 + (index * 0.1)}s forwards`;
+  });
 }
 
-// Function to go to the next slide
-function nextSlide() {
-  let nextIndex = currentSlideIndex + 1;
-  if (nextIndex >= programsData.length) {
-    nextIndex = 0;
-  }
-  showSlide(nextIndex);
-}
+// Auto slide functionality
+let slideInterval = setInterval(() => {
+  changeSlide(1);
+}, 4000);
 
-// Function to go to the previous slide
-function prevSlide() {
-  let prevIndex = currentSlideIndex - 1;
-  if (prevIndex < 0) {
-    prevIndex = programsData.length - 1;
-  }
-  showSlide(prevIndex);
-}
+// Pause auto slide on hover
+document.querySelector('.slideshow-container').addEventListener('mouseenter', () => {
+  clearInterval(slideInterval);
+});
 
-// Function to toggle autoplay
-function toggleAutoplay() {
-  if (isPlaying) {
-    clearInterval(slideInterval);
-    playPauseIcon.innerHTML = `
-                  <polygon points="5,3 19,12 5,21"></polygon>
-              `;
-  } else {
-    slideInterval = setInterval(nextSlide, slideIntervalTime);
-    playPauseIcon.innerHTML = `
-                  <rect x="6" y="4" width="4" height="16"></rect>
-                  <rect x="14" y="4" width="4" height="16"></rect>
-              `;
-  }
-  isPlaying = !isPlaying;
-}
+// Resume auto slide on mouse leave
+document.querySelector('.slideshow-container').addEventListener('mouseleave', () => {
+  slideInterval = setInterval(() => {
+    changeSlide(1);
+  }, 4000);
+});
 
-// Initialize thumbnails
-function initThumbnails() {
-  programsData.forEach((program, index) => {
-    const thumbnail = document.createElement('div');
-    thumbnail.className = `thumbnail thumbnail-${index}`;
-    if (index === currentSlideIndex) {
-      thumbnail.classList.add('active');
+// Language toggle functionality
+function toggleLanguage() {
+  isEnglish = !isEnglish;
+
+  // Sample translation data
+  const translations = {
+    slide1: {
+      title: isEnglish ? "Website Launch" : "වෙබ් අඩවිය දියත් කිරීම",
+      subtitle: isEnglish ? "A New Digital Experience Coming Soon" : "නව ඩිජිටල් අත්දැකීමක් ඉක්මනින්",
+      description: isEnglish ? "Experience our innovative school programs in an interactive digital showcase. Join us for the official launch event and explore our educational excellence online." : "අපගේ නවීන පාසල් වැඩසටහන් අන්තර්ක්‍රියාකාරී ඩිජිටල් ප්‍රදර්ශනයක් තුළ අත්විඳින්න. නිල දියත් කිරීමේ උත්සවය සඳහා අප සමඟ සම්බන්ධ වී අපගේ අධ්‍යාපනික විශිෂ්ටත්වය අන්තර්ජාලය හරහා ගවේෂණය කරන්න.",
+      details: [
+        isEnglish ? "Interactive Program Showcases" : "අන්තර්ක්‍රියාකාරී වැඩසටහන් ප්‍රදර්ශන",
+        isEnglish ? "Modern, Responsive Design" : "නවීන, ප්‍රතිචාරාත්මක නිර්මාණය",
+        isEnglish ? "Immersive Educational Content" : "ගිලෙන අධ්‍යාපනික අන්තර්ගතය",
+        isEnglish ? "Launch Event with Special Presentations" : "විශේෂ ඉදිරිපත් කිරීම් සමඟ දියත් කිරීමේ උත්සවය"
+      ],
+      badge: isEnglish ? "WHAT'S NEW" : "අලුත් කුමක්ද"
+    },
+    slide2: {
+      title: isEnglish ? "PoyaDay Musical Program" : "පෝය දින සංගීත වැඩසටහන",
+      subtitle: isEnglish ? "Celebrating Cultural Heritage Through Music" : "සංගීතය හරහා සංස්කෘතික උරුමය සැමරීම",
+      description: isEnglish ? "Join us for a special evening of traditional and contemporary music performances by our talented students in celebration of Poya Day. Experience the rich cultural heritage of our community through melodious tunes and rhythmic beats." : "පෝය දිනය සැමරීම සඳහා අපගේ දක්ෂ සිසුන්ගේ සාම්ප්‍රදායික හා සමකාලීන සංගීත ප්‍රසංගයක් සඳහා අප හා එක්වන්න. මිහිරි හඬ සහ ලයබද්ධ තාල හරහා අපගේ ප්‍රජාවේ පොහොසත් සංස්කෘතික උරුමය අත්විඳින්න.",
+      details: [
+        isEnglish ? "Traditional Instrumental Performances" : "සාම්ප්‍රදායික වාද්‍ය භාණ්ඩ ප්‍රසංගය",
+        isEnglish ? "Choir Presentations of Buddhist Hymns" : "බෞද්ධ භක්ති ගී ගායනා චන්ද්‍රිකා ඉදිරිපත් කිරීම්",
+        isEnglish ? "Student Solo Performances" : "සිසුන්ගේ තනි ප්‍රසංග",
+        isEnglish ? "Special Moonlight Outdoor Concert" : "විශේෂ පුර්ණ චන්ද්‍ර එළියේ එළිමහන් ප්‍රසංගය"
+      ],
+      badge: isEnglish ? "UPCOMING EVENT" : "ඉදිරි උත්සවය"
+    },
+    slide3: {
+      title: isEnglish ? "Annual Science Exhibition" : "වාර්ෂික විද්‍යා ප්‍රදර්ශනය",
+      subtitle: isEnglish ? "Discover, Innovate, Create" : "සොයා ගන්න, නවීකරණය කරන්න, නිර්මාණය කරන්න",
+      description: isEnglish ? "Our annual science exhibition showcases student projects spanning robotics, environmental science, biology, and physics. Come witness the brilliant minds of tomorrow as they demonstrate their innovative solutions to real-world problems." : "අපගේ වාර්ෂික විද්‍යා ප්‍රදර්ශනය රොබෝ තාක්ෂණය, පරිසර විද්‍යාව, ජීව විද්‍යාව සහ භෞතික විද්‍යාව පුරා විහිදුණු සිසුන්ගේ ව්‍යාපෘති ප්‍රදර්ශනය කරයි. ලෝකයේ ගැටලුවලට නව විසඳුම් ඔවුන් විසින් ප්‍රදර්ශනය කරන ආකාරය නැරඹීමට පැමිණෙන්න.",
+      details: [
+        isEnglish ? "Interactive Demonstrations" : "අන්තර්ක්‍රියාකාරී ප්‍රදර්ශන",
+        isEnglish ? "Student-Led Research Projects" : "සිසු නායකත්වයෙන් යුත් පර්යේෂණ ව්‍යාපෘති",
+        isEnglish ? "Technology Innovations" : "තාක්ෂණික නවෝත්පාදන",
+        isEnglish ? "Guest Speakers from Leading Universities" : "ප්‍රමුඛ විශ්ව විද්‍යාලවල ආරාධිත කථිකයින්"
+      ],
+      badge: isEnglish ? "ACADEMIC EXCELLENCE" : "අධ්‍යාපනික විශිෂ්ටත්වය"
+    },
+    slide4: {
+      title: isEnglish ? "Inter-House Sports Tournament" : "අන්තර් නිවාස ක්‍රීඩා තරඟාවලිය",
+      subtitle: isEnglish ? "Strength, Spirit, Sportsmanship" : "ශක්තිය, ආත්මය, ක්‍රීඩා හැඟීම",
+      description: isEnglish ? "Our annual inter-house sports tournament brings together students from all grades to compete in various athletic events. From track and field to team sports, witness the determination and team spirit of our young athletes." : "අපගේ වාර්ෂික අන්තර් නිවාස ක්‍රීඩා තරඟාවලිය විවිධ ක්‍රීඩා ඉසව්වල තරඟ කිරීමට සියලුම ශ්‍රේණිවල සිසුන් එක් කරයි. පථ සහ ක්ෂේත්‍ර සිට කණ්ඩායම් ක්‍රීඩා දක්වා, අපගේ තරුණ ක්‍රීඩකයින්ගේ අධිෂ්ඨානය සහ කණ්ඩායම් ආත්මය දැක ගන්න.",
+      details: [
+        isEnglish ? "Track and Field Events" : "පථ හා ක්ෂේත්‍ර ඉසව්",
+        isEnglish ? "Team Sports Competitions" : "කණ්ඩායම් ක්‍රීඩා තරඟ",
+        isEnglish ? "Swimming Gala" : "පිහිනුම් පිළිගැනීම",
+        isEnglish ? "Award Ceremony and Celebrations" : "සම්මාන උළෙල සහ සැමරුම්"
+      ],
+      badge: isEnglish ? "SPORTS" : "ක්‍රීඩා"
+    },
+    uiElements: {
+      days: isEnglish ? "Days" : "දින",
+      hours: isEnglish ? "Hours" : "පැය",
+      minutes: isEnglish ? "Minutes" : "මිනිත්තු",
+      seconds: isEnglish ? "Seconds" : "තත්පර"
     }
+  };
 
-    const thumbnailImage = document.createElement('div');
-    thumbnailImage.className = 'thumbnail-image';
+  // Update slide 1
+  updateSlideContent(1, translations.slide1);
 
-    const overlay = document.createElement('div');
-    overlay.className = 'thumbnail-overlay';
+  // Update slide 2
+  updateSlideContent(2, translations.slide2);
 
-    const title = document.createElement('div');
-    title.className = 'thumbnail-title';
-    title.textContent = program.name;
+  // Update slide 3
+  updateSlideContent(3, translations.slide3);
 
-    overlay.appendChild(title);
-    thumbnail.appendChild(thumbnailImage);
-    thumbnail.appendChild(overlay);
+  // Update slide 4
+  updateSlideContent(4, translations.slide4);
 
-    // Add click event
-    thumbnail.addEventListener('click', () => {
-      showSlide(index);
-      if (isPlaying) {
-        clearInterval(slideInterval);
-        slideInterval = setInterval(nextSlide, slideIntervalTime);
-      }
+  // Update UI elements
+  updateUIElements(translations.uiElements);
+}
+
+function updateSlideContent(slideNum, content) {
+  const slide = document.getElementById(`slide${slideNum}`);
+
+  // Update title, subtitle, and description
+  slide.querySelector('.slide-title').textContent = content.title;
+  slide.querySelector('.slide-subtitle').textContent = content.subtitle;
+  slide.querySelector('.slide-description').textContent = content.description;
+  slide.querySelector('.badge').textContent = content.badge;
+
+  // Update detail items
+  const detailItems = slide.querySelectorAll('.detail-text');
+  for (let i = 0; i < detailItems.length && i < content.details.length; i++) {
+    detailItems[i].textContent = content.details[i];
+  }
+}
+
+function updateUIElements(translations) {
+  // Update countdown labels
+  document.querySelectorAll('.countdown-label').forEach(label => {
+    if (label.textContent.trim() === 'Days') label.textContent = translations.days;
+    else if (label.textContent.trim() === 'Hours') label.textContent = translations.hours;
+    else if (label.textContent.trim() === 'Minutes') label.textContent = translations.minutes;
+    else if (label.textContent.trim() === 'Seconds') label.textContent = translations.seconds;
+  });
+
+  // Update language toggle text
+  document.querySelector('.lang-text').textContent = isEnglish ? 'English' : 'සිංහල';
+}
+
+// Countdown timer functionality for website launch
+const launchDate = new Date('2025-04-04T08:30:00').getTime();
+
+function updateCountdown() {
+  const now = new Date().getTime();
+  const distance = launchDate - now;
+
+  // Time calculations
+  const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+  const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+  const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+  const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+  // Update elements
+  document.getElementById('daysEl').textContent = days < 10 ? '0' + days : days;
+  document.getElementById('hoursEl').textContent = hours < 10 ? '0' + hours : hours;
+  document.getElementById('minsEl').textContent = minutes < 10 ? '0' + minutes : minutes;
+  document.getElementById('secsEl').textContent = seconds < 10 ? '0' + seconds : seconds;
+
+  // If countdown is finished
+  if (distance < 0) {
+    clearInterval(countdownTimer);
+    document.getElementById('daysEl').textContent = '00';
+    document.getElementById('hoursEl').textContent = '00';
+    document.getElementById('minsEl').textContent = '00';
+    document.getElementById('secsEl').textContent = '00';
+  }
+}
+
+// Update countdown every second
+const countdownTimer = setInterval(updateCountdown, 1000);
+
+// Initialize countdown
+updateCountdown();
+
+// Mobile detection and adjustments
+function checkMobile() {
+  if (window.innerWidth <= 768) {
+    // Adjust for mobile view
+    const slideContents = document.querySelectorAll('.slide-content');
+    slideContents.forEach(content => {
+      content.style.paddingTop = '80px';
     });
-
-    thumbnailsContainer.appendChild(thumbnail);
-  });
-}
-
-// Set up the countdown timer for the website launch
-function setupCountdown() {
-  // Set the countdown date (30 days from now for demo purposes)
-  const countdownDate = new Date();
-  countdownDate.setDate(countdownDate.getDate() + 30);
-
-  // Update the countdown every 1 second
-  const countdownTimer = setInterval(function () {
-    // Get today's date and time
-    const now = new Date().getTime();
-
-    // Find the distance between now and the countdown date
-    const distance = countdownDate - now;
-
-    // Time calculations for days, hours, minutes and seconds
-    const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-    const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-    const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-    const seconds = Math.floor((distance % (1000 * 60)) / 1000);
-
-    // Display the result
-    document.getElementById("daysEl").textContent = days.toString().padStart(2, '0');
-    document.getElementById("hoursEl").textContent = hours.toString().padStart(2, '0');
-    document.getElementById("minsEl").textContent = minutes.toString().padStart(2, '0');
-    document.getElementById("secsEl").textContent = seconds.toString().padStart(2, '0');
-
-    // If the countdown is finished, display expired message
-    if (distance < 0) {
-      clearInterval(countdownTimer);
-      document.getElementById("daysEl").textContent = "00";
-      document.getElementById("hoursEl").textContent = "00";
-      document.getElementById("minsEl").textContent = "00";
-      document.getElementById("secsEl").textContent = "00";
-    }
-  }, 1000);
-}
-
-// Set up event listeners
-prevButton.addEventListener('click', () => {
-  prevSlide();
-  if (isPlaying) {
-    clearInterval(slideInterval);
-    slideInterval = setInterval(nextSlide, slideIntervalTime);
+  } else {
+    // Reset for desktop view
+    const slideContents = document.querySelectorAll('.slide-content');
+    slideContents.forEach(content => {
+      content.style.paddingTop = '0';
+    });
   }
+}
+
+// Check on load and resize
+window.addEventListener('load', checkMobile);
+window.addEventListener('resize', checkMobile);
+
+// Handle touch events for mobile swiping
+let touchStartX = 0;
+let touchEndX = 0;
+
+document.querySelector('.slideshow-container').addEventListener('touchstart', e => {
+  touchStartX = e.changedTouches[0].screenX;
 });
 
-nextButton.addEventListener('click', () => {
-  nextSlide();
-  if (isPlaying) {
-    clearInterval(slideInterval);
-    slideInterval = setInterval(nextSlide, slideIntervalTime);
-  }
+document.querySelector('.slideshow-container').addEventListener('touchend', e => {
+  touchEndX = e.changedTouches[0].screenX;
+  handleSwipe();
 });
 
-playPauseButton.addEventListener('click', toggleAutoplay);
+function handleSwipe() {
+  const threshold = 50; // Minimum distance to be considered a swipe
 
-// Initialize slideshow
-function init() {
-  initThumbnails();
-  setupCountdown();
-  showSlide(0); // Start with the Website Launch slide
-  // Start autoplay by default
-  toggleAutoplay();
+  if (touchEndX < touchStartX - threshold) {
+    // Swipe left - show next slide
+    changeSlide(1);
+  }
+
+  if (touchEndX > touchStartX + threshold) {
+    // Swipe right - show previous slide
+    changeSlide(-1);
+  }
 }
 
-// Start the slideshow when the page loads
-window.addEventListener('load', init);
+// Initialize the page
+document.addEventListener('DOMContentLoaded', function () {
+  showSlide(1);
+  updateCountdown();
+});
+
