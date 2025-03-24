@@ -238,7 +238,7 @@ h1:after {
     color: #ffffff;
     width: 60px;
     height: 40px;
-    border-radius: 0px;
+    border-radius: 10px;
     border: none;
     cursor: pointer;
     display: flex;
