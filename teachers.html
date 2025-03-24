@@ -17,30 +17,6 @@
     <h1>Teachers</h1>
 
     <div class="controls-container">
-      <!-- Filter container -->
-      <div class="filter-container">
-        <div class="filter-dropdown">
-          <button onclick="toggleDropdown()" class="dropdown-btn" id="current-filter">All</button>
-          <div id="filterDropdown" class="dropdown-content">
-            <a href="#" onclick="filterTeachers('All')" data-original-category="All">All</a>
-            <a href="#" onclick="filterTeachers('A/L')" data-original-category="A/L">A/L</a>
-            <a href="#" onclick="filterTeachers('O/L')" data-original-category="O/L">O/L</a>
-            <a href="#" onclick="filterTeachers('Prefect Board')" data-original-category="Prefect Board">Prefect
-              Board</a>
-            <a href="#" onclick="filterTeachers('Scout')" data-original-category="Scout">Scout</a>
-            <a href="#" onclick="filterTeachers('Ecogroup')" data-original-category="Ecogroup">Ecogroup</a>
-            <a href="#" onclick="filterTeachers('Saukydana')" data-original-category="Saukydana">Saukydana</a>
-            <a href="#" onclick="filterTeachers('Disciplinary committee')"
-              data-original-category="Disciplinary committee">Disciplinary committee</a>
-            <a href="#" onclick="filterTeachers('Media Association')" data-original-category="Media Association">Media
-              Association</a>
-            <a href="#" onclick="filterTeachers('Student counselling and Career guide')"
-              data-original-category="Student counselling and Career guide">Student counselling and Career guide</a>
-            <a href="#" onclick="filterTeachers('In charge of sections')"
-              data-original-category="In charge of sections">In charge of sections</a>
-          </div>
-        </div>
-      </div>
 
       <!-- Search container -->
       <div class="search-container">
@@ -51,593 +27,410 @@
         </div>
 
         <div class="recent-searches" id="recentSearches">
-          <div class="recent-title"></div>
+          <div class="recent-title" id="recentSearchesTitle">Recent Searches:</div>
           <!-- Recent search items will be dynamically added here -->
         </div>
       </div>
+
+      <!-- Theme toggle button will be added here by JS -->
+      <div id="themeToggle" class="theme-toggle">
+        <i class="fas fa-moon"></i>
+      </div>
     </div>
-    <div class="view-all">
-      <a href="index.html" class="view-all-btn"><i class="fas fa-home"></i> Back To Home</i></a>
-    </div>
 
-    <div class="teachers-grid">
-      <!-- Teacher 1 -->
-      <div class="teacher-card" data-categories="O/L" data-name="Mr. A.D.Thiraj Lasantha"
-        data-subject="Sinhala, History, Geography" data-name-si="ඒ.ඩී.තිරාජ් ලසන්ත මයා" data-subject-si="සිංහල, ඉතිහාසය, භූගෝල විද්‍යාව">
-        <div class="profile-pic">
-          <img src="/api/placeholder/120/120" alt="Teacher">
-        </div>
-        <div class="teacher-info">
-          <div class="teacher-name">Mr. A.D.Thiraj Lasantha</div>
-          <div class="teacher-position">Sinhala/ History/ Geography</div>
-          <button class="about-btn">More Info..</button>
-          <div class="categories">
-            <span class="category-tag">O/L</span>
-            <!-- <span class="category-tag">Prefect Board</span> -->
-          </div>
+    <!-- Filter container -->
+    <div class="filter-container">
+      <div class="filter-dropdown">
+        <button onclick="toggleDropdown()" class="dropdown-btn" id="current-filter">All</button>
+        <div id="filterDropdown" class="dropdown-content">
+          <a href="#" onclick="filterTeachers('All')" data-original-category="All">All</a>
+          <a href="#" onclick="filterTeachers('A/L')" data-original-category="A/L">A/L</a>
+          <a href="#" onclick="filterTeachers('O/L')" data-original-category="O/L">O/L</a>
+          <a href="#" onclick="filterTeachers('Prefect Board')" data-original-category="Prefect Board">Prefect
+            Board</a>
+          <a href="#" onclick="filterTeachers('Scout')" data-original-category="Scout">Scout</a>
+          <a href="#" onclick="filterTeachers('Ecogroup')" data-original-category="Ecogroup">Ecogroup</a>
+          <a href="#" onclick="filterTeachers('Saukydana')" data-original-category="Saukydana">Saukydana</a>
+          <a href="#" onclick="filterTeachers('Disciplinary committee')"
+            data-original-category="Disciplinary committee">Disciplinary committee</a>
+          <a href="#" onclick="filterTeachers('Media Association')" data-original-category="Media Association">Media
+            Association</a>
+          <a href="#" onclick="filterTeachers('Student Counselling')"
+            data-original-category="Student Counselling">Student Counselling</a>
+          <a href="#" onclick="filterTeachers('In charge of sections')"
+            data-original-category="In charge of sections">In charge of sections</a>
+          <a href="#" onclick="filterTeachers('Drama Club')" data-original-category="Drama Club">Drama Club</a>
+          <a href="#" onclick="filterTeachers('Aesthetics Department')"
+            data-original-category="Aesthetics Department">Aesthetics Department</a>
         </div>
       </div>
-
-      <!-- Teacher 2 -->
-      <div class="teacher-card" data-categories="O/L" data-name="Mrs. Kaushani Chathurika Disanayaka"
-        data-subject="Science" data-name-si="කෞශානි චතුරිකා දිසානායක මිය" data-subject-si="විද්‍යාව">
-        <div class="profile-pic">
-          <img src="/api/placeholder/120/120" alt="Teacher">
-        </div>
-        <div class="teacher-info">
-          <div class="teacher-name">Mrs. Kaushani Chathurika Disanayaka</div>
-          <div class="teacher-position">Science</div>
-          <button class="about-btn">More Info..</button>
-          <div class="categories">
-            <span class="category-tag">O/L</span>
-            <!-- <span class="category-tag">Ecogroup</span> -->
-          </div>
-        </div>
-      </div>
-
-      <!-- Teacher 3 -->
-      <div class="teacher-card" data-categories="O/L,Prefect Board" data-name="Mr. Priyashan Dilruk"
-        data-subject="Mathematics" data-name-si="ප්‍රියෂාන් දිල්රුක් මයා" data-subject-si="ගණිතය">
-        <div class="profile-pic">
-          <img src="/api/placeholder/120/120" alt="Teacher">
-        </div>
-        <div class="teacher-info">
-          <div class="teacher-name">Mr. Priyashan Dilruk</div>
-          <div class="teacher-position">Mathematics</div>
-          <button class="about-btn">More Info..</button>
-          <div class="categories">
-            <span class="category-tag">O/L</span>
-            <span class="category-tag">Prefect Board</span>
-          </div>
-        </div>
-      </div>
-
-      <!-- Teacher 4 -->
-      <div class="teacher-card" data-categories="A/L" data-name="Ms. J.Wishwa Sandeepani Siriwardhana" data-subject="Economics" data-name-si="විශ්වා සංදීපනී සිරිවර්ධන මෙනවිය" data-subject-si="ආර්තික විද්‍යාව">
-        <div class="profile-pic">
-          <img src="/api/placeholder/120/120" alt="Teacher">
-        </div>
-        <div class="teacher-info">
-          <div class="teacher-name">Ms. Wishwa Sandeepani</div>
-          <div class="teacher-position">Economics</div>
-          <button class="about-btn">More Info..</button>
-          <div class="categories">
-            <span class="category-tag">A/L</span>
-            <!-- <span class="category-tag">Scout</span> -->
-          </div>
-        </div>
-      </div>
-
-      <!-- Teacher 5 -->
-      <div class="teacher-card" data-categories="A/L,O/L" data-name="Mr. S.Sudheera Sampath" data-subject="Acconting" data-name-si="එස්.සුධීර සම්පත් මයා" data-subject-si="ගිණුම්කරණය">
-        <div class="profile-pic">
-          <img src="./sudheera sir.jpg" alt="Teacher">
-        </div>
-        <div class="teacher-info">
-          <div class="teacher-name">Mr. S.Sudheera Sampath</div>
-          <div class="teacher-position">Acconting</div>
-          <button class="about-btn">More Info..</button>
-          <div class="categories">
-            <span class="category-tag">A/L</span>
-            <span class="category-tag">O/L</span>
-          </div>
-        </div>
-      </div>
-
-      <!-- Teacher 6 -->
-      <div class="teacher-card" data-categories="A/L,O/L" data-name="Mrs. Senani Senarathna"
-        data-subject="Communication & Media Studies" data-name-si="එම්.සේනානි සේනාරත්න මිය" data-subject-si="සන්නිවේදනය හා මාධ්‍ය අධ්‍යනය">
-        <div class="profile-pic">
-          <img src="./senani teacher.png" alt="Teacher">
-        </div>
-        <div class="teacher-info">
-          <div class="teacher-name">Mrs. Senani Senarathna</div>
-          <div class="teacher-position">Communication & Media Studies</div>
-          <button class="about-btn">More Info..</button>
-          <div class="categories">
-            <span class="category-tag">A/L</span>
-            <span class="category-tag">O/L</span>
-            <span class="category-tag">Media Association</span>
-          </div>
-        </div>
-      </div>
-
-      <!-- Teacher 7 -->
-      <div class="teacher-card" data-categories="O/L,A/L,Disciplinary committee,Prefect Board"
-        data-name="Mr. Lenin Priyantha Liyanage" data-subject="Drama and Theatre" data-name-si="ලෙනින් ප්‍රියන්ත ලියනගේ මයා" data-subject-si="නාට්‍ය හා රංගකලාව">
-        <div class="profile-pic">
-          <div class="img-holder">
-            <img src="./Lenin sir.JPG" alt="Teacher">
-          </div>
-        </div>
-        <div class="teacher-info">
-          <div class="teacher-name">Mr. Lenin Priyantha Liyanage</div>
-          <div class="teacher-position">Drama and Theatre</div>
-          <button class="about-btn">More Info..</button>
-          <div class="categories">
-            <span class="category-tag">A/L</span>
-            <span class="category-tag">O/L</span>
-            <span class="category-tag">Drama Club</span>
-            <span class="category-tag">Disciplinary committee</span>
-            <span class="category-tag">Prefect Board</span>
-          </div>
-        </div>
-      </div>
-
-      <!-- Teacher 8 -->
-      <div class="teacher-card" data-categories="O/L,Scout" data-name="Mrs. U.Chalani Madhusanka"
-        data-subject="Second Language Tamil" data-name-si="චලනි මධුසංකා මිය" data-subject-si="දෙවන භාෂාව දෙමළ">
-        <div class="profile-pic">
-          <img src="./chalani teacher.JPG" alt="Teacher">
-        </div>
-        <div class="teacher-info">
-          <div class="teacher-name">Mrs. Chalani Madhusanka</div>
-          <div class="teacher-position">Second Language Tamil</div>
-          <button class="about-btn">More Info..</button>
-          <div class="categories">
-            <span class="category-tag">O/L</span>
-            <span class="category-tag">Scout</span>
-          </div>
-        </div>
-      </div>
-
-      <!-- Teacher 9 -->
-      <div class="teacher-card" data-categories="Saukydana,counselling" data-name="Mrs. A.A.Nirmali Amarasingha"
-        data-subject="counselling,Saukydana" data-name-si="ඒ.ඒ.නිර්මලී අමරසිංහ මිය" data-subject-si="ශිෂ්‍ය උපදේශන හා මාර්ගෝපදේශ">
-        <div class="profile-pic">
-          <img src="./mali teacher.jpg" alt="Teacher">
-        </div>
-        <div class="teacher-info">
-          <div class="teacher-name">Mrs. A.A.Nirmali Amarasingha</div>
-          <div class="teacher-position">Student counselling and Career guide</div>
-          <button class="about-btn">More Info..</button>
-          <div class="categories">
-            <span class="category-tag">Saukydana</span>
-            <!-- <span class="category-tag">Counselling</span> -->
-            <!-- <span class="category-tag">Prefect Board</span> -->
-          </div>
-        </div>
-      </div>
-
-      <!-- Teacher 10 -->
-      <!-- <div class="teacher-card" data-categories="O/L,In charge of sections" data-name="Thomas Anderson"
-        data-subject="Physics, Mathematics" >
-        <div class="profile-pic">
-          <img src="/api/placeholder/120/120" alt="Teacher">
-        </div>
-        <div class="teacher-info">
-          <div class="teacher-name">Thomas Anderson</div>
-          <div class="teacher-position">Physics / Mathematics</div>
-          <button class="about-btn">About Me (Hover)</button>
-          <div class="categories">
-            <span class="category-tag">O/L</span>
-            <span class="category-tag">In charge of sections</span>
-          </div>
-        </div>
-      </div> -->
-
-      <!-- Teacher 11 -->
-      <!-- <div class="teacher-card" data-categories="A/L,Saukydana" data-name="Lisa Robinson"
-        data-subject="Foreign Languages">
-        <div class="profile-pic">
-          <img src="/api/placeholder/120/120" alt="Teacher">
-        </div>
-        <div class="teacher-info">
-          <div class="teacher-name">Lisa Robinson</div>
-          <div class="teacher-position">Foreign Languages</div>
-          <button class="about-btn">About Me (Hover)</button>
-          <div class="categories">
-            <span class="category-tag">A/L</span>
-            <span class="category-tag">Saukydana</span>
-          </div>
-        </div>
-      </div> -->
-
-      <!-- Teacher 12 -->
-      <!-- <div class="teacher-card" data-name="Daniel Taylor" data-categories="O/L,Prefect Board,Ecogroup"
-        data-subject="Music, Performing Arts">
-        <div class="profile-pic">
-          <img src="/api/placeholder/120/120" alt="Teacher">
-        </div>
-        <div class="teacher-info">
-          <div class="teacher-name">Daniel Taylor</div>
-          <div class="teacher-position">Music / Performing Arts</div>
-          <button class="about-btn">About Me (Hover)</button>
-          <div class="categories">
-            <span class="category-tag">O/L</span>
-            <span class="category-tag">Prefect Board</span>
-            <span class="category-tag">Ecogroup</span>
-          </div>
-        </div>
-      </div> -->
     </div>
   </div>
 
-  <script src="./updated-teachers-js.js">
-  //   // Toggle dropdown menu
-  //   function toggleDropdown() {
-  //     document.getElementById("filterDropdown").classList.toggle("show");
-  //   }
+  <div class="view-all">
+    <a href="index.html" class="view-all-btn"><i class="fas fa-home"></i> Back To Home</i></a>
+  </div>
 
-  //   // Close the dropdown if clicked outside
-  //   window.onclick = function (event) {
-  //     if (!event.target.matches('.dropdown-btn')) {
-  //       var dropdowns = document.getElementsByClassName("dropdown-content");
-  //       for (var i = 0; i < dropdowns.length; i++) {
-  //         var openDropdown = dropdowns[i];
-  //         if (openDropdown.classList.contains('show')) {
-  //           openDropdown.classList.remove('show');
-  //         }
-  //       }
-  //     }
-  //   }
 
-  //   // Filter teachers based on selected category
-  //   function filterTeachers(category) {
-  //     // Update dropdown button text
-  //     document.getElementById("current-filter").textContent = category;
+  <div class="teachers-grid">
+    <!-- Teacher 1 -->
+    <div class="teacher-card" data-categories="O/L,Scout" data-name="Mr. A.D.Thiraj Lasantha"
+      data-subject="Sinhala, History, Geography" data-name-si="ඒ.ඩී.තිරාජ් ලසන්ත මයා"
+      data-subject-si="සිංහල, ඉතිහාසය, භූගෝල විද්‍යාව">
+      <div class="profile-pic">
+        <img src="" alt="Mr. A.D.Thiraj Lasantha">
+      </div>
+      <div class="teacher-info">
+        <div class="teacher-name">Mr. A.D.Thiraj Lasantha</div>
+        <div class="teacher-position">Sinhala/ History/ Geography</div>
+        <button class="about-btn">More Info..</button>
+        <div class="categories">
+          <span class="category-tag">O/L</span>
+          <span class="category-tag">Scout</span>
+        </div>
+      </div>
+    </div>
 
-  //     // Hide dropdown
-  //     document.getElementById("filterDropdown").classList.remove("show");
+    <!-- Teacher 2 -->
+    <div class="teacher-card" data-categories="O/L" data-name="Mrs. Kaushani Chathurika Disanayaka"
+      data-subject="Science" data-name-si="කෞශානි චතුරිකා දිසානායක මිය" data-subject-si="විද්‍යාව">
+      <div class="profile-pic">
+        <img src="" alt="Mrs. Kaushani Chathurika Disanayaka">
+      </div>
+      <div class="teacher-info">
+        <div class="teacher-name">Mrs. Kaushani Chathurika Disanayaka</div>
+        <div class="teacher-position">Science</div>
+        <button class="about-btn">More Info..</button>
+        <div class="categories">
+          <span class="category-tag">O/L</span>
+          <!-- <span class="category-tag">Ecogroup</span> -->
+        </div>
+      </div>
+    </div>
 
-  //     // Get all teacher cards
-  //     var cards = document.getElementsByClassName("teacher-card");
+    <!-- Teacher 3 -->
+    <div class="teacher-card" data-categories="O/L,Prefect Board" data-name="Mr. Priyashan Dilruk"
+      data-subject="Mathematics" data-name-si="ප්‍රියෂාන් දිල්රුක් මයා" data-subject-si="ගණිතය">
+      <div class="profile-pic">
+        <img src="" alt="Mr. Priyashan Dilruk">
+      </div>
+      <div class="teacher-info">
+        <div class="teacher-name">Mr. Priyashan Dilruk</div>
+        <div class="teacher-position">Mathematics</div>
+        <button class="about-btn">More Info..</button>
+        <div class="categories">
+          <span class="category-tag">O/L</span>
+          <span class="category-tag">Prefect Board</span>
+        </div>
+      </div>
+    </div>
 
-  //     // If "All" is selected, show all cards
-  //     if (category === "All") {
-  //       for (var i = 0; i < cards.length; i++) {
-  //         cards[i].classList.remove("hidden");
-  //         // Reset animation for fade-in effect
-  //         cards[i].style.animation = "none";
-  //         setTimeout(function (index) {
-  //           return function () {
-  //             cards[index].style.animation = "fadeIn 0.5s forwards";
-  //             cards[index].style.animationDelay = (index * 0.1) + "s";
-  //           }
-  //         }(i), 11);
-  //       }
-  //       return;
-  //     }
+    <!-- Teacher 4 -->
+    <div class="teacher-card" data-categories="A/L" data-name="Ms. J.Wishwa Sandeepani Siriwardhana"
+      data-subject="Economics" data-name-si="විශ්වා සංදීපනී සිරිවර්ධන මෙනවිය" data-subject-si="ආර්තික විද්‍යාව">
+      <div class="profile-pic">
+        <img src="" alt="Ms. Wishwa Sandeepani">
+      </div>
+      <div class="teacher-info">
+        <div class="teacher-name">Ms. Wishwa Sandeepani</div>
+        <div class="teacher-position">Economics</div>
+        <button class="about-btn">More Info..</button>
+        <div class="categories">
+          <span class="category-tag">A/L</span>
+          <!-- <span class="category-tag">Scout</span> -->
+        </div>
+      </div>
+    </div>
 
-  //     // Otherwise, filter based on category
-  //     for (var i = 0; i < cards.length; i++) {
-  //       var categories = cards[i].getAttribute("data-categories").split(",");
+    <!-- Teacher 5 -->
+    <div class="teacher-card" data-categories="A/L,O/L" data-name="Mr. S.Sudheera Sampath" data-subject="Acconting"
+      data-name-si="එස්.සුධීර සම්පත් මයා" data-subject-si="ගිණුම්කරණය">
+      <div class="profile-pic">
+        <img src="./sudheera sir.jpg" alt="Teacher">
+      </div>
+      <div class="teacher-info">
+        <div class="teacher-name">Mr. S.Sudheera Sampath</div>
+        <div class="teacher-position">Acconting</div>
+        <button class="about-btn">More Info..</button>
+        <div class="categories">
+          <span class="category-tag">A/L</span>
+          <span class="category-tag">O/L</span>
+        </div>
+      </div>
+    </div>
 
-  //       if (categories.includes(category)) {
-  //         cards[i].classList.remove("hidden");
-  //         // Reset animation for fade-in effect
-  //         cards[i].style.animation = "none";
-  //         setTimeout(function (index) {
-  //           return function () {
-  //             cards[index].style.animation = "fadeIn 0.5s forwards";
-  //             cards[index].style.animationDelay = (index * 0.1) + "s";
-  //           }
-  //         }(i), 11);
-  //       } else {
-  //         cards[i].classList.add("hidden");
-  //       }
-  //     }
-  //   }
+    <!-- Teacher 6 -->
+    <div class="teacher-card" data-categories="A/L,O/L,Media Association" data-name="Mrs. Senani Senarathna"
+      data-subject="Communication & Media Studies" data-name-si="එම්.සේනානි සේනාරත්න මිය"
+      data-subject-si="සන්නිවේදනය හා මාධ්‍ය අධ්‍යනය">
+      <div class="profile-pic">
+        <img src="./senani teacher.png" alt="Teacher">
+      </div>
+      <div class="teacher-info">
+        <div class="teacher-name">Mrs. Senani Senarathna</div>
+        <div class="teacher-position">Communication & Media Studies</div>
+        <button class="about-btn">More Info..</button>
+        <div class="categories">
+          <span class="category-tag">A/L</span>
+          <span class="category-tag">O/L</span>
+          <span class="category-tag">Media Association</span>
+        </div>
+      </div>
+    </div>
 
-  //   // Search functionality
-  //   document.addEventListener('DOMContentLoaded', function () {
-  //     // DOM Elements
-  //     const searchInput = document.getElementById('teacherSearch');
-  //     const searchBtn = document.getElementById('searchBtn');
-  //     const recentSearches = document.getElementById('recentSearches');
-  //     const teacherCards = document.querySelectorAll('.teacher-card');
+    <!-- Teacher 7 -->
+    <div class="teacher-card" data-categories="O/L,A/L,Disciplinary committee,Prefect Board,Aesthetics Department,Drama Club"
+      data-name="Mr. Lenin Priyantha Liyanage" data-subject="Drama and Theatre"
+      data-name-si="ලෙනින් ප්‍රියන්ත ලියනගේ මයා" data-subject-si="නාට්‍ය හා රංගකලාව">
+      <div class="profile-pic">
+        <div class="img-holder">
+          <img src="./Lenin sir.JPG" alt="Teacher">
+        </div>
+      </div>
+      <div class="teacher-info">
+        <div class="teacher-name">Mr. Lenin Priyantha Liyanage</div>
+        <div class="teacher-position">Drama and Theatre</div>
+        <button class="about-btn">More Info..</button>
+        <div class="categories">
+          <span class="category-tag">A/L</span>
+          <span class="category-tag">O/L</span>
+          <span class="category-tag">Drama Club</span>
+          <span class="category-tag">Disciplinary committee</span>
+          <span class="category-tag">Prefect Board</span>
+          <span class="category-tag">Aesthetics Department</span>
+        </div>
+      </div>
+    </div>
 
-  //     // Store recent searches in localStorage
-  //     let recentSearchList = JSON.parse(localStorage.getItem('teacherRecentSearches')) || [];
+    <!-- Teacher 8 -->
+    <div class="teacher-card" data-categories="O/L,Scout" data-name="Mrs. U.Chalani Madhusanka"
+      data-subject="Second Language Tamil" data-name-si="චලනි මධුසංකා මිය" data-subject-si="දෙවන භාෂාව දෙමළ">
+      <div class="profile-pic">
+        <img src="./chalani teacher.JPG" alt="Teacher">
+      </div>
+      <div class="teacher-info">
+        <div class="teacher-name">Mrs. Chalani Madhusanka</div>
+        <div class="teacher-position">Second Language Tamil</div>
+        <button class="about-btn">More Info..</button>
+        <div class="categories">
+          <span class="category-tag">O/L</span>
+          <span class="category-tag">Scout</span>
+        </div>
+      </div>
+    </div>
 
-  //     // Display recent searches
-  //     function displayRecentSearches() {
-  //       // Clear previous recent searches (except the title)
-  //       while (recentSearches.childNodes.length > 1) {
-  //         recentSearches.removeChild(recentSearches.lastChild);
-  //       }
+    <!-- Teacher 9 -->
+    <div class="teacher-card" data-categories="Saukydana,Student Counselling" data-name="Mrs. A.A.Nirmali Amarasingha"
+      data-subject="Student counselling" data-name-si="ඒ.ඒ.නිර්මලී අමරසිංහ මිය"
+      data-subject-si="ශිෂ්‍ය උපදේශන">
+      <div class="profile-pic">
+        <img src="./mali teacher.jpg" alt="Teacher">
+      </div>
+      <div class="teacher-info">
+        <div class="teacher-name">Mrs. A.A.Nirmali Amarasingha</div>
+        <div class="teacher-position">Student counselling and Career guide</div>
+        <button class="about-btn">More Info..</button>
+        <div class="categories">
+          <span class="category-tag">Saukydana</span>
+          <span class="category-tag">Student Counselling</span>
+        </div>
+      </div>
+    </div>
 
-  //       // Add recent searches
-  //       recentSearchList.forEach(search => {
-  //         const item = document.createElement('div');
-  //         item.className = 'recent-item';
-  //         item.textContent = search;
-  //         item.addEventListener('click', function () {
-  //           searchInput.value = search;
-  //           performSearch();
-  //         });
-  //         recentSearches.appendChild(item);
-  //       });
+    <!-- Teacher 10 -->
+    <div class="teacher-card" data-categories="O/L,A/L," data-name="Mrs. T.Sumudu Sashikala Piris" data-subject="Mathematics, Physics"
+      data-name-si="ටී.සුමුදු සෂිකලා පීරිස් මිය" data-subject-si="ගණිතය, භෞතික විද්‍යාව">
+      <div class="profile-pic">
+        <img src="" alt="Mrs. T.Sumudu Sashikala Piris">
+      </div>
+      <div class="teacher-info">
+        <div class="teacher-name">Mrs. T.Sumudu Sashikala Piris</div>
+        <div class="teacher-position">Mathematics/ Physics</div>
+        <button class="about-btn">More Info..</button>
+        <div class="categories">
+          <span class="category-tag">A/L</span>
+          <span class="category-tag">O/L</span>
+        </div>
+      </div>
+    </div>
 
-  //       // // Show/hide recent searches section
-  //       // recentSearches.style.display = recentSearchList.length > 0 ? 'block' : 'none';
-  //     }
+    <!-- Teacher 11 -->
+    <div class="teacher-card" data-categories="O/L" data-name="Mrs. W.Dushanthi Duleeka"
+      data-subject="History" data-name-si="ඩබ්.දුශාන්ති දුලීකා මිය" data-subject-si="ඉතිහාසය">
+      <div class="profile-pic">
+        <img src="" alt="Mrs. W.Dushanthi Duleeka">
+      </div>
+      <div class="teacher-info">
+        <div class="teacher-name">Mrs. W.Dushanthi Duleeka</div>
+        <div class="teacher-position">History</div>
+        <button class="about-btn">More Info..</button>
+        <div class="categories">
+          <span class="category-tag">O/L</span>
+        </div>
+      </div>
+    </div>
 
-  //     //   // Initialize recent searches
-  //     //   displayRecentSearches();
+    <!-- Teacher 12 -->
+    <div class="teacher-card" data-categories="A/L" data-name="Mr. Vimukthi Madhujith Kumarasinghe"
+      data-subject="Business Studies" data-name-si="විමුක්ති මධුජිත් කුමාරසිංහ මයා" data-subject-si="ව්‍යාපාර අධ්‍යනය">
+      <div class="profile-pic">
+        <img src="" alt="Mr. Vimukthi Madhujith Kumarasinghe">
+      </div>
+      <div class="teacher-info">
+        <div class="teacher-name">Vimukthi Madhujith Kumarasinghe </div>
+        <div class="teacher-position">Business Studies</div>
+        <button class="about-btn">More Info..</button>
+        <div class="categories">
+          <span class="category-tag">A/L</span>
+        </div>
+      </div>
+    </div>
 
-  //     // Handle search button click
-  //     searchBtn.addEventListener('click', performSearch);
+    <!-- Teacher 13 -->
+    <div class="teacher-card" data-categories="O/L,A/L" data-name="Mr. M.G.Sanjeewa" data-subject="Sinhala"
+      data-name-si="එම්.ජී.සංජීව මයා" data-subject-si="සිංහල">
+      <div class="profile-pic">
+        <img src="" alt="Mr. M.G.Sanjeewa">
+      </div>
+      <div class="teacher-info">
+        <div class="teacher-name">Mr. M.G.Sanjeewa</div>
+        <div class="teacher-position">Sinhala</div>
+        <button class="about-btn">More Info..</button>
+        <div class="categories">
+          <span class="category-tag">A/L</span>
+          <span class="category-tag">O/L</span>
+        </div>
+      </div>
+    </div>
 
-  //     // Handle Enter key press
-  //     searchInput.addEventListener('keydown', function (e) {
-  //       if (e.key === 'Enter') {
-  //         performSearch();
-  //       }
-  //     });
+    <!-- Teacher 14 -->
+    <div class="teacher-card" data-categories="O/L,Aesthetics Department" data-name="Mrs.  S.W.Lilani Madhubhashini"
+      data-subject="Art" data-name-si="එස්.ඩබ්.ලිලානි මධුභාෂිණී මිය" data-subject-si="චිත්‍ර කලාව">
+      <div class="profile-pic">
+        <img src="" alt="Mrs.  S.W.Lilani Madhubhashini">
+      </div>
+      <div class="teacher-info">
+        <div class="teacher-name">Mrs. S.W.Lilani Madhubhashini</div>
+        <div class="teacher-position">Art</div>
+        <button class="about-btn">More Info..</button>
+        <div class="categories">
+          <span class="category-tag">O/L</span>
+          <span class="category-tag">Aesthetics Department</span>
+        </div>
+      </div>
+    </div>
 
-  //     function performSearch() {
-  //       const searchTerm = searchInput.value.trim().toLowerCase();
+    <!-- Teacher 15 -->
+    <div class="teacher-card" data-categories="O/L,A/L,Media Association" data-name="Mr. U.Ishara Lakmal Nuwansiri"
+      data-subject="Buddhism, History" data-name-si="යූ.ඉෂාර ලක්මාල් නුවන්සිරි මයා"
+      data-subject-si="බුද්ධ ධර්මය, ඉතිහාසය">
+      <div class="profile-pic">
+        <img src="" alt="Mr. U.Ishara Lakmal Nuwansiri">
+      </div>
+      <div class="teacher-info">
+        <div class="teacher-name">Mr. U.Ishara Lakmal Nuwansiri</div>
+        <div class="teacher-position">Buddhism/ History</div>
+        <button class="about-btn">More Info..</button>
+        <div class="categories
+            ">
+          <span class="category-tag">A/L</span>
+          <span class="category-tag">O/L</span>
+          <span class="category-tag">Media Association</span>
+        </div>
+      </div>
+    </div>
 
-  //       if (searchTerm) {
-  //         // Add search term to recent searches
-  //         if (!recentSearchList.includes(searchTerm)) {
-  //           recentSearchList.unshift(searchTerm);
-  //           recentSearchList = recentSearchList.slice(0, 5); // Keep only 5 recent searches
-  //           localStorage.setItem('teacherRecentSearches', JSON.stringify(recentSearchList));
-  //           displayRecentSearches();
-  //         }
+    <!-- Teacher 16 -->
+    <div class="teacher-card" data-categories="O/L" data-name="Mrs. A.G.Chandrangani Senevirathna" data-subject="Buddhism, History"
+      data-name-si="ඒ.ජී.චන්ද්‍රාංගනී සෙනෙවිරත්න මිය" data-subject-si="බුද්ධ ධර්මය, ඉතිහාසය">
+      <div class="profile-pic">
+        <img src="" alt="Mrs. A.G.Chandrangani Senevirathna">
+      </div>
+      <div class="teacher-info">
+        <div class="teacher-name">Mrs. A.G.Chandrangani Senevirathna</div>
+        <div class="teacher-position">Buddhism/ History</div>
+        <button class="about-btn">More Info..</button>
+        <div class="categories">
+          <span class="category-tag">O/L</span>
+        </div>
+      </div>
+    </div>
 
-  //         let hasResults = false;
+    <!-- Teacher 17 -->
+    <div class="teacher-card" data-categories="O/L,A/L,Aesthetics Department" data-name="Mrs. T.Anuradha Niroshini Fernando"
+      data-subject="Dancing" data-name-si="ටී.අනුරාධා නිරෝෂිණී ප්‍රනාන්දු මිය" data-subject-si="නර්තනය">
+      <div class="profile-pic">
+        <img src="" alt="Mrs. T.Anuradha Niroshini Fernando">
+      </div>
+      <div class="teacher-info">
+        <div class="teacher-name">Mrs. T.Anuradha Niroshini Fernando</div>
+        <div class="teacher-position">Dancing</div>
+        <button class="about-btn">More Info..</button>
+        <div class="categories">
+          <span class="category-tag">A/L</span>
+          <span class="category-tag">O/L</span>
+          <span class="category-tag">Aesthetics Department</span>
+        </div>
+      </div>
+    </div>
 
-  //         // Filter teachers based on data-name and data-subject
-  //         teacherCards.forEach(card => {
-  //           const name = card.getAttribute('data-name').toLowerCase();
-  //           const subject = card.getAttribute('data-subject').toLowerCase();
+    <!-- Teacher 18 -->
+    <!-- <div class="teacher-card" data-categories="Saukydana,counselling" data-name="Mrs. A.A.Nirmali Amarasingha"
+      data-subject="counselling,Saukydana" data-name-si="ඒ.ඒ.නිර්මලී අමරසිංහ මිය"
+      data-subject-si="ශිෂ්‍ය උපදේශන හා මාර්ගෝපදේශ">
+      <div class="profile-pic">
+        <img src="./mali teacher.jpg" alt="Teacher">
+      </div>
+      <div class="teacher-info">
+        <div class="teacher-name">Mrs. A.A.Nirmali Amarasingha</div>
+        <div class="teacher-position">Student counselling and Career guide</div>
+        <button class="about-btn">More Info..</button>
+        <div class="categories">
+          <span class="category-tag">Saukydana</span>
+        </div>
+      </div>
+    </div> -->
 
-  //           if (name.includes(searchTerm) || subject.includes(searchTerm)) {
-  //             card.classList.remove('hidden');
-  //             hasResults = true;
+    <!-- Teacher 19 -->
+    <!-- <div class="teacher-card" data-categories="O/L,Scout" data-name="Mr. S.Sudheera Sampath" data-subject="Acconting"
+      data-name-si="එස්.සුධීර සම්පත් මයා" data-subject-si="ගිණුම්කරණය">
+      <div class="profile-pic">
+        <img src="./sudheera sir.jpg" alt="Teacher">
+      </div>
+      <div class="teacher-info">
+        <div class="teacher-name">Mr. S.Sudheera Sampath</div>
+        <div class="teacher-position">Acconting</div>
+        <button class="about-btn">More Info..</button>
+        <div class="categories">
+          <span class="category-tag">O/L</span>
+          <span class="category-tag">Scout</span>
+        </div>
+      </div>
+    </div> -->
 
-  //             // Reset animation for fade-in effect
-  //             card.style.animation = "none";
-  //             setTimeout(function () {
-  //               card.style.animation = "fadeIn 0.5s forwards";
-  //             }, 10);
-  //           } else {
-  //             card.classList.add('hidden');
-  //           }
-  //         });
+    <!-- Teacher 20 -->
+    <!-- <div class="teacher-card" data-categories="O/L,Scout" data-name="Mrs. U.Chalani Madhusanka"
+      data-subject="Second Language Tamil" data-name-si="චලනි මධුසංකා මිය" data-subject-si="දෙවන භාෂාව දෙමළ">
+      <div class="profile-pic">
+        <img src="./chalani teacher.JPG" alt="Teacher">
+      </div>
+      <div class="teacher-info">
+        <div class="teacher-name">Mrs. Chalani Madhusanka</div>
+        <div class="teacher-position">Second Language Tamil</div>
+        <button class="about-btn">More Info..</button>
+        <div class="categories">
+          <span class="category-tag">O/L</span>
+          <span class="category-tag">Scout</span>
+        </div>
+      </div>
+    </div> -->
 
-  //         // Reset category dropdown to show we're in search mode
-  //         if (hasResults) {
-  //           document.getElementById("current-filter").textContent = "Search Results";
-  //         }
-  //       } else {
-  //         // If search is empty, show all teachers
-  //         teacherCards.forEach(card => {
-  //           card.classList.remove('hidden');
 
-  //           // Reset animation for fade-in effect
-  //           card.style.animation = "none";
-  //           setTimeout(function () {
-  //             card.style.animation = "fadeIn 0.5s forwards";
-  //           }, 10);
-  //         });
-
-  //         // Reset filter to "All"
-  //         document.getElementById("current-filter").textContent = "All";
-  //       }
-  //     }
-  //   });
-
-  //   // Tranlate Sinhala text
-
-  //   // Language translations
-  //   const translations = {
-  //     en: {
-  //       title: "Teachers",
-  //       all: "All",
-  //       backToHome: "Back To Home",
-  //       searchPlaceholder: "Search for teachers by name or subject...",
-  //       moreInfo: "More Info..",
-  //       recentSearches: "Recent Searches:",
-  //       // Categories
-  //       al: "A/L",
-  //       ol: "O/L",
-  //       prefectBoard: "Prefect Board",
-  //       scout: "Scout",
-  //       ecogroup: "Ecogroup",
-  //       saukydana: "Saukydana",
-  //       disciplinaryCommittee: "Disciplinary committee",
-  //       mediaAssociation: "Media Association",
-  //       counselling: "Student counselling and Career guide",
-  //       inChargeOfSections: "In charge of sections",
-  //       dramaClub: "Drama Club"
-  //     },
-  //     si: {
-  //       title: "ගුරුවරුන්",
-  //       all: "සියලුම",
-  //       backToHome: "මුල් පිටුවට",
-  //       searchPlaceholder: "නම හෝ විෂය අනුව ගුරුවරුන් සොයන්න...",
-  //       moreInfo: "වැඩි විස්තර..",
-  //       recentSearches: "මෑත සෙවීම්:",
-  //       // Categories
-  //       al: "උ/පෙළ",
-  //       ol: "සා/පෙළ",
-  //       prefectBoard: "ශිෂයනායක මණ්ඩලය භාර",
-  //       scout: "බාලදක්ෂ",
-  //       ecogroup: "පරිසර කණ්ඩායම",
-  //       saukydana: "සෞඛ්‍යදාන",
-  //       disciplinaryCommittee: "විනය කමිටුව",
-  //       mediaAssociation: "මාධ්‍ය සංගමය",
-  //       counselling: "ශිෂ්‍ය උපදේශන හා මාර්ගෝපදේශ",
-  //       inChargeOfSections: "අංශ භාර",
-  //       dramaClub: "නාට්‍ය සමාජය"
-  //     }
-  //   };
-
-  //   // Initialize language
-  //   let currentLang = localStorage.getItem('preferredLanguage') || 'en';
-
-  //   // Function to switch language
-  //   function switchLanguage(lang) {
-  //     currentLang = lang;
-  //     localStorage.setItem('preferredLanguage', lang);
-
-  //     // Update UI elements with translations
-  //     document.querySelector('h1').textContent = translations[lang].title;
-  //     document.getElementById('current-filter').textContent =
-  //       (document.getElementById('current-filter').textContent === "All" ||
-  //         document.getElementById('current-filter').textContent === "සියලුම") ?
-  //         translations[lang].all : document.getElementById('current-filter').textContent;
-
-  //     document.querySelector('.view-all-btn').innerHTML =
-  //       `<i class="fas fa-home"></i> ${translations[lang].backToHome}`;
-
-  //     document.querySelector('.search-input').placeholder = translations[lang].searchPlaceholder;
-
-  //     // Update category tags
-  //     document.querySelectorAll('.category-tag').forEach(tag => {
-  //       const categoryKey = getCategoryKey(tag.textContent);
-  //       if (categoryKey && translations[lang][categoryKey]) {
-  //         tag.textContent = translations[lang][categoryKey];
-  //       }
-  //     });
-
-  //     // Update dropdown options
-  //     const dropdownLinks = document.querySelectorAll('#filterDropdown a');
-  //     dropdownLinks.forEach(link => {
-  //       const categoryKey = getCategoryKey(link.textContent);
-  //       if (categoryKey && translations[lang][categoryKey]) {
-  //         // Store original English category as data attribute for filter function
-  //         if (!link.hasAttribute('data-original-category')) {
-  //           link.setAttribute('data-original-category', link.textContent);
-  //         }
-  //         link.textContent = translations[lang][categoryKey];
-  //       }
-  //     });
-
-  //     // Update More Info buttons
-  //     document.querySelectorAll('.about-btn').forEach(btn => {
-  //       if (btn.textContent === "More Info.." || btn.textContent === "වැඩි විස්තර..") {
-  //         btn.textContent = translations[lang].moreInfo;
-  //       }
-  //     });
-  //   }
-
-  //   // Helper function to get category key from text
-  //   function getCategoryKey(text) {
-  //     const normalized = text.trim();
-  //     switch (normalized) {
-  //       case "All": case "සියලුම": return "all";
-  //       case "A/L": case "උ/පෙළ": return "al";
-  //       case "O/L": case "සා/පෙළ": return "ol";
-  //       case "Prefect Board": case "ප්‍රීෆෙක්ට් මණ්ඩලය": return "prefectBoard";
-  //       case "Scout": case "බාලදක්ෂ": return "scout";
-  //       case "Ecogroup": case "පරිසර කණ්ඩායම": return "ecogroup";
-  //       case "Saukydana": case "සෞඛ්‍යදාන": return "saukydana";
-  //       case "Disciplinary committee": case "විනය කමිටුව": return "disciplinaryCommittee";
-  //       case "Media Association": case "මාධ්‍ය සංගමය": return "mediaAssociation";
-  //       case "Student counselling and Career guide": case "ශිෂ්‍ය උපදේශන හා මාර්ගෝපදේශ": return "counselling";
-  //       case "In charge of sections": case "අංශ භාර": return "inChargeOfSections";
-  //       case "Drama Club": case "නාට්‍ය සමාජය": return "dramaClub";
-  //       default: return null;
-  //     }
-  //   }
-
-  //   // Modified filter function to work with translations
-  //   function filterTeachers(category) {
-  //     // Get original category if we're in Sinhala mode
-  //     let originalCategory = category;
-
-  //     // Find the link with the displayed text that matches the category
-  //     const links = document.querySelectorAll('#filterDropdown a');
-  //     for (let i = 0; i < links.length; i++) {
-  //       if (links[i].textContent === category && links[i].hasAttribute('data-original-category')) {
-  //         originalCategory = links[i].getAttribute('data-original-category');
-  //         break;
-  //       }
-  //     }
-
-  //     // Update dropdown button text with translated category
-  //     document.getElementById("current-filter").textContent = category;
-
-  //     // Hide dropdown
-  //     document.getElementById("filterDropdown").classList.remove("show");
-
-  //     // Get all teacher cards
-  //     var cards = document.getElementsByClassName("teacher-card");
-
-  //     // If "All" or "සියලුම" is selected, show all cards
-  //     if (originalCategory === "All" || category === translations.si.all) {
-  //       for (var i = 0; i < cards.length; i++) {
-  //         cards[i].classList.remove("hidden");
-  //         // Reset animation for fade-in effect
-  //         cards[i].style.animation = "none";
-  //         setTimeout(function (index) {
-  //           return function () {
-  //             cards[index].style.animation = "fadeIn 0.5s forwards";
-  //             cards[index].style.animationDelay = (index * 0.1) + "s";
-  //           }
-  //         }(i), 11);
-  //       }
-  //       return;
-  //     }
-
-  //     // Otherwise, filter based on original category name (English)
-  //     for (var i = 0; i < cards.length; i++) {
-  //       var categories = cards[i].getAttribute("data-categories").split(",");
-
-  //       if (categories.includes(originalCategory)) {
-  //         cards[i].classList.remove("hidden");
-  //         // Reset animation for fade-in effect
-  //         cards[i].style.animation = "none";
-  //         setTimeout(function (index) {
-  //           return function () {
-  //             cards[index].style.animation = "fadeIn 0.5s forwards";
-  //             cards[index].style.animationDelay = (index * 0.1) + "s";
-  //           }
-  //         }(i), 11);
-  //       } else {
-  //         cards[i].classList.add("hidden");
-  //       }
-  //     }
-  //   }
-
-  //   // Initialize the page with the saved language preference
-  //   document.addEventListener('DOMContentLoaded', function () {
-  //     // Add language switcher HTML
-  //     const controlsContainer = document.querySelector('.controls-container');
-  //     const langSwitcher = document.createElement('div');
-  //     langSwitcher.className = 'lang-switcher';
-  //     langSwitcher.innerHTML = `
-  //   <button class="lang-btn lang-en ${currentLang === 'en' ? 'active' : ''}" onclick="switchLanguage('en')">EN</button>
-  //   <button class="lang-btn lang-si ${currentLang === 'si' ? 'active' : ''}" onclick="switchLanguage('si')">සිං</button>
-  // `;
-  //     controlsContainer.appendChild(langSwitcher);
-
-  //     // Apply current language
-  //     switchLanguage(currentLang);
-
-  //     // Modify the original event listeners for search to work with translations
-  //     const searchBtn = document.getElementById('searchBtn');
-  //     const originalPerformSearch = searchBtn.onclick;
-
-  //     // We need to ensure original script code still runs
-  //     const origSearchDOMContentLoaded = window.onload;
-  //   });
-  </script>
+    <!-- Load JavaScript modules -->
+    <script src="./translator.js"></script>
+    <script src="./animations.js"></script>
+    <script src="./filter-search.js"></script>
+    <script src="./main.js"></script>
 </body>
 
 </html>

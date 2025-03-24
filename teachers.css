@@ -99,8 +99,9 @@ h1:after {
 }
 
 .dropdown-btn:hover {
-    background-color: gold;
+    background-color: #ffffff;
     border: 2px solid #610030;
+    color: #610030;
 }
 
 .dropdown-content {
@@ -111,7 +112,7 @@ h1:after {
     box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
     z-index: 1;
     border-radius: 5px;
-    overflow: hidden;
+    overflow: scroll;
     max-height: 0;
     transition: max-height 0.3s ease-out;
 }
@@ -131,7 +132,7 @@ h1:after {
 
 .dropdown-content a:hover {
     background-color: #f1f1f1;
-    color: gold;
+    color: #610030;
 }
 
 /* Search Container Styles */
@@ -139,7 +140,6 @@ h1:after {
     flex: 1 1 auto;
     max-width: 600px;
     position: relative;
-    margin-left: 20px;
 }
 
 .search-wrapper {
@@ -172,11 +172,11 @@ h1:after {
     transition: background-color 0.3s;
     border: 2px solid #610030;
     border-left: 0;
-    
+
 }
 
 .search-button:hover {
-    background-color: gold;
+    background-color: #610030c9;
     border: 2px solid #610030;
     border-left: 0;
 }
@@ -232,12 +232,56 @@ h1:after {
     color: #3498db;
 }
 
+/* Theme Toggle */
+.theme-toggle {
+    background-color: #610030;
+    color: #ffffff;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
+}
+
+.theme-toggle:hover {
+    background-color: #7a0038;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.theme-toggle:active {
+    transform: translateY(1px);
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+}
+
+.theme-toggle i {
+    font-size: 18px;
+}
+
+/* Dark theme styles for the toggle button */
+.dark-theme .theme-toggle {
+    background-color: #ffd700;
+    color: #333333;
+}
+
+.dark-theme .theme-toggle:hover {
+    background-color: #ffec80;
+}
+
+
 /* Teachers Grid Styles */
 .teachers-grid {
-    margin-top: 12%;
+    margin-top: 5%;
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-    gap: 30px;
+    gap: 20px;
+    padding: 10px;
 }
 
 .teacher-card {
@@ -465,9 +509,9 @@ h1:after {
     display: flex;
     gap: 10px;
     margin-left: 20px;
-  }
-  
-  .lang-btn {
+}
+
+.lang-btn {
     background-color: #f5f5f5;
     border: 2px solid #610030;
     color: #610030;
@@ -476,39 +520,39 @@ h1:after {
     border-radius: 20px;
     cursor: pointer;
     transition: all 0.3s;
-  }
-  
-  .lang-btn:hover {
-    background-color: #610030;
-    color: white;
-  }
-  
-  .lang-btn.active {
-    background-color: #610030;
-    color: white;
-  }
-  
-  /* Responsive adjustments */
-  @media (max-width: 768px) {
-    .controls-container {
-      flex-wrap: wrap;
-    }
-    
-    .lang-switcher {
-      order: -1;
-      margin-bottom: 15px;
-      margin-left: 0;
-      width: 100%;
-      justify-content: center;
-    }
-  }
+}
 
-  /* Theme Toggle Styles */
+.lang-btn:hover {
+    background-color: #610030;
+    color: white;
+}
+
+.lang-btn.active {
+    background-color: #610030;
+    color: white;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .controls-container {
+        flex-wrap: wrap;
+    }
+
+    .lang-switcher {
+        order: -1;
+        margin-bottom: 15px;
+        margin-left: 0;
+        width: 100%;
+        justify-content: center;
+    }
+}
+
+/* Theme Toggle Styles */
 .theme-toggle {
     margin-left: 10px;
-  }
-  
-  .theme-btn {
+}
+
+.theme-btn {
     background-color: #610030;
     color: white;
     border: none;
@@ -520,107 +564,107 @@ h1:after {
     align-items: center;
     justify-content: center;
     transition: all 0.3s;
-  }
-  
-  .theme-btn:hover {
+}
+
+.theme-btn:hover {
     background-color: gold;
     color: #610030;
-  }
-  
-  /* Dark Theme Styles */
-  body.dark-theme {
+}
+
+/* Dark Theme Styles */
+body.dark-theme {
     background-color: #121212;
     color: #f5f5f5;
-  }
-  
-  body.dark-theme .teacher-card {
+}
+
+body.dark-theme .teacher-card {
     background-color: #1e1e1e;
     color: #f5f5f5;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
-  }
-  
-  body.dark-theme .teacher-name {
+}
+
+body.dark-theme .teacher-name {
     color: #f5f5f5;
-  }
-  
-  body.dark-theme .teacher-position {
+}
+
+body.dark-theme .teacher-position {
     color: #aaaaaa;
-  }
-  
-  body.dark-theme .category-tag {
+}
+
+body.dark-theme .category-tag {
     background-color: #333;
     color: #ddd;
-  }
-  
-  body.dark-theme .about-btn {
+}
+
+body.dark-theme .about-btn {
     color: gold;
     border: 1px solid gold;
-  }
-  
-  body.dark-theme .about-btn:hover {
+}
+
+body.dark-theme .about-btn:hover {
     background-color: gold;
     color: #121212;
-  }
-  
-  body.dark-theme h1 {
+}
+
+body.dark-theme h1 {
     color: gold;
-  }
-  
-  body.dark-theme .search-input {
+}
+
+body.dark-theme .search-input {
     background-color: #333;
     color: white;
     border-color: gold;
-  }
-  
-  body.dark-theme .dropdown-btn,
-  body.dark-theme .search-button {
+}
+
+body.dark-theme .dropdown-btn,
+body.dark-theme .search-button {
     background-color: gold;
     color: #121212;
     border-color: gold;
-  }
-  
-  body.dark-theme .dropdown-content {
+}
+
+body.dark-theme .dropdown-content {
     background-color: #333;
-  }
-  
-  body.dark-theme .dropdown-content a {
+}
+
+body.dark-theme .dropdown-content a {
     color: #f5f5f5;
-  }
-  
-  body.dark-theme .dropdown-content a:hover {
+}
+
+body.dark-theme .dropdown-content a:hover {
     background-color: #444;
-  }
-  
-  body.dark-theme .recent-searches {
+}
+
+body.dark-theme .recent-searches {
     background-color: #333;
-  }
-  
-  body.dark-theme .recent-item {
+}
+
+body.dark-theme .recent-item {
     color: #f5f5f5;
-  }
-  
-  body.dark-theme .recent-item:hover {
+}
+
+body.dark-theme .recent-item:hover {
     background-color: #444;
-  }
-  
-  /* Responsive adjustments for theme toggle */
-  @media (max-width: 768px) {
+}
+
+/* Responsive adjustments for theme toggle */
+@media (max-width: 768px) {
     .controls-container {
-      flex-wrap: wrap;
+        flex-wrap: wrap;
     }
-    
+
     .theme-toggle {
-      order: -1;
-      margin-bottom: 15px;
-      margin-left: 0;
-      width: 100%;
-      display: flex;
-      justify-content: center;
+        order: -1;
+        margin-bottom: 15px;
+        margin-left: 0;
+        width: 100%;
+        display: flex;
+        justify-content: center;
     }
-  }
-  
-  /* Font adjustments for Sinhala */
-  body[lang="si"] {
+}
+
+/* Font adjustments for Sinhala */
+body[lang="si"] {
     font-family: 'Noto Sans Sinhala', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     line-height: 1.8;
-  }
+}
