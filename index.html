@@ -9,11 +9,15 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <meta name="theme-color" content="#610030">
   <link rel="icon" type="image/png" href="./logo.png">
-    <meta property="og:title" content="WP/ Hr/ Polegoda M. V.">
-    <meta property="og:description" content="Vidya Dadathi Vinayan">
-    <meta property="og:image" content="https://harshana101.github.io/solopjt/link.jpg">
-    <meta property="og:url" content="https://harshana101.github.io/solopjt/">
-    <meta property="og:type" content="website">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Sinhala:wght@400;500;600;700&display=swap"
+    rel="stylesheet">
+  <meta property="og:title" content="WP/ Hr/ Polegoda M. V.">
+  <meta property="og:description" content="Vidya Dadathi Vinayan">
+  <meta property="og:image" content="./preview.jpg">
+  <meta property="og:url" content="https://harshana101.github.io/solopjt/">
+  <meta property="og:type" content="website">
+  <link rel="manifest" href="manifest.json">
 </head>
 
 <body>
@@ -144,7 +148,7 @@
             argumentative, or comparative. These paragraphs allow the reader to gain some insight into the writer's
             writing skills and method of expressing ideas. Creating expository paragraphs requires a good understanding
             and a deep knowledge of the language.</p>
-          <a href="./About blank.html" class="btn" id="read-more-history-btn">Read More</a>
+          <a href="./pending_page.html" class="btn" id="read-more-history-btn">Read More</a>
         </div>
         <div class="audio-player animate-fade-left">
           <h3 id="listen-history-title">Listen to Our History (Si)</h3>
@@ -440,6 +444,25 @@
     </div>
   </footer>
 
+  <!-- Add this script to your index.html just before the closing </body> tag -->
+  <script>
+ // Check if service workers are supported
+ if ('serviceWorker' in navigator) {
+    window.addEventListener('load', () => {
+      // Get the correct path for the service worker
+      const swPath = window.location.pathname.endsWith('/') 
+        ? './service-worker.js' 
+        : window.location.pathname.substring(0, window.location.pathname.lastIndexOf('/')) + '/service-worker.js';
+        
+      navigator.serviceWorker.register(swPath)
+        .then((registration) => {
+          console.log('Service Worker registered with scope:', registration.scope);
+        })
+        .catch((error) => {
+          console.error('Service Worker registration failed:', error);
+        });
+    });
+  }  </script>
   <script src="script.js"></script>
 </body>
 

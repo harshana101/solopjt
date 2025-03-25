@@ -22,8 +22,8 @@ const translations = {
     counselling: "Student Counselling",
     inChargeOfSections: "In charge of sections",
     dramaClub: "Drama Club",
-    aestheticsDepartment: "Aesthetics Department", // New category
-    studentCounselling: "Student Counselling" // New category
+    aestheticsDepartment: "Aesthetics Department",
+    studentCounselling: "Student Counselling"
   },
   si: {
     title: "ගුරුවරුන්",
@@ -45,8 +45,8 @@ const translations = {
     counselling: "ශිෂ්‍ය උපදේශන",
     inChargeOfSections: "අංශ භාර",
     dramaClub: "නාට්‍ය සමාජය",
-    aestheticsDepartment: "කලා අංශය", // New category
-    studentCounselling: "ශිෂ්‍ය උපදේශන" // New category
+    aestheticsDepartment: "සෞන්දර්ය අංශය",
+    studentCounselling: "ශිෂ්‍ය උපදේශන"
   }
 };
 
@@ -70,7 +70,7 @@ function getCategoryKey(text) {
     case "In charge of sections": case "අංශ භාර": return "inChargeOfSections";
     case "Drama Club": case "නාට්‍ය සමාජය": return "dramaClub";
     case "Student Counselling": case "ශිෂ්‍ය උපදේශන": return "studentCounselling";
-    case "Aesthetics Department": case "කලා අංශය": return "aestheticsDepartment";
+    case "Aesthetics Department": case "සෞන්දර්ය අංශය": return "aestheticsDepartment";
     default: return null;
   }
 }
