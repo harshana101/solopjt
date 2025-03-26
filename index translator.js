@@ -147,7 +147,7 @@ document.addEventListener('DOMContentLoaded', function () {
       email: "info@polegodamv.edu.lk",
       quickLinksTitle: "ඉක්මන් සබැඳි",
       home: "මුල් පිටුව",
-      about: "අප ගැන",
+      about: "ව්‍යාපෘතිය ගැන",
       faculty: "ගුරු මණ්ඩලය",
       events: "උත්සව",
       fullHistory: "සම්පූර්ණ ඉතිහාසය",
