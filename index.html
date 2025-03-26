@@ -5,7 +5,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>WP/ Hr/ Polegoda M. V.</title>
-  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="./index styles.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <meta name="theme-color" content="#610030">
   <link rel="icon" type="image/png" href="./logo.png">
@@ -34,6 +34,7 @@
         </div>
         <ul class="nav-links" id="navLinks">
           <li><a href="#" id="home-nav">Home</a></li>
+          <li><a href="#mv" id="mv-nav">Mission & Vision</a></li>
           <li><a href="#principal" id="principal-nav">Principal</a></li>
           <li><a href="#teachers" id="teachers-nav">Teachers</a></li>
           <li><a href="#history" id="history-nav">History</a></li>
@@ -71,6 +72,30 @@
       <p id="hero-subtitle"></p>
       <div class="hero-button-container">
         <a href="./whats-new.html" class="btn" id="learn-more-btn">Learn More</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Mission & Vision -->
+  <section class="mission-vision-section" id="mv">
+    <div class="container">
+      <div class="section-title animate-fade-up">
+        <h2 id="mv-section-title">Mission & Vision</h2>
+      </div>
+      <div class="mission-vision-content">
+        <div class="mission-content animate-fade-right">
+          <h3 id="mv-titlem">Mission</h3>
+          <p id="mv-textm">Our mission is to provide a holistic educational experience that empowers students to
+            become lifelong learners, critical thinkers, and responsible global citizens. We are committed to:
+            - Fostering academic excellence
+            - Nurturing personal growth and character development
+            - Encouraging creativity and innovation
+            - Promoting social responsibility and community engagement</p>
+        </div>
+        <div class="vision-content animate-fade-left">
+          <h3 id="mv-titlev">Vision</h3>
+          <p id="mv-textv">A quality child through good management..</p>
+        </div>
       </div>
     </div>
   </section>
@@ -141,13 +166,8 @@
       </div>
       <div class="history-content">
         <div class="history-text animate-fade-right">
-          <p id="history-excerpt">Expository paragraphs are sections of writing that are used to illustrate the nature
-            of a document or text. These expository paragraphs allow the writer to demonstrate his or her writing style,
-            language use, and method of organizing ideas.</p>
-          <p id="history-excerpt-2">Expository paragraphs come in many forms, and can be descriptive, narrative,
-            argumentative, or comparative. These paragraphs allow the reader to gain some insight into the writer's
-            writing skills and method of expressing ideas. Creating expository paragraphs requires a good understanding
-            and a deep knowledge of the language.</p>
+          <p id="history-excerpt">History para 1</p>
+          <p id="history-excerpt-2">History para 2</p>
           <a href="./pending_page.html" class="btn" id="read-more-history-btn">Read More</a>
         </div>
         <div class="audio-player animate-fade-left">
@@ -169,16 +189,11 @@
   <section class="programs-section" id="programs">
     <div class="container">
       <div class="section-title animate-fade-up">
-        <h2 class="programs-section-title">Programs</h2>
+        <h2 class="programs-section-title" id="programs-section-title">Programs & Events</h2>
       </div>
 
 
       <div class="slideshow-container">
-        <!-- Language Toggle -->
-        <div class="language-toggle" onclick="toggleLanguage()">
-          <span class="lang-text">English</span> / <span class="lang-text">සිංහල</span>
-        </div>
-
         <!-- Slide 1: Website Launch (from your HTML) -->
         <div id="slide1" class="slide active">
           <div class="slide-overlay"></div>
@@ -403,13 +418,13 @@
       <div class="footer-content">
         <div class="footer-column">
           <h3 id="contact-us-title">Contact Us</h3>
-          <p><i class="fas fa-map-marker-alt"></i> <span id="address">Polegoda Road, Polegoda</span></p>
-          <p onclick="showAlert()"><i class="fas fa-phone"></i> <span id="phone">+94 123 456 789</span></p>
-          <p onclick="showAlert()"><i class="fas fa-envelope"></i> <span id="email">info@polegodamv.edu.lk</span></p>
+          <a href="https://maps.app.goo.gl/42XZD7QHMBvcWh2h9"><p><i class="fas fa-map-marker-alt"></i> <span id="address">Polegoda Road, Polegoda</span></p></a>
+          <a href="tel:+94342244063"><p ><i class="fas fa-phone"></i> <span id="phone">+94 34 224 4063</span></p></a>
+          <a href="mailto:Pmvwpho@gmail.com"><p><i class="fas fa-envelope"></i> <span id="email">info@polegodamv.edu.lk</span></p></a>
           <br>
-          <h3>Developed By</h3>
+          <h3 id="developed-title">Developed By</h3>
           <a href="https://harshana101.github.io/T.D.K.H.Premalal/">
-            <p>Kasun Harshana Premalal</p>
+            <p id="developed-name">Kasun Harshana Premalal</p>
           </a>
         </div>
         <div class="footer-column">
@@ -446,24 +461,26 @@
 
   <!-- Add this script to your index.html just before the closing </body> tag -->
   <script>
- // Check if service workers are supported
- if ('serviceWorker' in navigator) {
-    window.addEventListener('load', () => {
-      // Get the correct path for the service worker
-      const swPath = window.location.pathname.endsWith('/') 
-        ? './service-worker.js' 
-        : window.location.pathname.substring(0, window.location.pathname.lastIndexOf('/')) + '/service-worker.js';
-        
-      navigator.serviceWorker.register(swPath)
-        .then((registration) => {
-          console.log('Service Worker registered with scope:', registration.scope);
-        })
-        .catch((error) => {
-          console.error('Service Worker registration failed:', error);
-        });
-    });
-  }  </script>
-  <script src="script.js"></script>
+    // Check if service workers are supported
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', () => {
+        // Get the correct path for the service worker
+        const swPath = window.location.pathname.endsWith('/')
+          ? './service-worker.js'
+          : window.location.pathname.substring(0, window.location.pathname.lastIndexOf('/')) + '/service-worker.js';
+
+        navigator.serviceWorker.register(swPath)
+          .then((registration) => {
+            console.log('Service Worker registered with scope:', registration.scope);
+          })
+          .catch((error) => {
+            console.error('Service Worker registration failed:', error);
+          });
+      });
+    }  </script>
+  <script src="./index main.js"></script>
+  <script src="./index translator.js"></script>
+  <script src="./index animator.js"></script>
 </body>
 
 </html>
