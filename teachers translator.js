@@ -7,7 +7,7 @@ const translations = {
     all: "All",
     backToHome: "Back To Home",
     searchPlaceholder: "Search for teachers by name or subject...",
-    moreInfo: "More Info..",
+    moreInfo: "Profile",
     recentSearches: "Recent Searches:",
     searchResults: "Search Results",
     // Categories
@@ -30,7 +30,7 @@ const translations = {
     all: "සියලුම",
     backToHome: "මුල් පිටුවට",
     searchPlaceholder: "නම හෝ විෂය අනුව ගුරුවරුන් සොයන්න...",
-    moreInfo: "වැඩි විස්තර..",
+    moreInfo: "පැතිකඩ",
     recentSearches: "මෑත සෙවීම්:",
     searchResults: "සෙවීම් ප්‍රතිඵල",
     // Categories
