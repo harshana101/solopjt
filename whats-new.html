@@ -9,13 +9,23 @@
     <link rel="icon" type="image/png" href="./logo.png">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Sinhala:wght@400;500;600;700&display=swap"
-      rel="stylesheet">
+        rel="stylesheet">
     <meta property="og:title" content="WP/ Hr/ Polegoda M. V.">
     <meta property="og:description" content="Vidya Dadathi Vinayan">
     <meta property="og:image" content="./preview.jpg">
     <meta property="og:url" content="https://harshana101.github.io/solopjt/">
     <meta property="og:type" content="website">
-  
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-796S4JXDEK">
+    </script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'G-796S4JXDEK');
+    </script>
+
     <style>
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -121,49 +131,55 @@
         }
 
         .author-box {
-    display: flex;
-    align-items: center;
-    background-color: #fff0f8;
-    padding: 1rem 1.5rem;
-    border-radius: 5px;
-    margin-top: 2rem;
-    flex-wrap: wrap; /* Add flex-wrap for small screens */
-}
+            display: flex;
+            align-items: center;
+            background-color: #fff0f8;
+            padding: 1rem 1.5rem;
+            border-radius: 5px;
+            margin-top: 2rem;
+            flex-wrap: wrap;
+            /* Add flex-wrap for small screens */
+        }
 
-.author-img {
-    width: 80px;
-    height: 80px;
-    border-radius: 50%;
-    background-image: url("mypic.JPG");
-    background-size: cover;
-    background-position: center;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-right: 1.5rem;
-    font-size: 2rem;
-    color: #666;
-    min-width: 60px; /* Minimum width */
-    flex-shrink: 0; /* Prevent the image from shrinking too much */
-}
+        .author-img {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            background-image: url("mypic.JPG");
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 1.5rem;
+            font-size: 2rem;
+            color: #666;
+            min-width: 60px;
+            /* Minimum width */
+            flex-shrink: 0;
+            /* Prevent the image from shrinking too much */
+        }
 
-.author-details {
-    flex: 1;
-    min-width: 200px; /* Ensure text has enough space */
-}
+        .author-details {
+            flex: 1;
+            min-width: 200px;
+            /* Ensure text has enough space */
+        }
 
-/* Add media query for smaller screens */
-@media (max-width: 480px) {
-    .author-box {
-        justify-content: center;
-        text-align: center;
-    }
-    
-    .author-img {
-        margin-right: 0;
-        margin-bottom: 1rem;
-    }
-}        .features {
+        /* Add media query for smaller screens */
+        @media (max-width: 480px) {
+            .author-box {
+                justify-content: center;
+                text-align: center;
+            }
+
+            .author-img {
+                margin-right: 0;
+                margin-bottom: 1rem;
+            }
+        }
+
+        .features {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 1.5rem;

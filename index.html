@@ -14,10 +14,20 @@
     rel="stylesheet">
   <meta property="og:title" content="WP/ Hr/ Polegoda M. V.">
   <meta property="og:description" content="Vidya Dadathi Vinayan">
-  <meta property="og:image" content="./link-01.jpg">
+  <meta property="og:image" content="./link.jpg">
   <meta property="og:url" content="https://harshana101.github.io/solopjt/">
   <meta property="og:type" content="website">
   <link rel="manifest" href="manifest.json">
+
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-796S4JXDEK">
+  </script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'G-796S4JXDEK');
+  </script>
 </head>
 
 <body>
@@ -85,12 +95,8 @@
       <div class="mission-vision-content">
         <div class="mission-content animate-fade-right">
           <h3 id="mv-titlem">Mission</h3>
-          <p id="mv-textm">Our mission is to provide a holistic educational experience that empowers students to
-            become lifelong learners, critical thinkers, and responsible global citizens. We are committed to:
-            - Fostering academic excellence
-            - Nurturing personal growth and character development
-            - Encouraging creativity and innovation
-            - Promoting social responsibility and community engagement</p>
+          <p id="mv-textm">It is our mission to raise a noble generation of children who are wise, spiritual, and
+            capable of standing on their own.</p>
         </div>
         <div class="vision-content animate-fade-left">
           <h3 id="mv-titlev">Vision</h3>
@@ -166,8 +172,8 @@
       </div>
       <div class="history-content">
         <div class="history-text animate-fade-right">
-          <p id="history-excerpt">History para1</p>
-          <p id="history-excerpt-2">History para2</p>
+          <p id="history-excerpt">History para 1</p>
+          <p id="history-excerpt-2">History para 2</p>
           <a href="./pending_page.html" class="btn" id="read-more-history-btn">Read More</a>
         </div>
         <div class="audio-player animate-fade-left">
@@ -418,9 +424,15 @@
       <div class="footer-content">
         <div class="footer-column">
           <h3 id="contact-us-title">Contact Us</h3>
-          <a href="https://maps.app.goo.gl/42XZD7QHMBvcWh2h9"><p><i class="fas fa-map-marker-alt"></i> <span id="address">Kurunduwatta Rd, Polegoda</span></p></a>
-          <a href="tel:+94342244063"><p ><i class="fas fa-phone"></i> <span id="phone">+94 34 224 4063</span></p></a>
-          <a href="mailto:Pmvwpho@gmail.com"><p><i class="fas fa-envelope"></i> <span id="email">pmvwpho@gmail.com</span></p></a>
+          <a href="https://maps.app.goo.gl/42XZD7QHMBvcWh2h9">
+            <p><i class="fas fa-map-marker-alt"></i> <span id="address">Polegoda Road, Polegoda</span></p>
+          </a>
+          <a href="tel:+94342244063">
+            <p><i class="fas fa-phone"></i> <span id="phone">+94 34 224 4063</span></p>
+          </a>
+          <a href="mailto:Pmvwpho@gmail.com">
+            <p><i class="fas fa-envelope"></i> <span id="email">info@polegodamv.edu.lk</span></p>
+          </a>
           <br>
           <h3 id="developed-title">Developed By</h3>
           <a href="https://harshana101.github.io/T.D.K.H.Premalal/">
@@ -431,10 +443,10 @@
           <h3 id="quick-links-title">Quick Links</h3>
           <ul>
             <li><a href="#" id="home-link">Home</a></li>
+            <li><a href="#principal" id="about-link">About Us</a></li>
             <li><a href="#teachers" id="faculty-link">Faculty</a></li>
             <li><a href="#programs" id="events-link">Events</a></li>
             <li><a href="history.html" id="full-history-link">Full History</a></li>
-            <li><a href="./whats-new.html" id="about-link">About The Project</a></li>
           </ul>
         </div>
         <div class="footer-column">
@@ -459,25 +471,6 @@
     </div>
   </footer>
 
-  <!-- Add this script to your index.html just before the closing </body> tag -->
-  <script>
-    // Check if service workers are supported
-    if ('serviceWorker' in navigator) {
-      window.addEventListener('load', () => {
-        // Get the correct path for the service worker
-        const swPath = window.location.pathname.endsWith('/')
-          ? './service-worker.js'
-          : window.location.pathname.substring(0, window.location.pathname.lastIndexOf('/')) + '/service-worker.js';
-
-        navigator.serviceWorker.register(swPath)
-          .then((registration) => {
-            console.log('Service Worker registered with scope:', registration.scope);
-          })
-          .catch((error) => {
-            console.error('Service Worker registration failed:', error);
-          });
-      });
-    }  </script>
   <script src="./index main.js"></script>
   <script src="./index translator.js"></script>
   <script src="./index animator.js"></script>
