@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teacher Profile | Mrs. M.Senani Senarathna</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="./profile.css">
+    <link rel="stylesheet" href="../loader.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+
+<body class="bg-gray-100 text-gray-800">
+    <!-- Loading screen -->
+    <div id="loading-screen">
+        <div class="logo-container">
+            <!-- Replace 'school-logo.png' with your actual logo file -->
+            <img src="../logo.png" alt="School Logo">
+        </div>
+        <div class="loading-bar-container">
+            <div id="loading-bar" class="loading-bar"></div>
+        </div>
+        <div id="loading-percentage" class="loading-percentage">0%</div>
+        <div class="school-name">WP/ Hr/ Polegoda M. V.</div>
+    </div>
+
+    <!-- Main content -->
+    <div id="content">
+
+    
+    
+    <div class="container mx-auto max-w-4xl px-4 py-8 relative">
+        <!-- Language Toggle -->
+        <div class="lang-toggle">
+            <select id="languageSelector" class="p-2 border rounded">
+                <option value="en">English</option>
+                <option value="si">සිංහල (Sinhala)</option>
+            </select>
+        </div>
+
+        <div class="bg-white shadow-xl rounded-xl overflow-hidden">
+            <!-- Profile Header -->
+            <div class="profile-header text-white p-6 flex items-center space-x-6">
+                <div class="w-32 h-32 rounded-full border-4 border-white overflow-hidden">
+                    <img src="../senani teacher.png" alt="Teacher Profile" class="w-full h-full object-cover">
+                </div>
+                <div>
+                    <h1 id="teacherName" class="text-3xl font-bold mb-2" data-en="Mrs. M.Senani Senarathna" data-si="එම්.සේනානි සේනාරත්න">Mrs. M.Senani Senarathna</h1>
+                    <p id="teacherPosition" class="text-xl opacity-80" data-en="" data-si=""></p>
+                </div>
+            </div>
+
+            <!-- Professional Details -->
+            <div class="p-6">
+                <div class="grid md:grid-cols-2 gap-6">
+                    <!-- Professional Information -->
+                    <div>
+                        <h2 id="professionalDetailsTitle" class="section-title text-xl font-semibold pb-2 mb-4" data-en="Professional Details" data-si="වෘත්තීය තොරතුරු">Professional Details</h2>
+                        <div class="space-y-3">
+                            <div class="detail-row p-3 rounded-md">
+                                <strong class="text-[#610030]" id="gradeCategory" data-en="Grade category:" data-si="ශ්‍රේණි කාණ්ඩය">Grade category:</strong>
+                                <li id="gradeLevelDetails" data-en="G.C.E. A/L (Advance Level)" data-si="අ.පො.ස. (උසස් පෙළ)">G.C.E. A/L (Advance Level)</li>                                
+                                <li id="gradeLevelDetails" data-en="G.C.E. O/L (Ordinary Level)" data-si="අ.පො.ස. (සාමාන්‍ය පෙළ)">G.C.E. O/L (Ordinary Level)</li>
+                            </div>
+                            <div class="detail-row p-3 rounded-md">
+                                <strong class="text-[#610030]" id="subjectsLabel" data-en="Subject(s) Taught:" data-si="විෂයන්">Subject(s) Taught:</strong>
+                                <ul class="list-disc list-inside">
+                                    <li id="subjectsDetails" data-en="MASS Media and Communication Studies" data-si="සන්නිවේදනය හා මාධ්‍ය අධ්‍යනය">MASS Media and Communication Studies</li>
+                                </ul>
+                            </div>
+                            <div class="detail-row p-3 rounded-md">
+                                <strong class="text-[#610030]" id="positionLabel" data-en="Committees / Clubs / Associations:" data-si="කමිටු / සමාජ / සංගම්">Committees / Clubs / Associations:</strong>
+                                <ul class="list-disc list-inside">
+                                    <li id="subjectsDetails" data-en="Media Associations" data-si="මාධ්‍ය සංගමය">Media Associations</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Educational & Service Information -->
+                    <div>
+                        <h2 id="professionalJourneyTitle" class="section-title text-xl font-semibold pb-2 mb-4" data-en="Professional Journey" data-si="වෘත්තීය ගමන්මග">Professional Journey</h2>
+                        <div class="space-y-3">
+                            <div class="detail-row p-3 rounded-md">
+                                <strong class="text-[#610030]" id="schoolsAttendedLabel" data-en="Schools Attended:" data-si="අධ්‍යාපනය ලබා ඇති පාසල්">Schools Attended:</strong>
+                                <ul class="list-disc list-inside">
+                                    <li id="school1" data-en="Dambadeniya Central College (National School)" data-si="දඹදෙණිය ම.ම.වි. (ජාතික පාසල)">Dambadeniya Central College (National School)</li>
+                                </ul>
+                            </div>
+                            <div class="detail-row p-3 rounded-md">
+                                <strong class="text-[#610030]" id="certificationsLabel"
+                                    data-en="Higher educational and professional certificates:" data-si="උසස් අධ්‍යාපනික සහ වෘත්තීය සහතික">Higher educational and professional certificates:</strong>
+                                <ul class="list-disc list-inside">
+                                    <li id="certification1" data-en="Bachelor of Arts (BA) - University of Kelaniya" data-si="ශාස්ත්‍රවේදි  උපාධිය (BA) - කැලණිය විශ්වවිද්‍යාලය ">Bachelor of Arts (BA) - University of Kelaniya</li>
+                                    <li id="school1" data-en="Postgraduate Diploma in Education (PgDip(Ed)) - National Institute of Education" data-si="අධ්‍යාපනය පිළිබඳ පශ්චාත් උපාධි ඩිප්ලෝමාව (PgDip(Ed)) - ජාතික අධ්‍යාපන ආයතනය">Postgraduate Diploma in Education (PgDip(Ed)) - National Institute of Education</li>
+                                </ul>
+                            </div>
+                            <div class="detail-row p-3 rounded-md">
+                                <strong class="text-[#610030]" id="yearsOfServiceLabel" data-en="Years of Service:" data-si="සේවා කාලය">Years of Service:</strong>
+                                <ul class="list-disc list-inside">
+                                    <li id="service1" data-en="13 years (Since 2012)" data-si="වසර 13 (2012 සිට)">13 years (Since 2012)</li>
+                                </ul>
+                            </div>
+                            <div class="detail-row p-3 rounded-md">
+                                <strong class="text-[#610030]" id="currentStatusLabel" data-en="Current Status:" data-si="වර්තමාන තත්ව">Current Status:</strong>
+                                <p id="currentStatusDetails" class="font-semibold text-green-700" data-en="Active" data-si="සක්‍රීය">Active</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Additional Contact & Professional Information -->
+                <div class="mt-6 bg-[#F5F5F5] p-4 rounded-md">
+                    <h2 id="contactInfoTitle" class="section-title text-xl font-semibold pb-2 mb-4" data-en="Contact Information" data-si="සබැඳි තොරතුරු">Contact Information</h2>
+                    <div class="grid md:grid-cols-2 gap-4">
+                        <div>
+                            <strong class="text-[#610030]" id="emailLabel" data-en="Email:" data-si="විද්‍යුත් තැපෑල:">Email:</strong>
+                            <p id="emailDetails">senanisenarathna0@gmail.com</p>
+                        </div>
+                        <div>
+                            <strong class="text-[#610030]" id="departmentLabel" data-en="Phone No:" data-si="දුර. අංකයකය:">Phone No:</strong>
+                            <p id="departmentDetails">+94 74 144 9554</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="../loader.js"></script>
+    <script>
+        document.getElementById('languageSelector').addEventListener('change', function () {
+            const lang = this.value;
+
+            // Select all elements with data-en and data-si attributes
+            const translatableElements = document.querySelectorAll('[data-en][data-si]');
+
+            translatableElements.forEach(element => {
+                // Update the text content based on selected language
+                element.textContent = element.getAttribute(`data-${lang}`);
+            });
+
+        });
+    </script>
+</body>
+
+</html>

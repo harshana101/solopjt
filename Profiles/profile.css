@@ -1,0 +1,112 @@
+:root {
+    --maroon: #610030;
+    --gold: #FFD700;
+}
+
+.profile-header {
+    background: linear-gradient(135deg, var(--maroon) 0%, #b8005c 100%);
+}
+
+.section-title {
+    color: var(--maroon);
+    border-bottom: 2px solid var(--maroon);
+}
+
+.detail-row:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+.lang-toggle {
+    position: absolute;
+    top: 40px;
+    right: 25px;
+    color: #ffffff;
+}
+
+select,
+option {
+    background-color: transparent;
+    color: var(--maroon);
+    border: 2px solid #ffffff;
+}
+
+i {
+    display: inline-block;
+    margin-right: 5px;
+    color: var(--maroon);
+    opacity: 0.7;
+}
+
+i .fas {
+    color: var(--maroon);
+    font-size: 0.7em;
+}
+
+::selection {
+    color: var(--gold);
+    background: var(--maroon);
+}
+::-moz-selection {
+    color: var(--gold);
+    background: var(--maroon);
+}
+::-webkit-scrollbar {
+    width: 8px;
+}
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+::-webkit-scrollbar-thumb {
+    background: var(--maroon);
+    border-radius: 10px;
+}
+::-webkit-scrollbar-thumb:hover {
+    background: var(--gold);
+}
+.detail-row {
+    transition: background-color 0.3s;
+}
+.detail-row:hover {
+    background-color: #eeeeee;
+}
+
+/* i Comment */
+.tooltip {
+    float: right;
+    position: relative;
+}
+
+.tooltip .tooltiptext {
+    visibility: hidden;
+    width: 380px;
+    font-size: smaller;
+    background-color: #ffffff;
+    border: 2px solid #610030;
+    color: #610030;
+    text-align: center;
+    padding: 5px 0;
+    position: absolute;
+    z-index: 1;
+    bottom: 120%;
+    left: 210%;
+    margin-left: -400px;
+    opacity: 0;
+    transition: opacity 0.3s;
+    border-radius: 10px;
+}
+
+.tooltip .tooltiptext::after {
+    content: "";
+    position: absolute;
+    top: 105%;
+    left: 81.5%;
+    margin-left: 50px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: #610030 transparent transparent transparent;
+}
+
+.tooltip:hover .tooltiptext {
+    visibility: visible;
+    opacity: 0.7;
+}
