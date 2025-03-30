@@ -1,0 +1,71 @@
+     /* Loading screen container */
+     #loading-screen {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: #ffffff;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        z-index: 9999;
+        transition: opacity 0.5s;
+    }
+
+    /* Logo container */
+    .logo-container {
+        width: 150px;
+        height: 150px;
+        margin-bottom: 30px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    /* Logo image - replace with your school logo */
+    .logo-container img {
+        max-width: 100%;
+        height: auto;
+    }
+
+    /* Loading bar container */
+    .loading-bar-container {
+        width: 300px;
+        height: 20px;
+        background-color: #f1f1f1;
+        border-radius: 10px;
+        overflow: hidden;
+        margin-bottom: 10px;
+    }
+
+    /* Loading bar progress */
+    .loading-bar {
+        height: 100%;
+        width: 0%;
+        background-color: #610030; /* Change to your school's color */
+        border-radius: 10px;
+        transition: width 0.3s ease;
+    }
+
+    /* Loading percentage */
+    .loading-percentage {
+        font-size: 14px;
+        color: #555;
+        margin-bottom: 20px;
+    }
+
+    /* School name */
+    .school-name {
+        margin-top: 20px;
+        font-size: 24px;
+        font-weight: bold;
+        color: #333; /* Change to your school's color */
+    }
+
+    /* Main content that will be shown after loading */
+    #content {
+        opacity: 0;
+        transition: opacity 1s;
+    }

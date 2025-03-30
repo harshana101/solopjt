@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>School FAQ - Frequently Asked Questions</title>
+    <style>
+        /* General styling */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f8f9fa;
+        }
+
+        /* Header styling */
+        .header {
+            text-align: center;
+            margin-bottom: 40px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .header h1 {
+            color: #610030;
+            margin-bottom: 10px;
+        }
+
+        .header p {
+            color: #555;
+            font-size: 18px;
+        }
+
+        /* Language selector */
+        .language-selector {
+            text-align: right;
+            margin-bottom: 20px;
+        }
+
+        .language-btn {
+            background-color: #610030;
+            color: white;
+            border: none;
+            padding: 8px 16px;
+            margin-left: 10px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: background-color 0.3s;
+        }
+
+        .language-btn:hover {
+            background-color: #b6005b;
+        }
+
+        .language-btn.active {
+            background-color: #b6005b;
+            box-shadow: 0 0 5px rgba(0,0,0,0.2);
+        }
+
+        /* Categories */
+        .categories {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 10px;
+            margin-bottom: 30px;
+        }
+
+        .category-btn {
+            background-color: #eee;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 30px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: all 0.3s;
+        }
+
+        .category-btn:hover, .category-btn.active {
+            background-color: #610030;
+            color: gold;
+        }
+
+        /* FAQ container */
+        .faq-container {
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            overflow: hidden;
+        }
+
+        /* FAQ item */
+        .faq-item {
+            border-bottom: 1px solid #eee;
+            overflow: hidden;
+        }
+
+        .faq-item:last-child {
+            border-bottom: none;
+        }
+
+        .faq-question {
+            padding: 20px;
+            background-color: white;
+            cursor: pointer;
+            font-weight: bold;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: background-color 0.3s;
+        }
+
+        .faq-question:hover {
+            background-color: #f5f5f5;
+        }
+
+        .faq-question:after {
+            content: '\002B';
+            font-size: 20px;
+            color: #555;
+        }
+
+        .faq-item.active .faq-question:after {
+            content: '\2212';
+        }
+
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+            background-color: #f9f9f9;
+            padding: 0 20px;
+        }
+
+        .faq-item.active .faq-answer {
+            max-height: 500px;
+            padding: 20px;
+        }
+
+        /* Responsive design */
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 24px;
+            }
+            
+            .header p {
+                font-size: 16px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Language selector -->
+    <div class="language-selector">
+        <button class="language-btn active" data-lang="en">English</button>
+        <button class="language-btn" data-lang="si">සිංහල</button>
+    </div>
+
+    <!-- Header -->
+    <div class="header">
+        <h1 data-en="Frequently Asked Questions" data-si="නිතර අසන ප්‍රශ්න">Frequently Asked Questions</h1>
+        <p data-en="Find answers to common questions about our school" data-si="අපගේ පාසල පිළිබඳ සාමාන්‍ය ප්‍රශ්නවලට පිළිතුරු සොයන්න">Find answers to common questions about our school</p>
+    </div>
+
+    <!-- Categories -->
+    <div class="categories">
+        <button class="category-btn active" data-category="all" data-en="All" data-si="සියල්ල">All</button>
+        <button class="category-btn" data-category="admission" data-en="Admission" data-si="ඇතුළත් කිරීම">Admission</button>
+        <button class="category-btn" data-category="academic" data-en="Academic" data-si="අධ්‍යාපනික">Academic</button>
+        <button class="category-btn" data-category="facilities" data-en="Facilities" data-si="පහසුකම්">Facilities</button>
+        <button class="category-btn" data-category="extracurricular" data-en="Extracurricular" data-si="අමතර විෂය">Extracurricular</button>
+    </div>
+
+    <!-- FAQ container -->
+    <div class="faq-container">
+        <!-- Admission FAQs -->
+        <div class="faq-item" data-category="admission">
+            <div class="faq-question">
+                <span data-en="What is the admission process for new students?" data-si="නව සිසුන් සඳහා ඇතුළත් කිරීමේ ක්‍රියාවලිය කුමක්ද?">What is the admission process for new students?</span>
+            </div>
+            <div class="faq-answer">
+                <p data-en="The admission process involves submitting an application form, providing previous academic records, attending an entrance assessment, and participating in an interview. Applications are typically accepted from January to March each year for the following academic year." data-si="ඇතුළත් කිරීමේ ක්‍රියාවලියට අයදුම්පත් ඉදිරිපත් කිරීම, පෙර අධ්‍යාපන වාර්තා සැපයීම, ප්‍රවේශ ඇගයීමකට සහභාගී වීම සහ සම්මුඛ පරීක්ෂණයකට සහභාගී වීම ඇතුළත් වේ. ඊළඟ අධ්‍යාපනික වසර සඳහා අයදුම්පත් සාමාන්‍යයෙන් සෑම වසරකම ජනවාරි සිට මාර්තු දක්වා පිළිගනු ලැබේ.">The admission process involves submitting an application form, providing previous academic records, attending an entrance assessment, and participating in an interview. Applications are typically accepted from January to March each year for the following academic year.</p>
+            </div>
+        </div>
+
+        <div class="faq-item" data-category="admission">
+            <div class="faq-question">
+                <span data-en="What documents are required for registration?" data-si="ලියාපදිංචි වීම සඳහා අවශ්‍ය ලේඛන මොනවාද?">What documents are required for registration?</span>
+            </div>
+            <div class="faq-answer">
+                <p data-en="Required documents include the student's birth certificate, previous school records, immunization records, completed application form, passport-sized photographs, and proof of residence. International students may need to provide additional documentation." data-si="අවශ්‍ය ලේඛනවලට සිසුවාගේ උප්පැන්න සහතිකය, පෙර පාසල් වාර්තා, ප්‍රතිශක්තිකරණ වාර්තා, සම්පූර්ණ කරන ලද අයදුම්පත, ගමන් බලපත් ප්‍රමාණයේ ඡායාරූප සහ පදිංචිය සනාථ කිරීම ඇතුළත් වේ. ජාත්‍යන්තර සිසුන්ට අමතර ලේඛන සැපයීමට අවශ්‍ය විය හැක.">Required documents include the student's birth certificate, previous school records, immunization records, completed application form, passport-sized photographs, and proof of residence. International students may need to provide additional documentation.</p>
+            </div>
+        </div>
+
+        <!-- Academic FAQs -->
+        <div class="faq-item" data-category="academic">
+            <div class="faq-question">
+                <span data-en="What curriculum does the school follow?" data-si="පාසල අනුගමනය කරන විෂය මාලාව කුමක්ද?">What curriculum does the school follow?</span>
+            </div>
+            <div class="faq-answer">
+                <p data-en="Our school follows the national curriculum set by the Ministry of Education, with an enhanced focus on English language proficiency, mathematics, and sciences. We also incorporate modern teaching methodologies and digital learning tools to provide a comprehensive education." data-si="අපගේ පාසල අධ්‍යාපන අමාත්‍යාංශය විසින් නියම කරන ලද ජාතික විෂය මාලාව අනුගමනය කරන අතර, ඉංග්‍රීසි භාෂා ප්‍රවීණතාව, ගණිතය සහ විද්‍යාව කෙරෙහි වැඩි අවධානයක් යොමු කරයි. අපි ව්‍යාපක අධ්‍යාපනයක් ලබා දීම සඳහා නවීන ඉගැන්වීමේ ක්‍රමවේද සහ ඩිජිටල් ඉගෙනුම් මෙවලම් ද ඇතුළත් කරමු.">Our school follows the national curriculum set by the Ministry of Education, with an enhanced focus on English language proficiency, mathematics, and sciences. We also incorporate modern teaching methodologies and digital learning tools to provide a comprehensive education.</p>
+            </div>
+        </div>
+
+        <div class="faq-item" data-category="academic">
+            <div class="faq-question">
+                <span data-en="How many students are typically in each class?" data-si="සාමාන්‍යයෙන් එක් පන්තියක සිසුන් කී දෙනෙක් සිටිද?">How many students are typically in each class?</span>
+            </div>
+            <div class="faq-answer">
+                <p data-en="We maintain a student-to-teacher ratio of approximately 25:1 in primary classes and 30:1 in secondary classes. This allows our teachers to provide individual attention while fostering a collaborative learning environment." data-si="අපි ප්‍රාථමික පන්තිවල සිසුන්-ගුරු අනුපාතය 25:1 පමණ සහ ද්විතීයික පන්තිවල 30:1 පවත්වාගෙන යමු. මෙය අපගේ ගුරුවරුන්ට සහයෝගී ඉගැන්වීමේ පරිසරයක් ඇති කරමින් පුද්ගලික අවධානය යොමු කිරීමට ඉඩ සලසයි.">We maintain a student-to-teacher ratio of approximately 25:1 in primary classes and 30:1 in secondary classes. This allows our teachers to provide individual attention while fostering a collaborative learning environment.</p>
+            </div>
+        </div>
+
+        <!-- Facilities FAQs -->
+        <div class="faq-item" data-category="facilities">
+            <div class="faq-question">
+                <span data-en="What library resources are available to students?" data-si="සිසුන්ට ලබා ගත හැකි පුස්තකාල සම්පත් මොනවාද?">What library resources are available to students?</span>
+            </div>
+            <div class="faq-answer">
+                <p data-en="Our school library houses over 10,000 books covering various subjects and genres. Students have access to digital resources, educational journals, and quiet study areas. The library is open from 8:00 AM to 4:30 PM on weekdays, and librarians are available to assist with research and resource location." data-si="අපගේ පාසල් පුස්තකාලයේ විවිධ විෂයයන් සහ ප්‍රභේද ආවරණය කරන පොත් 10,000 කට වැඩි ප්‍රමාණයක් තිබේ. සිසුන්ට ඩිජිටල් සම්පත්, අධ්‍යාපනික සඟරා සහ නිහඬ අධ්‍යයන ප්‍රදේශ වෙත ප්‍රවේශ විය හැක. පුස්තකාලය සතියේ දිනවල පෙරවරු 8:00 සිට පස්වරු 4:30 දක්වා විවෘතව ඇති අතර, පර්යේෂණ සහ සම්පත් ස්ථානගත කිරීම සඳහා සහාය වීමට පුස්තකාලයාධිපතිවරුන් සිටිති.">Our school library houses over 10,000 books covering various subjects and genres. Students have access to digital resources, educational journals, and quiet study areas. The library is open from 8:00 AM to 4:30 PM on weekdays, and librarians are available to assist with research and resource location.</p>
+            </div>
+        </div>
+
+        <div class="faq-item" data-category="facilities">
+            <div class="faq-question">
+                <span data-en="Does the school provide transportation services?" data-si="පාසල ප්‍රවාහන සේවා සපයනවාද?">Does the school provide transportation services?</span>
+            </div>
+            <div class="faq-answer">
+                <p data-en="Yes, our school operates a fleet of buses that service various routes throughout the city. Transportation fees are separate from tuition and depend on the distance from the school. All buses are equipped with safety features and are operated by experienced drivers with assistants to ensure student safety." data-si="ඔව්, අපගේ පාසල නගරය පුරා විවිධ මාර්ග සේවා කරන බස් රථ ඇති කරයි. ප්‍රවාහන ගාස්තු ශිෂ්‍යත්ව ගාස්තුවලින් වෙන් කර ඇති අතර පාසලේ සිට ඇති දුර මත රඳා පවතී. සියලුම බස් රථවල ආරක්ෂක විශේෂාංග සවි කර ඇති අතර සිසුන්ගේ ආරක්ෂාව තහවුරු කිරීම සඳහා සහායකයින් සමඟ පළපුරුදු රියදුරන් විසින් ක්‍රියාත්මක කරනු ලබයි.">Yes, our school operates a fleet of buses that service various routes throughout the city. Transportation fees are separate from tuition and depend on the distance from the school. All buses are equipped with safety features and are operated by experienced drivers with assistants to ensure student safety.</p>
+            </div>
+        </div>
+
+        <!-- Extracurricular FAQs -->
+        <div class="faq-item" data-category="extracurricular">
+            <div class="faq-question">
+                <span data-en="What sports programs are offered?" data-si="කුමන ක්‍රීඩා වැඩසටහන් ලබා දෙනවාද?">What sports programs are offered?</span>
+            </div>
+            <div class="faq-answer">
+                <p data-en="Our school offers a wide range of sports including cricket, volleyball, basketball, swimming, track and field, badminton, and chess. Students can join teams that compete at district and national levels. We have qualified coaches dedicated to developing students' skills while emphasizing sportsmanship and teamwork." data-si="අපගේ පාසල ක්‍රිකට්, වොලිබෝල්, බාස්කට්බෝල්, පිහිනුම්, ට්රැක් සහ ෆීල්ඩ්, බැඩ්මින්ටන් සහ චෙස් ඇතුළු විවිධ ක්‍රීඩා ලබා දෙයි. සිසුන්ට දිස්ත්‍රික් සහ ජාතික මට්ටමින් තරඟ කරන කණ්ඩායම්වලට සම්බන්ධ විය හැක. අපට ක්‍රීඩා ශූරත්වය සහ කණ්ඩායම් හැඟීම අවධාරණය කරමින් සිසුන්ගේ කුසලතා වර්ධනය කිරීමට කැපවූ සුදුසුකම් ලත් පුහුණුකරුවන් සිටිති.">Our school offers a wide range of sports including cricket, volleyball, basketball, swimming, track and field, badminton, and chess. Students can join teams that compete at district and national levels. We have qualified coaches dedicated to developing students' skills while emphasizing sportsmanship and teamwork.</p>
+            </div>
+        </div>
+
+        <div class="faq-item" data-category="extracurricular">
+            <div class="faq-question">
+                <span data-en="What arts and cultural activities are available?" data-si="කුමන කලා හා සංස්කෘතික ක්‍රියාකාරකම් තිබේද?">What arts and cultural activities are available?</span>
+            </div>
+            <div class="faq-answer">
+                <p data-en="Our school has vibrant arts and cultural programs including music (vocal and instrumental), dance (traditional and contemporary), drama, visual arts, and photography. We organize annual cultural festivals, concerts, and exhibitions where students can showcase their talents. These activities are guided by experienced instructors who are accomplished in their respective fields." data-si="අපගේ පාසලේ සංගීතය (වාචික සහ භාණ්ඩ), නර්තනය (සාම්ප්‍රදායික සහ සමකාලීන), නාට්‍ය, දෘශ්‍ය කලා සහ ඡායාරූපකරණය ඇතුළු සජීවී කලා සහ සංස්කෘතික වැඩසටහන් තිබේ. අපි වාර්ෂික සංස්කෘතික උත්සව, සංගීත ප්‍රසංග සහ ප්‍රදර්ශන සංවිධානය කරමු, එහිදී සිසුන්ට ඔවුන්ගේ දක්ෂතා පෙන්වීමට හැකි වේ. මෙම ක්‍රියාකාරකම් ඔවුන්ගේ අදාළ ක්ෂේත්‍රවල සාර්ථක වූ පළපුරුදු උපදේශකයින් විසින් මෙහෙයවනු ලැබේ.">Our school has vibrant arts and cultural programs including music (vocal and instrumental), dance (traditional and contemporary), drama, visual arts, and photography. We organize annual cultural festivals, concerts, and exhibitions where students can showcase their talents. These activities are guided by experienced instructors who are accomplished in their respective fields.</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // FAQ toggle functionality
+            const faqItems = document.querySelectorAll('.faq-item');
+            
+            faqItems.forEach(item => {
+                const question = item.querySelector('.faq-question');
+                
+                question.addEventListener('click', () => {
+                    // Close all other items
+                    faqItems.forEach(otherItem => {
+                        if (otherItem !== item && otherItem.classList.contains('active')) {
+                            otherItem.classList.remove('active');
+                        }
+                    });
+                    
+                    // Toggle current item
+                    item.classList.toggle('active');
+                });
+            });
+            
+            // Language switching functionality
+            const languageButtons = document.querySelectorAll('.language-btn');
+            
+            languageButtons.forEach(button => {
+                button.addEventListener('click', () => {
+                    const language = button.getAttribute('data-lang');
+                    
+                    // Update active button
+                    languageButtons.forEach(btn => {
+                        btn.classList.remove('active');
+                    });
+                    button.classList.add('active');
+                    
+                    // Update all translatable elements
+                    const translatableElements = document.querySelectorAll('[data-en]');
+                    
+                    translatableElements.forEach(element => {
+                        const translatedText = element.getAttribute(`data-${language}`);
+                        if (translatedText) {
+                            element.textContent = translatedText;
+                        }
+                    });
+                });
+            });
+            
+            // Category filtering
+            const categoryButtons = document.querySelectorAll('.category-btn');
+            
+            categoryButtons.forEach(button => {
+                button.addEventListener('click', () => {
+                    const category = button.getAttribute('data-category');
+                    
+                    // Update active button
+                    categoryButtons.forEach(btn => {
+                        btn.classList.remove('active');
+                    });
+                    button.classList.add('active');
+                    
+                    // Filter FAQ items
+                    faqItems.forEach(item => {
+                        const itemCategory = item.getAttribute('data-category');
+                        
+                        if (category === 'all' || itemCategory === category) {
+                            item.style.display = 'block';
+                        } else {
+                            item.style.display = 'none';
+                            // Close the item if it's active
+                            if (item.classList.contains('active')) {
+                                item.classList.remove('active');
+                            }
+                        }
+                    });
+                });
+            });
+        });
+    </script>
+</body>
+</html>

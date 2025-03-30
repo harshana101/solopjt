@@ -55,3 +55,28 @@ function initializeTheme() {
 window.toggleTheme = toggleTheme;
 window.applyFadeInAnimation = applyFadeInAnimation;
 window.initializeTheme = initializeTheme;
+
+
+// Initialize theme on page load
+// Function to hide loading screen and show content
+function hideLoadingScreen() {
+  const loadingScreen = document.getElementById('loading-screen');
+  const content = document.getElementById('content');
+  
+  // Fade out loading screen
+  loadingScreen.style.opacity = '0';
+  
+  // Show content
+  content.style.opacity = '1';
+  
+  // Remove loading screen from DOM after transition
+  setTimeout(() => {
+      loadingScreen.style.display = 'none';
+  }, 500);
+}
+
+// Hide loading screen when page is fully loaded
+window.addEventListener('load', () => {
+  // Add a small delay to make the loading screen visible for at least 1 second
+  setTimeout(hideLoadingScreen, 1000);
+});

@@ -20,205 +20,435 @@
   <meta property="og:image" content="./link.jpg">
   <meta property="og:url" content="https://harshana101.github.io/solopjt/">
   <meta property="og:type" content="website">
+  <link rel="stylesheet" href="./loader.css">
 
-   <!-- Google tag (gtag.js) -->
- <script async src="https://www.googletagmanager.com/gtag/js?id=G-796S4JXDEK">
-</script>
-<script>
- window.dataLayer = window.dataLayer || [];
- function gtag(){dataLayer.push(arguments);}
- gtag('js', new Date());
- gtag('config', 'G-796S4JXDEK');
-</script>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-796S4JXDEK">
+  </script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'G-796S4JXDEK');
+  </script>
 </head>
 
 <body>
-  <div class="container">
-    <h1>Teachers</h1>
-
-    <div class="controls-container">
-
-      <!-- Search container -->
-      <div class="search-container">
-        <div class="search-wrapper">
-          <input type="text" class="search-input" placeholder="Search for teachers by name or subject..."
-            id="teacherSearch">
-          <button class="search-button" id="searchBtn"><i class="fas fa-search"></i></button>
-        </div>
-
-        <div class="recent-searches" id="recentSearches">
-          <div class="recent-title" id="recentSearchesTitle">Recent Searches:</div>
-          <!-- Recent search items will be dynamically added here -->
-        </div>
-      </div>
-
-      <!-- Theme toggle button will be added here by JS -->
-      <div id="themeToggle" class="theme-toggle">
-        <i class="fas fa-moon"></i>
-      </div>
+  <!-- Loading screen -->
+  <div id="loading-screen">
+    <div class="logo-container">
+      <!-- Replace 'school-logo.png' with your actual logo file -->
+      <img src="./logo.png" alt="School Logo">
     </div>
-
-    <!-- Filter container -->
-    <div class="filter-container">
-      <div class="filter-dropdown">
-        <button onclick="toggleDropdown()" class="dropdown-btn" id="current-filter">All</button>
-        <div id="filterDropdown" class="dropdown-content">
-          <a href="#" onclick="filterTeachers('All')" data-original-category="All">All</a>
-          <a href="#" onclick="filterTeachers('A/L')" data-original-category="A/L">A/L</a>
-          <a href="#" onclick="filterTeachers('O/L')" data-original-category="O/L">O/L</a>
-          <a href="#" onclick="filterTeachers('Prefect Board')" data-original-category="Prefect Board">Prefect Board</a>
-          <a href="#" onclick="filterTeachers('Scout')" data-original-category="Scout">Scout</a>
-          <a href="#" onclick="filterTeachers('Ecogroup')" data-original-category="Ecogroup">Ecogroup</a>
-          <a href="#" onclick="filterTeachers('Saukydana')" data-original-category="Saukydana">Saukydana</a>
-          <a href="#" onclick="filterTeachers('Disciplinary committee')" data-original-category="Disciplinary committee">Disciplinary committee</a>
-          <a href="#" onclick="filterTeachers('Media Association')" data-original-category="Media Association">Media Association</a>
-          <a href="#" onclick="filterTeachers('Student Counselling')" data-original-category="Student Counselling">Student Counselling</a>
-          <a href="#" onclick="filterTeachers('In charge of sections')" data-original-category="In charge of sections">In charge of sections</a>
-          <a href="#" onclick="filterTeachers('Drama Club')" data-original-category="Drama Club">Drama Club</a>
-          <a href="#" onclick="filterTeachers('Aesthetics Department')" data-original-category="Aesthetics Department">Aesthetics Department</a>
-        </div>
-      </div>
+    <div class="loading-bar-container">
+      <div id="loading-bar" class="loading-bar"></div>
     </div>
+    <div id="loading-percentage" class="loading-percentage">0%</div>
+    <div class="school-name">WP/ Hr/ Polegoda M. V.</div>
   </div>
 
-  <div class="view-all">
-    <a href="index.html" class="view-all-btn"><i class="fas fa-home"></i> Back To Home</i></a>
-  </div>
+  <!-- Main content -->
+  <div id="content">
 
+    <div class="container">
+      <h1>Teachers</h1>
 
-  <div class="teachers-grid">
-    <!-- Teacher 1 -->
-    <div class="teacher-card" data-categories="O/L,Scout,Media Association" data-name="Mr. A.D.Thiraj Lasantha"
-      data-subject="Sinhala, History, Geography" data-name-si="ඒ.ඩී.තිරාජ් ලසන්ත මයා"
-      data-subject-si="සිංහල, ඉතිහාසය, භූගෝල විද්‍යාව">
-      <div class="profile-pic">
-        <img src="" alt="Mr. A.D.Thiraj Lasantha">
+      <div class="controls-container">
+
+        <!-- Search container -->
+        <div class="search-container">
+          <div class="search-wrapper">
+            <input type="text" class="search-input" placeholder="Search for teachers by name or subject..."
+              id="teacherSearch">
+            <button class="search-button" id="searchBtn"><i class="fas fa-search"></i></button>
+          </div>
+
+          <div class="recent-searches" id="recentSearches">
+            <div class="recent-title" id="recentSearchesTitle">Recent Searches:</div>
+            <!-- Recent search items will be dynamically added here -->
+          </div>
+        </div>
+
+        <!-- Theme toggle button will be added here by JS -->
+        <div id="themeToggle" class="theme-toggle">
+          <i class="fas fa-moon"></i>
+        </div>
       </div>
-      <div class="teacher-info">
-        <div class="teacher-name">Mr. A.D.Thiraj Lasantha</div>
-        <div class="teacher-position">Sinhala/ History/ Geography</div>
-        <a href="./Profiles/Mr_Thiraj Lasantha.html"><button class="about-btn">Profile</button></a>
-        <div class="categories">
-          <span class="category-tag">O/L</span>
-          <span class="category-tag">Scout</span>
-          <span class="category-tag">Media Association</span>
+
+      <!-- Filter container -->
+      <div class="filter-container">
+        <div class="filter-dropdown">
+          <button onclick="toggleDropdown()" class="dropdown-btn" id="current-filter">All</button>
+          <div id="filterDropdown" class="dropdown-content">
+            <a href="#" onclick="filterTeachers('All')" data-original-category="All">All</a>
+            <a href="#" onclick="filterTeachers('A/L')" data-original-category="A/L">A/L</a>
+            <a href="#" onclick="filterTeachers('O/L')" data-original-category="O/L">O/L</a>
+            <a href="#" onclick="filterTeachers('Prefect Board')" data-original-category="Prefect Board">Prefect Board</a>
+            <a href="#" onclick="filterTeachers('Scout')" data-original-category="Scout">Scout</a>
+            <a href="#" onclick="filterTeachers('Ecogroup')" data-original-category="Ecogroup">Ecogroup</a>
+            <a href="#" onclick="filterTeachers('Saukydana')" data-original-category="Saukydana">Saukydana</a> data-original-category="Disciplinary committee">Disciplinary committee</a>
+            <a href="#" onclick="filterTeachers('Media Association')" data-original-category="Media Association">Media Association</a>
+            <a href="#" onclick="filterTeachers('Student Counselling')" data-original-category="Student Counselling">Student Counselling</a>
+            <a href="#" onclick="filterTeachers('In charge of sections')" data-original-category="In charge of sections">In charge of sections</a>
+            <a href="#" onclick="filterTeachers('Drama Club')" data-original-category="Drama Club">Drama Club</a>
+            <a href="#" onclick="filterTeachers('Aesthetics Department')" data-original-category="Aesthetics Department">Aesthetics Department</a>
+          </div>
         </div>
       </div>
     </div>
 
-    <!-- Teacher 2 -->
-    <div class="teacher-card" data-categories="O/L" data-name="Mrs. Kaushani Chathurika Disanayaka"
-      data-subject="Science" data-name-si="කෞශානි චතුරිකා දිසානායක මිය" data-subject-si="විද්‍යාව">
-      <div class="profile-pic">
-        <img src="" alt="Mrs. Kaushani Chathurika Disanayaka">
-      </div>
-      <div class="teacher-info">
-        <div class="teacher-name">Mrs. Kaushani Chathurika Disanayaka</div>
-        <div class="teacher-position">Science</div>
-        <a href="./Profiles/Mrs_Kaushani Chathurika.html"><button class="about-btn">Profile</button></a>
-        <div class="categories">
-          <span class="category-tag">O/L</span>
-        </div>
-      </div>
+    <div class="view-all">
+      <a href="index.html" class="view-all-btn"><i class="fas fa-home"></i> Back To Home</i></a>
     </div>
 
-    <!-- Teacher 3 -->
-    <div class="teacher-card" data-categories="O/L,Prefect Board" data-name="Mr. Priyashan Dilruk Senevirathna"
-      data-subject="Mathematics" data-name-si="ප්‍රියෂාන් දිල්රුක් සෙනෙවිරත්න මයා" data-subject-si="ගණිතය">
-      <div class="profile-pic">
-        <img src="" alt="Mr. Priyashan Dilruk">
-      </div>
-      <div class="teacher-info">
-        <div class="teacher-name">Mr. Priyashan Dilruk Senevirathna</div>
-        <div class="teacher-position">Mathematics</div>
-        <a href="./Profiles/Mr Priyashan Dilruk.html"><button class="about-btn">Profile</button></a>
-        <div class="categories">
-          <span class="category-tag">O/L</span>
-          <span class="category-tag">Prefect Board</span>
-        </div>
-      </div>
-    </div>
 
-    <!-- Teacher 4 -->
-    <div class="teacher-card" data-categories="A/L" data-name="Ms. J.Wishwa Sandeepani Siriwardhana"
-      data-subject="Economics" data-name-si="විශ්වා සංදීපනී සිරිවර්ධන මෙනවිය" data-subject-si="ආර්තික විද්‍යාව">
-      <div class="profile-pic">
-        <img src="" alt="Ms. Wishwa Sandeepani">
-      </div>
-      <div class="teacher-info">
-        <div class="teacher-name">Ms. Wishwa Sandeepani</div>
-        <div class="teacher-position">Economics</div>
-        <a href="./Profiles/Ms"><button class="about-btn">Profile</button></a>
-        <div class="categories">
-          <span class="category-tag">A/L</span>
-          <!-- <span class="category-tag">Scout</span> -->
+    <div class="teachers-grid">
+      <!-- Teacher 1 -->
+      <div class="teacher-card" data-categories="O/L,Scout,Media Association" data-name="Mr. A.D.Thiraj Lasantha"
+        data-subject="Sinhala, History, Geography" data-name-si="ඒ.ඩී.තිරාජ් ලසන්ත මයා"
+        data-subject-si="සිංහල, ඉතිහාසය, භූගෝල විද්‍යාව">
+        <div class="profile-pic">
+          <img src="" alt="Mr. A.D.Thiraj Lasantha">
+        </div>
+        <div class="teacher-info">
+          <div class="teacher-name">Mr. A.D.Thiraj Lasantha</div>
+          <div class="teacher-position">Sinhala/ History/ Geography</div>
+          <a href="./Profiles/Mr_Thiraj Lasantha.html"><button class="about-btn">Profile</button></a>
+          <div class="categories">
+            <span class="category-tag">O/L</span>
+            <span class="category-tag">Scout</span>
+            <span class="category-tag">Media Association</span>
+          </div>
         </div>
       </div>
-    </div>
 
-    <!-- Teacher 5 -->
-    <div class="teacher-card" data-categories="A/L,O/L" data-name="Mr. S.Sudheera Sampath" data-subject="Acconting"
-      data-name-si="එස්.සුධීර සම්පත් මයා" data-subject-si="ගිණුම්කරණය">
-      <div class="profile-pic">
-        <img src="./sudheera sir.jpg" alt="Teacher">
-      </div>
-      <div class="teacher-info">
-        <div class="teacher-name">Mr. S.Sudheera Sampath</div>
-        <div class="teacher-position">Acconting</div>
-        <button class="about-btn">More Info..</button>
-        <div class="categories">
-          <span class="category-tag">A/L</span>
-          <span class="category-tag">O/L</span>
+      <!-- Teacher 2 -->
+      <div class="teacher-card" data-categories="O/L" data-name="Mrs. Kaushani Chathurika Disanayaka"
+        data-subject="Science" data-name-si="කෞශානි චතුරිකා දිසානායක මිය" data-subject-si="විද්‍යාව">
+        <div class="profile-pic">
+          <img src="" alt="Mrs. Kaushani Chathurika Disanayaka">
+        </div>
+        <div class="teacher-info">
+          <div class="teacher-name">Mrs. Kaushani Chathurika Disanayaka</div>
+          <div class="teacher-position">Science</div>
+          <a href="./Profiles/Mrs_Kaushani Chathurika.html"><button class="about-btn">Profile</button></a>
+          <div class="categories">
+            <span class="category-tag">O/L</span>
+          </div>
         </div>
       </div>
-    </div>
 
-    <!-- Teacher 6 -->
-    <div class="teacher-card" data-categories="A/L,O/L,Media Association" data-name="Mrs. Senani Senarathna"
-      data-subject="Communication & Media Studies, MASS Media and Communication Studies" data-name-si="එම්.සේනානි සේනාරත්න මිය"
-      data-subject-si="සන්නිවේදනය හා මාධ්‍ය අධ්‍යනය">
-      <div class="profile-pic">
-        <img src="./senani teacher.png" alt="Teacher">
-      </div>
-      <div class="teacher-info">
-        <div class="teacher-name">Mrs. Senani Senarathna</div>
-        <div class="teacher-position">Communication & Media Studies, MASS Media and Communication Studies</div>
-        <button class="about-btn">More Info..</button>
-        <div class="categories">
-          <span class="category-tag">A/L</span>
-          <span class="category-tag">O/L</span>
-          <span class="category-tag">Media Association</span>
+      <!-- Teacher 3 -->
+      <div class="teacher-card" data-categories="O/L,Prefect Board" data-name="Mr. Priyashan Dilruk Senevirathna"
+        data-subject="Mathematics" data-name-si="ප්‍රියෂාන් දිල්රුක් සෙනෙවිරත්න මයා" data-subject-si="ගණිතය">
+        <div class="profile-pic">
+          <img src="" alt="Mr. Priyashan Dilruk">
+        </div>
+        <div class="teacher-info">
+          <div class="teacher-name">Mr. Priyashan Dilruk Senevirathna</div>
+          <div class="teacher-position">Mathematics</div>
+          <a href="./Profiles/Mr Priyashan Dilruk.html"><button class="about-btn">Profile</button></a>
+          <div class="categories">
+            <span class="category-tag">O/L</span>
+            <span class="category-tag">Prefect Board</span>
+          </div>
         </div>
       </div>
-    </div>
 
-    <!-- Teacher 7 -->
-    <div class="teacher-card"
-      data-categories="O/L,A/L,Disciplinary committee,Prefect Board,Aesthetics Department,Drama Club"
-      data-name="Mr. Lenin Priyantha Liyanage" data-subject="Drama and Theatre"
-      data-name-si="ලෙනින් ප්‍රියන්ත ලියනගේ මයා" data-subject-si="නාට්‍ය හා රංගකලාව">
-      <div class="profile-pic">
-        <div class="img-holder">
-          <img src="./Lenin sir.JPG" alt="Teacher">
+      <!-- Teacher 4 -->
+      <div class="teacher-card" data-categories="A/L" data-name="Ms. J.Wishwa Sandeepani Siriwardhana"
+        data-subject="Economics" data-name-si="විශ්වා සංදීපනී සිරිවර්ධන මෙනවිය" data-subject-si="ආර්තික විද්‍යාව">
+        <div class="profile-pic">
+          <img src="" alt="Ms. Wishwa Sandeepani">
+        </div>
+        <div class="teacher-info">
+          <div class="teacher-name">Ms. Wishwa Sandeepani</div>
+          <div class="teacher-position">Economics</div>
+          <a href="./Profiles/Ms Wishwa Sandeepani.html"><button class="about-btn">Profile</button></a>
+          <div class="categories">
+            <span class="category-tag">A/L</span>
+            <!-- <span class="category-tag">Scout</span> -->
+          </div>
         </div>
       </div>
-      <div class="teacher-info">
-        <div class="teacher-name">Mr. Lenin Priyantha Liyanage</div>
-        <div class="teacher-position">Drama and Theatre</div>
-        <a href="./Profiles/Mr Lenin Liyanage.html"><button class="about-btn">Profile</button></a>
-        <div class="categories">
-          <span class="category-tag">A/L</span>
-          <span class="category-tag">O/L</span>
-          <span class="category-tag">Drama Club</span>
-          <span class="category-tag">Disciplinary committee</span>
-          <span class="category-tag">Prefect Board</span>
-          <span class="category-tag">Aesthetics Department</span>
-        </div>
-      </div>
-    </div>
 
-    <!-- Teacher 8 -->
-    <div class="teacher-card" data-categories="O/L,Scout" data-name="Mrs. U.Chalani Madhusanka"
+      <!-- Teacher 5 -->
+      <div class="teacher-card" data-categories="A/L,O/L" data-name="Mr. S.Sudheera Sampath" data-subject="Acconting"
+        data-name-si="එස්.සුධීර සම්පත් මයා" data-subject-si="ගිණුම්කරණය">
+        <div class="profile-pic">
+          <img src="./sudheera sir.jpg" alt="Teacher">
+        </div>
+        <div class="teacher-info">
+          <div class="teacher-name">Mr. S.Sudheera Sampath</div>
+          <div class="teacher-position">Acconting</div>
+          <a href="./Profiles/Mr Sudheera Sampath.html"><button class="about-btn">Profile</button></a>
+          <div class="categories">
+            <span class="category-tag">A/L</span>
+            <span class="category-tag">O/L</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Teacher 6 -->
+      <div class="teacher-card" data-categories="A/L,O/L,Media Association" data-name="Mrs. Senani Senarathna"
+        data-subject="Communication & Media Studies, MASS Media and Communication Studies"
+        data-name-si="එම්.සේනානි සේනාරත්න මිය" data-subject-si="සන්නිවේදනය හා මාධ්‍ය අධ්‍යනය">
+        <div class="profile-pic">
+          <img src="./senani teacher.png" alt="Teacher">
+        </div>
+        <div class="teacher-info">
+          <div class="teacher-name">Mrs. Senani Senarathna</div>
+          <div class="teacher-position">Communication & Media Studies, MASS Media and Communication Studies</div>
+          <a href="./Profiles/Mrs Senani Senarathna.html"><button class="about-btn">Profile</button></a>
+          <div class="categories">
+            <span class="category-tag">A/L</span>
+            <span class="category-tag">O/L</span>
+            <span class="category-tag">Media Association</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Teacher 7 -->
+      <div class="teacher-card"
+        data-categories="O/L,A/L,Disciplinary committee,Prefect Board,Aesthetics Department,Drama Club"
+        data-name="Mr. Lenin Priyantha Liyanage" data-subject="Drama and Theatre"
+        data-name-si="ලෙනින් ප්‍රියන්ත ලියනගේ මයා" data-subject-si="නාට්‍ය හා රංගකලාව">
+        <div class="profile-pic">
+          <div class="img-holder">
+            <img src="./Lenin sir.JPG" alt="Teacher">
+          </div>
+        </div>
+        <div class="teacher-info">
+          <div class="teacher-name">Mr. Lenin Priyantha Liyanage</div>
+          <div class="teacher-position">Drama and Theatre</div>
+          <a href="./Profiles/Mr Lenin Liyanage.html"><button class="about-btn">Profile</button></a>
+          <div class="categories">
+            <span class="category-tag">A/L</span>
+            <span class="category-tag">O/L</span>
+            <span class="category-tag">Drama Club</span>
+            <span class="category-tag">Disciplinary committee</span>
+            <span class="category-tag">Prefect Board</span>
+            <span class="category-tag">Aesthetics Department</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Teacher 8 -->
+      <div class="teacher-card" data-categories="O/L,Scout" data-name="Mrs. U.Chalani Madhusanka"
+        data-subject="Second Language Tamil" data-name-si="චලනි මධුසංකා මිය" data-subject-si="දෙවන භාෂාව දෙමළ">
+        <div class="profile-pic">
+          <img src="./chalani teacher.JPG" alt="Teacher">
+        </div>
+        <div class="teacher-info">
+          <div class="teacher-name">Mrs. Chalani Madhusanka</div>
+          <div class="teacher-position">Second Language Tamil</div>
+          <a href="./Profiles/Mrs Chalani Madhusanka.html"><button class="about-btn">Profile</button></a>
+          <div class="categories">
+            <span class="category-tag">O/L</span>
+            <span class="category-tag">Scout</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Teacher 9 -->
+      <div class="teacher-card" data-categories="Saukydana,Student Counselling" data-name="Mrs. A.A.Nirmali Amarasingha"
+        data-subject="Student counselling" data-name-si="ඒ.ඒ.නිර්මලී අමරසිංහ මිය" data-subject-si="ශිෂ්‍ය උපදේශන">
+        <div class="profile-pic">
+          <img src="./mali teacher.jpg" alt="Teacher">
+        </div>
+        <div class="teacher-info">
+          <div class="teacher-name">Mrs. A.A.Nirmali Amarasingha</div>
+          <div class="teacher-position">Student counselling and Career guide</div>
+          <a href="./Profiles/Mrs Nirmalee Amarasingha.html"><button class="about-btn">Profile</button></a>
+          <div class="categories">
+            <span class="category-tag">Saukydana</span>
+            <span class="category-tag">Student Counselling</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Teacher 10 -->
+      <div class="teacher-card" data-categories="O/L,A/L," data-name="Mrs. T.Sumudu Sashikala Piris"
+        data-subject="Mathematics, Physics" data-name-si="ටී.සුමුදු සෂිකලා පීරිස් මිය"
+        data-subject-si="ගණිතය, භෞතික විද්‍යාව">
+        <div class="profile-pic">
+          <img src="" alt="Mrs. T.Sumudu Sashikala Piris">
+        </div>
+        <div class="teacher-info">
+          <div class="teacher-name">Mrs. T.Sumudu Sashikala Piris</div>
+          <div class="teacher-position">Mathematics/ Physics</div>
+          <a href="./Profiles/Mrs Sumudu Sashikala.html"><button class="about-btn">Profile</button></a>
+          <div class="categories">
+            <span class="category-tag">A/L</span>
+            <span class="category-tag">O/L</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Teacher 11 -->
+      <div class="teacher-card" data-categories="O/L" data-name="Mrs. W.Dushanthi Duleeka" data-subject="History"
+        data-name-si="ඩබ්.දුශාන්ති දුලීකා මිය" data-subject-si="ඉතිහාසය">
+        <div class="profile-pic">
+          <img src="" alt="Mrs. W.Dushanthi Duleeka">
+        </div>
+        <div class="teacher-info">
+          <div class="teacher-name">Mrs. W.Dushanthi Duleeka</div>
+          <div class="teacher-position">History</div>
+          <a href="./Profiles/Mrs Dushanthi Duleeka.html"><button class="about-btn">Profile</button></a>
+          <div class="categories">
+            <span class="category-tag">O/L</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Teacher 12 -->
+      <div class="teacher-card" data-categories="A/L" data-name="Mr. Vimukthi Madhujith Kumarasinghe"
+        data-subject="Business Studies" data-name-si="විමුක්ති මධුජිත් කුමාරසිංහ මයා"
+        data-subject-si="ව්‍යාපාර අධ්‍යනය">
+        <div class="profile-pic">
+          <img src="" alt="Mr. Vimukthi Madhujith Kumarasinghe">
+        </div>
+        <div class="teacher-info">
+          <div class="teacher-name">Vimukthi Madhujith Kumarasinghe </div>
+          <div class="teacher-position">Business Studies</div>
+          <a href="./Profiles/Mr Vimukthi Madhujith.html"><button class="about-btn">Profile</button></a>
+          <div class="categories">
+            <span class="category-tag">A/L</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Teacher 13 -->
+      <div class="teacher-card" data-categories="O/L,A/L" data-name="Mr. M.G.Sanjeewa" data-subject="Sinhala"
+        data-name-si="එම්.ජී.සංජීව මයා" data-subject-si="සිංහල">
+        <div class="profile-pic">
+          <img src="" alt="Mr. M.G.Sanjeewa">
+        </div>
+        <div class="teacher-info">
+          <div class="teacher-name">Mr. M.G.Sanjeewa</div>
+          <div class="teacher-position">Sinhala</div>
+          <a href="./Profiles/Mr Sanjeewa.html"><button class="about-btn">Profile</button></a>
+          <div class="categories">
+            <span class="category-tag">A/L</span>
+            <span class="category-tag">O/L</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Teacher 14 -->
+      <div class="teacher-card" data-categories="O/L,Aesthetics Department" data-name="Mrs.  S.W.Lilani Madhubhashini"
+        data-subject="Art" data-name-si="එස්.ඩබ්.ලිලානි මධුභාෂිණී මිය" data-subject-si="චිත්‍ර කලාව">
+        <div class="profile-pic">
+          <img src="" alt="Mrs.  S.W.Lilani Madhubhashini">
+        </div>
+        <div class="teacher-info">
+          <div class="teacher-name">Mrs. S.W.Lilani Madhubhashini</div>
+          <div class="teacher-position">Art</div>
+          <a href="./Profiles/Mrs Lilani Madhubhashini.html"><button class="about-btn">Profile</button></a>
+          <div class="categories">
+            <span class="category-tag">O/L</span>
+            <span class="category-tag">Aesthetics Department</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Teacher 15 -->
+      <div class="teacher-card" data-categories="O/L,A/L,Media Association" data-name="Mr. U.Ishara Lakmal Nuwansiri"
+        data-subject="Buddhism, History" data-name-si="යූ.ඉෂාර ලක්මාල් නුවන්සිරි මයා"
+        data-subject-si="බුද්ධ ධර්මය, ඉතිහාසය">
+        <div class="profile-pic">
+          <img src="" alt="Mr. U.Ishara Lakmal Nuwansiri">
+        </div>
+        <div class="teacher-info">
+          <div class="teacher-name">Mr. U.Ishara Lakmal Nuwansiri</div>
+          <div class="teacher-position">Buddhism/ History</div>
+          <a href="./Profiles/Mr Ishara Lakmal.html"><button class="about-btn">Profile</button></a>
+          <div class="categories">
+            <span class="category-tag">A/L</span>
+            <span class="category-tag">O/L</span>
+            <span class="category-tag">Media Association</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Teacher 16 -->
+      <div class="teacher-card" data-categories="O/L" data-name="Mrs. A.G.Chandrangani Senevirathna"
+        data-subject="Buddhism, History" data-name-si="ඒ.ජී.චන්ද්‍රාංගනී සෙනෙවිරත්න මිය"
+        data-subject-si="බුද්ධ ධර්මය, ඉතිහාසය">
+        <div class="profile-pic">
+          <img src="" alt="Mrs. A.G.Chandrangani Senevirathna">
+        </div>
+        <div class="teacher-info">
+          <div class="teacher-name">Mrs. A.G.Chandrangani Senevirathna</div>
+          <div class="teacher-position">Buddhism/ History</div>
+          <a href="./Profiles/Mrs Chandrangani Senevirathne.html"><button class="about-btn">Profile</button></a>
+          <div class="categories">
+            <span class="category-tag">O/L</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Teacher 17 -->
+      <div class="teacher-card" data-categories="O/L,A/L,Aesthetics Department,Ecogroup"
+        data-name="Mrs. T.Anuradha Niroshini Fernando" data-subject="Dancing"
+        data-name-si="ටී.අනුරාධා නිරෝෂිණී ප්‍රනාන්දු මිය" data-subject-si="නර්තනය">
+        <div class="profile-pic">
+          <img src="" alt="Mrs. T.Anuradha Niroshini Fernando">
+        </div>
+        <div class="teacher-info">
+          <div class="teacher-name">Mrs. T.Anuradha Niroshini Fernando</div>
+          <div class="teacher-position">Dancing</div>
+          <a href="./Profiles/Mrs Anuradha Nirishini.html"><button class="about-btn">Profile</button></a>
+          <div class="categories">
+            <span class="category-tag">A/L</span>
+            <span class="category-tag">O/L</span>
+            <span class="category-tag">Aesthetics Department</span>
+            <span class="category-tag">Ecogroup</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Teacher 18 -->
+      <div class="teacher-card" data-categories="O/L,A/L," data-name="Mrs. H.D.Chamari Kanchanamala"
+        data-subject="Information and Communication Technology, General Information Technology"
+        data-name-si="එච්.ඩී.චමරී කාංචනමාලා මිය"
+        data-subject-si="තොරතුරු හා සන්නිවේදන තාක්ෂණය, සාමාන්‍ය තොරතුරු තාක්ෂණය">
+        <div class="profile-pic">
+          <img src="" alt="Mrs. H.D.Chamari Kanchanamala">
+        </div>
+        <div class="teacher-info">
+          <div class="teacher-name">Mrs. H.D.Chamari Kanchanamala</div>
+          <div class="teacher-position">Information and Communication Technology/ General Information Technology</div>
+          <a href="./Profiles/Mrs Chamari Kanchanamala.html"><button class="about-btn">Profile</button></a>
+          <div class="categories">
+            <span class="category-tag">A/L</span>
+            <span class="category-tag">O/L</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Teacher 19 -->
+      <div class="teacher-card" data-categories="O/L,A/L,Aesthetics Department,Ecogroup"
+        data-name="Mrs. H.Sanjeewani Hewage" data-subject="Eastern Music" data-name-si="එච්.සංජීවනී හේවගේ මිය"
+        data-subject-si="පෙරදිග සංගීතය">
+        <div class="profile-pic">
+          <img src="" alt="Mrs. H.Sanjeewani Hewage">
+        </div>
+        <div class="teacher-info">
+          <div class="teacher-name">Mrs. H.Sanjeewani Hewage</div>
+          <div class="teacher-position">Eastern Music</div>
+          <a href="./Profiles/Mrs Sanjeewani Hewage.html"><button class="about-btn">Profile</button></a>
+          <div class="categories">
+            <span class="category-tag">A/L</span>
+            <span class="category-tag">O/L</span>
+            <span class="category-tag">Aesthetics Department</span>
+            <span class="category-tag">Ecogroup</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Teacher 20 -->
+      <!-- <div class="teacher-card" data-categories="O/L,Scout" data-name="Mrs. U.Chalani Madhusanka"
       data-subject="Second Language Tamil" data-name-si="චලනි මධුසංකා මිය" data-subject-si="දෙවන භාෂාව දෙමළ">
       <div class="profile-pic">
         <img src="./chalani teacher.JPG" alt="Teacher">
@@ -226,220 +456,7 @@
       <div class="teacher-info">
         <div class="teacher-name">Mrs. Chalani Madhusanka</div>
         <div class="teacher-position">Second Language Tamil</div>
-        <button class="about-btn">More Info..</button>
-        <div class="categories">
-          <span class="category-tag">O/L</span>
-          <span class="category-tag">Scout</span>
-        </div>
-      </div>
-    </div>
-
-    <!-- Teacher 9 -->
-    <div class="teacher-card" data-categories="Saukydana,Student Counselling" data-name="Mrs. A.A.Nirmali Amarasingha"
-      data-subject="Student counselling" data-name-si="ඒ.ඒ.නිර්මලී අමරසිංහ මිය" data-subject-si="ශිෂ්‍ය උපදේශන">
-      <div class="profile-pic">
-        <img src="./mali teacher.jpg" alt="Teacher">
-      </div>
-      <div class="teacher-info">
-        <div class="teacher-name">Mrs. A.A.Nirmali Amarasingha</div>
-        <div class="teacher-position">Student counselling and Career guide</div>
-        <button class="about-btn">More Info..</button>
-        <div class="categories">
-          <span class="category-tag">Saukydana</span>
-          <span class="category-tag">Student Counselling</span>
-        </div>
-      </div>
-    </div>
-
-    <!-- Teacher 10 -->
-    <div class="teacher-card" data-categories="O/L,A/L," data-name="Mrs. T.Sumudu Sashikala Piris"
-      data-subject="Mathematics, Physics" data-name-si="ටී.සුමුදු සෂිකලා පීරිස් මිය"
-      data-subject-si="ගණිතය, භෞතික විද්‍යාව">
-      <div class="profile-pic">
-        <img src="" alt="Mrs. T.Sumudu Sashikala Piris">
-      </div>
-      <div class="teacher-info">
-        <div class="teacher-name">Mrs. T.Sumudu Sashikala Piris</div>
-        <div class="teacher-position">Mathematics/ Physics</div>
-        <button class="about-btn">More Info..</button>
-        <div class="categories">
-          <span class="category-tag">A/L</span>
-          <span class="category-tag">O/L</span>
-        </div>
-      </div>
-    </div>
-
-    <!-- Teacher 11 -->
-    <div class="teacher-card" data-categories="O/L" data-name="Mrs. W.Dushanthi Duleeka" data-subject="History"
-      data-name-si="ඩබ්.දුශාන්ති දුලීකා මිය" data-subject-si="ඉතිහාසය">
-      <div class="profile-pic">
-        <img src="" alt="Mrs. W.Dushanthi Duleeka">
-      </div>
-      <div class="teacher-info">
-        <div class="teacher-name">Mrs. W.Dushanthi Duleeka</div>
-        <div class="teacher-position">History</div>
-        <button class="about-btn">More Info..</button>
-        <div class="categories">
-          <span class="category-tag">O/L</span>
-        </div>
-      </div>
-    </div>
-
-    <!-- Teacher 12 -->
-    <div class="teacher-card" data-categories="A/L" data-name="Mr. Vimukthi Madhujith Kumarasinghe"
-      data-subject="Business Studies" data-name-si="විමුක්ති මධුජිත් කුමාරසිංහ මයා" data-subject-si="ව්‍යාපාර අධ්‍යනය">
-      <div class="profile-pic">
-        <img src="" alt="Mr. Vimukthi Madhujith Kumarasinghe">
-      </div>
-      <div class="teacher-info">
-        <div class="teacher-name">Vimukthi Madhujith Kumarasinghe </div>
-        <div class="teacher-position">Business Studies</div>
-        <button class="about-btn">More Info..</button>
-        <div class="categories">
-          <span class="category-tag">A/L</span>
-        </div>
-      </div>
-    </div>
-
-    <!-- Teacher 13 -->
-    <div class="teacher-card" data-categories="O/L,A/L" data-name="Mr. M.G.Sanjeewa" data-subject="Sinhala"
-      data-name-si="එම්.ජී.සංජීව මයා" data-subject-si="සිංහල">
-      <div class="profile-pic">
-        <img src="" alt="Mr. M.G.Sanjeewa">
-      </div>
-      <div class="teacher-info">
-        <div class="teacher-name">Mr. M.G.Sanjeewa</div>
-        <div class="teacher-position">Sinhala</div>
-        <button class="about-btn">More Info..</button>
-        <div class="categories">
-          <span class="category-tag">A/L</span>
-          <span class="category-tag">O/L</span>
-        </div>
-      </div>
-    </div>
-
-    <!-- Teacher 14 -->
-    <div class="teacher-card" data-categories="O/L,Aesthetics Department" data-name="Mrs.  S.W.Lilani Madhubhashini"
-      data-subject="Art" data-name-si="එස්.ඩබ්.ලිලානි මධුභාෂිණී මිය" data-subject-si="චිත්‍ර කලාව">
-      <div class="profile-pic">
-        <img src="" alt="Mrs.  S.W.Lilani Madhubhashini">
-      </div>
-      <div class="teacher-info">
-        <div class="teacher-name">Mrs. S.W.Lilani Madhubhashini</div>
-        <div class="teacher-position">Art</div>
-        <button class="about-btn">More Info..</button>
-        <div class="categories">
-          <span class="category-tag">O/L</span>
-          <span class="category-tag">Aesthetics Department</span>
-        </div>
-      </div>
-    </div>
-
-    <!-- Teacher 15 -->
-    <div class="teacher-card" data-categories="O/L,A/L,Media Association" data-name="Mr. U.Ishara Lakmal Nuwansiri"
-      data-subject="Buddhism, History" data-name-si="යූ.ඉෂාර ලක්මාල් නුවන්සිරි මයා"
-      data-subject-si="බුද්ධ ධර්මය, ඉතිහාසය">
-      <div class="profile-pic">
-        <img src="" alt="Mr. U.Ishara Lakmal Nuwansiri">
-      </div>
-      <div class="teacher-info">
-        <div class="teacher-name">Mr. U.Ishara Lakmal Nuwansiri</div>
-        <div class="teacher-position">Buddhism/ History</div>
-        <button class="about-btn">More Info..</button>
-        <div class="categories
-            ">
-          <span class="category-tag">A/L</span>
-          <span class="category-tag">O/L</span>
-          <span class="category-tag">Media Association</span>
-        </div>
-      </div>
-    </div>
-
-    <!-- Teacher 16 -->
-    <div class="teacher-card" data-categories="O/L" data-name="Mrs. A.G.Chandrangani Senevirathna"
-      data-subject="Buddhism, History" data-name-si="ඒ.ජී.චන්ද්‍රාංගනී සෙනෙවිරත්න මිය"
-      data-subject-si="බුද්ධ ධර්මය, ඉතිහාසය">
-      <div class="profile-pic">
-        <img src="" alt="Mrs. A.G.Chandrangani Senevirathna">
-      </div>
-      <div class="teacher-info">
-        <div class="teacher-name">Mrs. A.G.Chandrangani Senevirathna</div>
-        <div class="teacher-position">Buddhism/ History</div>
-        <button class="about-btn">More Info..</button>
-        <div class="categories">
-          <span class="category-tag">O/L</span>
-        </div>
-      </div>
-    </div>
-
-    <!-- Teacher 17 -->
-    <div class="teacher-card" data-categories="O/L,A/L,Aesthetics Department,Ecogroup"
-      data-name="Mrs. T.Anuradha Niroshini Fernando" data-subject="Dancing"
-      data-name-si="ටී.අනුරාධා නිරෝෂිණී ප්‍රනාන්දු මිය" data-subject-si="නර්තනය">
-      <div class="profile-pic">
-        <img src="" alt="Mrs. T.Anuradha Niroshini Fernando">
-      </div>
-      <div class="teacher-info">
-        <div class="teacher-name">Mrs. T.Anuradha Niroshini Fernando</div>
-        <div class="teacher-position">Dancing</div>
-        <button class="about-btn">More Info..</button>
-        <div class="categories">
-          <span class="category-tag">A/L</span>
-          <span class="category-tag">O/L</span>
-          <span class="category-tag">Aesthetics Department</span>
-          <span class="category-tag">Ecogroup</span>
-        </div>
-      </div>
-    </div>
-
-    <!-- Teacher 18 -->
-    <div class="teacher-card" data-categories="O/L,A/L," data-name="Mrs. H.D.Chamari Kanchanamala"
-      data-subject="Information and Communication Technology, General Information Technology"
-      data-name-si="එච්.ඩී.චමරී කාංචනමාලා මිය" data-subject-si="තොරතුරු හා සන්නිවේදන තාක්ෂණය, සාමාන්‍ය තොරතුරු තාක්ෂණය">
-      <div class="profile-pic">
-        <img src="" alt="Mrs. H.D.Chamari Kanchanamala">
-      </div>
-      <div class="teacher-info">
-        <div class="teacher-name">Mrs. H.D.Chamari Kanchanamala</div>
-        <div class="teacher-position">Information and Communication Technology/ General Information Technology</div>
-        <button class="about-btn">More Info..</button>
-        <div class="categories">
-          <span class="category-tag">A/L</span>
-          <span class="category-tag">O/L</span>
-        </div>
-      </div>
-    </div>
-
-    <!-- Teacher 19 -->
-    <div class="teacher-card" data-categories="O/L,A/L,Aesthetics Department,Ecogroup"
-      data-name="Mrs. H.Sanjeewani Hewage" data-subject="Eastern Music" data-name-si="එච්.සංජීවනී හේවගේ මිය"
-      data-subject-si="පෙරදිග සංගීතය">
-      <div class="profile-pic">
-        <img src="" alt="Mrs. H.Sanjeewani Hewage">
-      </div>
-      <div class="teacher-info">
-        <div class="teacher-name">Mrs. H.Sanjeewani Hewage</div>
-        <div class="teacher-position">Eastern Music</div>
-        <button class="about-btn">More Info..</button>
-        <div class="categories">
-          <span class="category-tag">A/L</span>
-          <span class="category-tag">O/L</span>
-          <span class="category-tag">Aesthetics Department</span>
-          <span class="category-tag">Ecogroup</span>
-        </div>
-      </div>
-    </div>
-
-    <!-- Teacher 20 -->
-    <!-- <div class="teacher-card" data-categories="O/L,Scout" data-name="Mrs. U.Chalani Madhusanka"
-      data-subject="Second Language Tamil" data-name-si="චලනි මධුසංකා මිය" data-subject-si="දෙවන භාෂාව දෙමළ">
-      <div class="profile-pic">
-        <img src="./chalani teacher.JPG" alt="Teacher">
-      </div>
-      <div class="teacher-info">
-        <div class="teacher-name">Mrs. Chalani Madhusanka</div>
-        <div class="teacher-position">Second Language Tamil</div>
-        <button class="about-btn">More Info..</button>
+        <button class="about-btn">Profile</button>
         <div class="categories">
           <span class="category-tag">O/L</span>
           <span class="category-tag">Scout</span>
@@ -448,11 +465,12 @@
     </div> -->
 
 
-    <!-- Load JavaScript modules -->
-    <script src="./teachers main.js"></script>
-    <script src="./teachers translator.js"></script>
-    <script src="./teachers filter.js"></script>
-    <script src="./teacher animations.js"></script>
+      <!-- Load JavaScript modules -->
+      <script src="./teachers main.js"></script>
+      <script src="./teachers translator.js"></script>
+      <script src="./teachers filter.js"></script>
+      <script src="./teacher animations.js"></script>
+      <script src="./loader.js"></script>
 </body>
 
 </html>

@@ -259,6 +259,15 @@ nav {
   }
 }
 
+/* Marquee */
+marquee {
+  height: fit-content;
+  padding: 10px 0;
+  color: #ffffff;
+  background: linear-gradient(to right, #61003000 0%, #610030, #61003000);
+  margin-top: 10px;
+}
+
 /* Principal Section */
 .principal-section {
   padding: 80px 0;
@@ -1107,95 +1116,95 @@ footer {
 /* Mobile View (Google Play Style) */
 @media (max-width: 768px) {
   .slideshow-container {
-      height: auto;
+    height: auto;
   }
 
   .slide {
-      height: auto;
-      min-height: 500px;
-      display: none;
-      flex-direction: column;
+    height: auto;
+    min-height: 500px;
+    display: none;
+    flex-direction: column;
   }
 
   .slide.active {
-      display: flex;
+    display: flex;
   }
 
   .slide-overlay {
-      background: linear-gradient(to bottom, rgba(0, 0, 0, 0.7) 0%, rgba(0, 0, 0, 0.9) 100%);
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.7) 0%, rgba(0, 0, 0, 0.9) 100%);
   }
 
   .slide-content {
-      padding: 20px;
-      justify-content: flex-start;
-      margin-top: 60px;
+    padding: 20px;
+    justify-content: flex-start;
+    margin-top: 60px;
   }
 
   .slide-title {
-      font-size: 2rem;
+    font-size: 2rem;
   }
 
   .slide-subtitle {
-      font-size: 1.3rem;
+    font-size: 1.3rem;
   }
 
   .slide-description {
-      font-size: 1rem;
+    font-size: 1rem;
   }
 
   .detail-item {
-      margin-bottom: 10px;
+    margin-bottom: 10px;
   }
 
   .navigation-buttons {
-      position: relative;
-      bottom: auto;
-      padding: 15px 0;
-      background-color: #000;
+    position: relative;
+    bottom: auto;
+    padding: 15px 0;
+    background-color: #000;
   }
 
   .language-toggle {
-      top: 10px;
-      right: 10px;
+    top: 10px;
+    right: 10px;
   }
 
   .prev-btn,
   .next-btn {
-      width: 40px;
-      height: 40px;
-      font-size: 1.2rem;
+    width: 40px;
+    height: 40px;
+    font-size: 1.2rem;
   }
 
   .countdown-item {
-      min-width: 65px;
-      padding: 10px;
+    min-width: 65px;
+    padding: 10px;
   }
 
   .countdown-number {
-      font-size: 1.5rem;
+    font-size: 1.5rem;
   }
 }
 
 /* Animations */
 @keyframes fadeIn {
   from {
-      opacity: 0;
+    opacity: 0;
   }
 
   to {
-      opacity: 1;
+    opacity: 1;
   }
 }
 
 @keyframes slideUp {
   from {
-      transform: translateY(20px);
-      opacity: 0;
+    transform: translateY(20px);
+    opacity: 0;
   }
 
   to {
-      transform: translateY(0);
-      opacity: 1;
+    transform: translateY(0);
+    opacity: 1;
   }
 }
 
@@ -1229,12 +1238,13 @@ footer {
   gap: 2rem;
 }
 
-.mission-content, .vision-content {
+.mission-content,
+.vision-content {
   flex: 1;
   background-color: white;
   padding: 2rem;
   border-radius: 10px;
-  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 .mission-vision-section h3 {
