@@ -506,6 +506,11 @@ marquee {
 
 .history-text p {
   margin-bottom: 20px;
+  text-align: justify;
+}
+
+#history-excerpt {
+  text-indent: 100px;
 }
 
 .audio-player {
@@ -1260,4 +1265,13 @@ footer {
   .mission-vision-content {
     flex-direction: column;
   }
+}
+
+::selection {
+  color: gold;
+  background: #610030;
+}
+::-moz-selection {
+  color: gold;
+  background: #610030;
 }
