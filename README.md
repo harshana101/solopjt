@@ -2,13 +2,13 @@
 
 ![What's New Banner](./webhero-01.jpg)
 
-## About The Project
+## About The Project ℹ️
 
 "What's New" is a dynamic website dedicated to bringing the latest information, trends, and innovations to our school community. Our aim is to keep everyone informed about what's happening around us and to encourage students to embrace new knowledge and perspectives.
 
 Through this initiative, we hope to inspire curiosity, foster a culture of continuous learning, and prepare students to adapt to our ever-changing world.
 
-## Key Features
+## Key Features 🧩
 
 - **Latest School News**: Stay updated with events, announcements, and important dates
 - **Student Achievements**: Spotlight on academic, sports, and extracurricular accomplishments
@@ -19,7 +19,7 @@ Through this initiative, we hope to inspire curiosity, foster a culture of conti
 - **Media Gallery**: Photos and videos from school events and activities
 - **Mobile-Friendly Design**: Access the site seamlessly from any device
 
-## Technologies Used
+## Technologies Used ⚙️
 
 - **Google** - For analytics and search optimization
 - **GitHub** - Version control and project hosting
@@ -27,13 +27,13 @@ Through this initiative, we hope to inspire curiosity, foster a culture of conti
 - **Chat GPT** - Interactive elements and automated responses
 - **Microsoft Co-Pilot** - Development assistance and code generation
 
-## Access
+## Access 🗝️
 
 The website is publicly accessible. Simply visit [our link](https://harshana101.github.io/solopjt/) to explore all that "What's New" has to offer.
 
 No installation required - just an internet connection and a web browser!
 
-## Usage
+## Usage 🖥️
 
 This platform is designed for:
 
@@ -43,7 +43,7 @@ This platform is designed for:
 - **Administrators**: To communicate important information efficiently
 - **Community Members**: To engage with our school's progress and achievements
 
-## Future Development Plans
+## Future Development Plans 💡
 
 We look forward to expanding "What's New" with:
 
@@ -55,16 +55,20 @@ We look forward to expanding "What's New" with:
 - Interactive learning modules
 - Community contribution system
 
-## License Information
+## License Information 🔐
 
 © WP/Hr/Polegoda.M.V. | Media Unit of Polegoda.M.V. | Kasun Harshana Premalal.
 
 All rights reserved. Unauthorized reproduction or distribution of this content is prohibited.
 
-## Contact
+## Contact ☎️
 
 For questions, suggestions, or collaboration opportunities, please contact [project administrator](https://harshana101.github.io/T.D.K.H.Premalal/).
 
 ---
 
-<p align="center">Made with ❤️ for our school community</p>
+
+<div align="center" >
+<div style="text-decoration:none;">
+  
+# [Launch Now 🚀](https://harshana101.github.io/solopjt/)
