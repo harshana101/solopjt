@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Animated Vesak-Themed Header</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      overflow-x: hidden;
+      font-family: Arial, sans-serif;
+    }
+    
+    .header-container {
+      position: relative;
+      width: 100%;
+      height: 180px;
+      overflow: hidden;
+      background: linear-gradient(90deg, #330033, #660066);
+    }
+    
+    .pattern-background {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      background-image: url('./Vesak\ BG.svg');
+      background-size: cover;
+      opacity: 0.7;
+    }
+    
+    .buddha {
+      position: absolute;
+      left: 20px;
+      bottom: 0;
+      width: 100px;
+      height: 150px;
+      background-image: url('./Lord\ Buddha.svg');
+      background-size: contain;
+      background-repeat: no-repeat;
+      background-position: bottom;
+      animation: glow 4s infinite ease-in-out;
+    }
+    
+    .temple {
+      position: absolute;
+      right: 20px;
+      bottom: 0;
+      width: 120px;
+      height: 120px;
+      background-image: url('./Sthupa.svg');
+      background-size: contain;
+      background-repeat: no-repeat;
+      background-position: bottom;
+      animation: shine 10s infinite linear;
+    }
+    
+    .lantern {
+      position: absolute;
+      background-image: url('./Lantern.svg');
+      background-size: contain;
+      background-repeat: no-repeat;
+      animation: float 10s infinite ease-in-out;
+    }
+    
+    .lantern1 {
+      right: 120px;
+      top: 20px;
+      width: 40px;
+      height: 60px;
+      animation-delay: 0s;
+    }
+    
+    .lantern2 {
+      right: 200px;
+      top: 30px;
+      width: 30px;
+      height: 45px;
+      animation-delay: 2s;
+    }
+    
+    .lantern3 {
+      left: 180px;
+      top: 10px;
+      width: 35px;
+      height: 55px;
+      animation-delay: 1s;
+    }
+    
+    .lantern4 {
+      left: 70px;
+      top: 25px;
+      width: 25px;
+      height: 40px;
+      animation-delay: 3s;
+    }
+    
+    .moon {
+      position: absolute;
+      left: 50%;
+      top: 20px;
+      width: 80px;
+      height: 80px;
+      background-image: url('./Moon.svg');
+      background-size: contain;
+      background-repeat: no-repeat;
+      transform: translateX(-50%);
+      animation: float 8s infinite ease-in-out;
+    }
+    
+    .star {
+      position: absolute;
+      width: 5px;
+      height: 5px;
+      background-color: #FFF9C4;
+      border-radius: 50%;
+      animation: twinkle 4s infinite ease-in-out;
+    }
+    
+    @keyframes float {
+      0%, 100% {
+        transform: translateY(0);
+      }
+      50% {
+        transform: translateY(-15px);
+      }
+    }
+    
+    @keyframes shine {
+      0%, 100% {
+        filter: brightness(1);
+      }
+      50% {
+        filter: brightness(1.3);
+      }
+    }
+    
+    @keyframes glow {
+      0%, 100% {
+        filter: drop-shadow(0 0 3px rgba(255, 215, 0, 0.5));
+      }
+      50% {
+        filter: drop-shadow(0 0 8px rgba(255, 215, 0, 0.8));
+      }
+    }
+    
+    @keyframes twinkle {
+      0%, 100% {
+        opacity: 0.3;
+        transform: scale(1);
+      }
+      50% {
+        opacity: 1;
+        transform: scale(1.5);
+      }
+    }
+    
+    /* Responsive adjustments */
+    @media (max-width: 768px) {
+      .buddha {
+        width: 80px;
+        height: 120px;
+        left: 10px;
+      }
+      
+      .temple {
+        width: 90px;
+        height: 90px;
+        right: 10px;
+      }
+      
+      .lantern {
+        transform: scale(0.8);
+      }
+    }
+    
+    @media (max-width: 480px) {
+      .header-container {
+        height: 120px;
+      }
+      
+      .buddha {
+        width: 60px;
+        height: 90px;
+        left: 5px;
+      }
+      
+      .temple {
+        width: 60px;
+        height: 60px;
+        right: 5px;
+      }
+      
+      .lantern {
+        transform: scale(0.6);
+      }
+    }
+    
+    /* Demo content */
+    .content {
+      padding: 20px;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+  <div class="header-container">
+    <div class="pattern-background"></div>
+    <div class="buddha"></div>
+    <div class="temple"></div>
+    <div class="lantern lantern1"></div>
+    <div class="lantern lantern2"></div>
+    <div class="lantern lantern3"></div>
+    <div class="lantern lantern4"></div>
+    <div class="moon"></div>
+    <div class="moon-shine"></div>
+  </div>
+  
+  <div class="content">
+    <h1>Happy Vesak</h1>
+    <p>May peace and harmony fill your life.</p>
+  </div>
+
+  <script>
+    // Create twinkling stars
+    document.addEventListener('DOMContentLoaded', function() {
+      const headerContainer = document.querySelector('.header-container');
+      
+      // Create stars
+      for (let i = 0; i < 50; i++) {
+        const star = document.createElement('div');
+        star.classList.add('star');
+        
+        // Random position
+        star.style.left = `${Math.random() * 100}%`;
+        star.style.top = `${Math.random() * 100}%`;
+        
+        // Random size
+        const size = Math.random() * 3 + 1;
+        star.style.width = `${size}px`;
+        star.style.height = `${size}px`;
+        
+        // Random animation delay
+        star.style.animationDelay = `${Math.random() * 4}s`;
+        
+        headerContainer.appendChild(star);
+      }
+      
+      // Make lanterns interactive
+      const lanterns = document.querySelectorAll('.lantern');
+      lanterns.forEach(lantern => {
+        // Add slight swing effect on hover
+        lantern.addEventListener('mouseover', function() {
+          this.style.animation = 'none';
+          this.style.transform = 'rotate(5deg)';
+          setTimeout(() => {
+            this.style.transform = 'rotate(-5deg)';
+          }, 300);
+          setTimeout(() => {
+            this.style.transform = '';
+            this.style.animation = '';
+          }, 600);
+        });
+      });
+      
+      // Make Buddha element interactive
+      const buddha = document.querySelector('.buddha');
+      buddha.addEventListener('mouseover', function() {
+        this.style.filter = 'drop-shadow(0 0 15px rgba(255, 215, 0, 1))';
+      });
+      
+      buddha.addEventListener('mouseout', function() {
+        this.style.filter = '';
+      });
+    });
+  </script>
+</body>
+</html>

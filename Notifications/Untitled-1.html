@@ -1,0 +1,74 @@
+<!-- public/admin.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>School Notification Dashboard</title>
+  <link rel="stylesheet" href="css/admin.css">
+</head>
+<body>
+  <div class="container">
+    <h1>School Notification Dashboard</h1>
+    
+    <form id="notification-form">
+      <div class="form-group">
+        <label for="title">Notification Title:</label>
+        <input type="text" id="title" name="title" required>
+      </div>
+      
+      <div class="form-group">
+        <label for="body">Notification Message:</label>
+        <textarea id="body" name="body" required></textarea>
+      </div>
+      
+      <div class="form-group">
+        <label for="url">Link URL (optional):</label>
+        <input type="url" id="url" name="url" placeholder="https://yourschool.edu/event">
+      </div>
+      
+      <fieldset>
+        <legend>Target Audience:</legend>
+        
+        <div class="form-group">
+          <label for="grade">Grade:</label>
+          <select id="grade" name="grade">
+            <option value="all">All Grades</option>
+            <option value="9">Grade 9</option>
+            <option value="10">Grade 10</option>
+            <option value="11">Grade 11</option>
+            <option value="12">Grade 12</option>
+          </select>
+        </div>
+        
+        <div class="form-group">
+          <label for="section">Section:</label>
+          <select id="section" name="section">
+            <option value="all">All Sections</option>
+            <option value="A">Section A</option>
+            <option value="B">Section B</option>
+            <option value="C">Section C</option>
+          </select>
+        </div>
+        
+        <div class="form-group">
+          <label for="userType">User Type:</label>
+          <select id="userType" name="userType">
+            <option value="all">Everyone</option>
+            <option value="student">Students</option>
+            <option value="teacher">Teachers</option>
+            <option value="parent">Parents</option>
+            <option value="staff">Staff</option>
+          </select>
+        </div>
+      </fieldset>
+      
+      <button type="submit" id="send-button">Send Notification</button>
+    </form>
+    
+    <div id="result" class="hidden"></div>
+  </div>
+  
+  <script src="js/admin.js"></script>
+</body>
+</html>

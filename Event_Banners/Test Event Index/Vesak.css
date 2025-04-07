@@ -1,0 +1,401 @@
+    .header-container {
+        width: 100%;
+        height: 150px;
+        position: sticky;
+        overflow: hidden;
+    }
+
+    .header-container::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(90deg, #ffffff00, #ffffff00), url('../Vesak/Vesak\ BG.svg');
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        z-index: -1;
+        background-size: cover;
+        background-position: center;
+        opacity: 1;
+    }
+
+    .logo-text {
+        color: #ffe600;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    }
+
+    nav {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 20px 0;
+        position: absolute;
+        z-index: 2000;
+    }
+
+
+
+    .buddha {
+        position: absolute;
+        left: 20px;
+        bottom: 0;
+        width: 100px;
+        height: 150px;
+        background-image: url('../Vesak/Lord\ Buddha.svg');
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: bottom;
+        animation: glow 4s infinite ease-in-out;
+    }
+
+    .buddha-circle {
+        position: absolute;
+        border-radius: 50%;
+        background: url('../Vesak/B\ Light.svg');
+        animation: pulse 4s infinite ease-in-out;
+        z-index: -1;
+    }
+
+    .circle1 {
+        left: 42.5px;
+        bottom: 55px;
+        width: 50px;
+        height: 50px;
+    }
+
+    .circle2 {
+        left: 35px;
+        bottom: 48px;
+        width: 65px;
+        height: 65px;
+    }
+
+    .temple {
+        position: absolute;
+        right: 15px;
+        bottom: 20px;
+        width: 120px;
+        height: 120px;
+        background-image: url('../Vesak/Sthupa.svg');
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: bottom;
+        animation: shine 10s infinite linear;
+    }
+
+    .rock {
+        position: absolute;
+        right: -75px;
+        bottom: -160px;
+        width: 350px;
+        height: 350px;
+        background-image: url('../Vesak/Rock.svg');
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: bottom;
+    }
+
+    .moon {
+        position: absolute;
+        right: 80px;
+        top: 20px;
+        width: 30px;
+        height: 30px;
+        background-image: url('../Vesak/Moon.svg');
+        background-size: contain;
+        background-repeat: no-repeat;
+        animation: glow 8s infinite ease-in-out;
+    }
+
+    .moon-shine {
+        position: absolute;
+        border-radius: 50%;
+        background: url(../Vesak/Moon.svg);
+        animation: pulse 8s infinite ease-in-out;
+    }
+    
+    .shine1 {
+        right: 75px;
+        top: 15px;
+        width: 40px;
+        height: 40px;
+        opacity: 0.5;
+        z-index: -1;
+    }
+
+    .shine2 {
+        right: 70px;
+        top: 10px;
+        width: 50px;
+        height: 50px;
+        opacity: 0.3;
+        z-index: -1;
+    }
+
+    .lantern {
+        position: absolute;
+        background-image: url('../Vesak/Lantern.svg');
+        background-size: contain;
+        background-repeat: no-repeat;
+        animation: float 10s infinite ease-in-out;
+    }
+
+    .lantern1 {
+        right: 120px;
+        top: 20px;
+        width: 40px;
+        height: 60px;
+        animation-delay: 0s;
+    }
+
+    .lantern2 {
+        right: 200px;
+        top: 30px;
+        width: 30px;
+        height: 45px;
+        animation-delay: 2s;
+    }
+
+    .lantern3 {
+        left: 180px;
+        top: 10px;
+        width: 35px;
+        height: 55px;
+        animation-delay: 1s;
+    }
+
+    .lantern4 {
+        left: 70px;
+        top: 25px;
+        width: 25px;
+        height: 40px;
+        animation-delay: 3s;
+    }
+    
+
+    .star {
+        position: absolute;
+        width: 5px;
+        height: 5px;
+        background-color: #FFF9C4;
+        border-radius: 50%;
+        animation: twinkle 4s infinite ease-in-out;
+        z-index: -1;
+    }
+
+    .fa-bars {
+        color: #FFF9C4;
+        right: 20px;
+        margin-top: 50px;
+
+    }
+
+    .fa-bars:hover {
+        color: #FFEB3B;
+        animation: glow 1s infinite ease-in-out;
+    }
+
+    .fa-bars:active {
+        color: #FFEB3B;
+        animation: pulse 0.5s infinite ease-in-out;
+    }
+
+    .fa-bars:focus {
+        outline: none;
+        box-shadow: 0 0 0 2px #FFEB3B, 0 0 0 4px #FFEB3B;
+        animation: pulse 0.5s infinite ease-in-out;
+    }
+    .fa-bars:focus-visible {
+        outline: 2px solid #FFEB3B;
+        outline-offset: 2px;
+    }
+    .fa-bars::after {
+        content: " ";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        opacity: 0.5;
+        border-radius: 50%;
+        color: #FFEB3B;
+    }
+
+    .mobile-menu {
+        right: 20px;
+        top: 20px;
+    }
+
+    @keyframes float {
+
+        0%,
+        100% {
+            transform: translateY(0);
+        }
+
+        50% {
+            transform: translateY(-15px);
+        }
+    }
+
+    @keyframes shine {
+
+        0%,
+        100% {
+            filter: brightness(1);
+        }
+
+        50% {
+            filter: brightness(1.3);
+        }
+    }
+
+    @keyframes glow {
+
+        0%,
+        100% {
+            filter: drop-shadow(0 0 3px rgba(255, 215, 0, 0.5));
+        }
+
+        50% {
+            filter: drop-shadow(0 0 8px rgba(255, 215, 0, 0.8));
+        }
+    }
+
+    @keyframes pulse {
+
+        0%,
+        100% {
+            opacity: 0.3;
+            transform: scale(1);
+        }
+
+        50% {
+            opacity: 0.7;
+            transform: scale(1.2);
+        }
+    }
+
+    @keyframes twinkle {
+
+        0%,
+        100% {
+            opacity: 0.3;
+            transform: scale(1);
+        }
+
+        50% {
+            opacity: 1;
+            transform: scale(1.5);
+        }
+    }
+
+    /* Responsive adjustments */
+    @media (max-width: 768px) {
+        .buddha {
+            scale: 0.6;
+            height: 120px;
+            left: 6px;
+            bottom: -25px;
+        }
+
+        .circle1 {
+            left: 29.5px;
+            bottom: 25px;
+            scale: 0.7;
+        }
+
+        .circle2 {
+            left: 22.5px;
+            bottom: 18px;
+            scale: 0.7;
+        }
+
+        .temple {
+            width: 60px;
+            height: 60px;
+            right: 10px;
+            bottom: 25px;
+        }
+
+        .rock {
+            scale: 0.7;
+            right: -100px;
+        }
+
+        .moon {
+            width: 30px;
+            height: 30px;
+            right: 60px;
+            top: 20px;
+        }
+
+        .shine1 {
+            width: 40px;
+            height: 40px;
+            right: 55px;
+            top: 15px;
+        }
+
+        .shine2 {
+            width: 50px;
+            height: 50px;
+            right: 50px;
+            top: 10px;
+        }
+
+        .lantern {
+            transform: scale(0.8);
+        }
+    }
+
+    @media (max-width: 480px) {
+        .header-container {
+            height: 120px;
+        }
+
+        .buddha {
+           left: 5px;
+           scale: 0.5;
+        }
+
+        .buddha-circle {
+            left: 25px;
+            bottom: 45px;
+            width: 30px;
+            height: 30px;
+        }
+
+        .temple {
+            scale: 0.5;
+        }
+
+        .rock {
+            scale: 0.5;
+            bottom: -0.5px;
+        }
+
+        .moon {
+            width: 20px;
+            height: 20px;
+            right: 40px;
+        }
+
+        .moon-shine {
+            width: 30px;
+            height: 30px;
+            right: 42px;
+            top: 15px;
+        }
+
+        .lantern {
+            transform: scale(0.6);
+        }
+    }
+
+    /* Demo content */
+    .content {
+        padding: 20px;
+        text-align: center;
+    }

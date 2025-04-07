@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Poson Celebration Banner</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      overflow-x: hidden;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+    
+    .poson-banner {
+      position: relative;
+      width: 100%;
+      height: 250px;
+      overflow: hidden;
+      background: linear-gradient(to bottom, #0d47a1, #1565c0, #42a5f5);
+    }
+    
+    .poson-background {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      background-image: url('./background-01.svg');
+      background-size: contain;
+      background-repeat: no-repeat;
+      background-position: center bottom;
+      opacity: 0.5;
+      z-index: 1;
+    }
+    
+    .mihintale {
+      position: absolute;
+      left: 10%;
+      bottom: 0;
+      width: 150px;
+      height: 140px;
+      background-image: url('./monks_and_rock.svg');
+      background-size: contain;
+      background-repeat: no-repeat;
+      background-position: bottom;
+      z-index: 3;
+      animation: appear 8s infinite alternate;
+    }
+    
+    .mahinda-thero {
+      position: absolute;
+      right: 15%;
+      bottom: 0;
+      width: 100px;
+      height: 160px;
+      background-image: url('./king.svg');
+      background-size: contain;
+      background-repeat: no-repeat;
+      background-position: bottom;
+      z-index: 2;
+      animation: shimmer 10s infinite ease-in-out;
+    }
+    
+    .lantern {
+      position: absolute;
+      width: 50px;
+      height: 70px;
+      background-image: url('https://raw.githubusercontent.com/harshana101/pic4web/main/Poson/lantern.svg');
+      background-size: contain;
+      background-repeat: no-repeat;
+      z-index: 2;
+      animation: sway 4s infinite alternate;
+    }
+    
+    .lantern-left {
+      left: 30%;
+      top: 30px;
+      animation-delay: 0.5s;
+    }
+    
+    .lantern-right {
+      right: 30%;
+      top: 30px;
+      animation-delay: 1s;
+    }
+    
+    .dharmachakra {
+      position: absolute;
+      width: 60px;
+      height: 60px;
+      background-image: url('https://raw.githubusercontent.com/harshana101/pic4web/main/Poson/dhamma%20chakra.svg');
+      background-size: contain;
+      background-repeat: no-repeat;
+      animation: rotate 20s infinite linear;
+      z-index: 3;
+      opacity: 0.8;
+      left: 50%;
+      transform: translateX(-50%);
+      top: 20px;
+    }
+    
+    .full-moon {
+      position: absolute;
+      width: 80px;
+      height: 80px;
+      background-image: url('https://raw.githubusercontent.com/harshana101/pic4web/main/Poson/full%20moon.svg');
+      background-size: contain;
+      background-repeat: no-repeat;
+      z-index: 1;
+      animation: glow 8s infinite alternate;
+      right: 10%;
+      top: 30px;
+    }
+    
+    .butterfly {
+      position: absolute;
+      width: 30px;
+      height: 30px;
+      background-image: url('https://raw.githubusercontent.com/harshana101/pic4web/main/Poson/butterfly.svg');
+      background-size: contain;
+      background-repeat: no-repeat;
+      z-index: 4;
+      animation: flutter 15s infinite;
+    }
+    
+    .butterfly-1 {
+      left: 20%;
+      top: 40%;
+      animation-delay: 0s;
+    }
+    
+    .butterfly-2 {
+      left: 60%;
+      top: 30%;
+      animation-delay: 3s;
+    }
+    
+    .butterfly-3 {
+      right: 25%;
+      top: 50%;
+      animation-delay: 6s;
+    }
+    
+    .firefly {
+      position: absolute;
+      width: 4px;
+      height: 4px;
+      background-color: #ffff99;
+      border-radius: 50%;
+      box-shadow: 0 0 8px 2px rgba(255, 255, 150, 0.8);
+      z-index: 5;
+      animation: flicker 4s infinite alternate;
+    }
+    
+    .bird {
+      position: absolute;
+      width: 40px;
+      height: 30px;
+      background-image: url('https://raw.githubusercontent.com/harshana101/pic4web/main/Poson/bird.svg');
+      background-size: contain;
+      background-repeat: no-repeat;
+      z-index: 2;
+      animation: fly 20s infinite linear;
+    }
+    
+    .bird-1 {
+      top: 50px;
+      animation-delay: 0s;
+    }
+    
+    .bird-2 {
+      top: 70px;
+      animation-delay: 5s;
+      transform: scale(0.8);
+    }
+    
+    .bird-3 {
+      top: 90px;
+      animation-delay: 10s;
+      transform: scale(0.7);
+    }
+    
+    @keyframes appear {
+      0%, 100% {
+        opacity: 0.9;
+      }
+      50% {
+        opacity: 1;
+        filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.5));
+      }
+    }
+    
+    @keyframes shimmer {
+      0%, 100% {
+        filter: brightness(1);
+      }
+      50% {
+        filter: brightness(1.2) drop-shadow(0 0 15px rgba(255, 255, 255, 0.3));
+      }
+    }
+    
+    @keyframes sway {
+      0%, 100% {
+        transform: rotate(-5deg);
+      }
+      50% {
+        transform: rotate(5deg);
+      }
+    }
+    
+    @keyframes rotate {
+      0% {
+        transform: translateX(-50%) rotate(0deg);
+      }
+      100% {
+        transform: translateX(-50%) rotate(360deg);
+      }
+    }
+    
+    @keyframes glow {
+      0%, 100% {
+        opacity: 0.7;
+        filter: brightness(1);
+      }
+      50% {
+        opacity: 1;
+        filter: brightness(1.3) drop-shadow(0 0 20px rgba(255, 255, 255, 0.5));
+      }
+    }
+    
+    @keyframes flutter {
+      0% {
+        transform: translate(0, 0) rotate(0deg) scale(1);
+      }
+      25% {
+        transform: translate(50px, -30px) rotate(10deg) scale(0.9);
+      }
+      50% {
+        transform: translate(100px, 0) rotate(-5deg) scale(1.1);
+      }
+      75% {
+        transform: translate(50px, 30px) rotate(15deg) scale(0.9);
+      }
+      100% {
+        transform: translate(0, 0) rotate(0deg) scale(1);
+      }
+    }
+    
+    @keyframes flicker {
+      0%, 100% {
+        opacity: 0.2;
+        transform: scale(0.8);
+      }
+      50% {
+        opacity: 1;
+        transform: scale(1.2);
+      }
+    }
+    
+    @keyframes fly {
+      0% {
+        left: -40px;
+        transform: translateY(0);
+      }
+      25% {
+        transform: translateY(-10px);
+      }
+      50% {
+        transform: translateY(0);
+      }
+      75% {
+        transform: translateY(10px);
+      }
+      100% {
+        left: calc(100% + 40px);
+        transform: translateY(0);
+      }
+    }
+    
+    /* Responsive adjustments */
+    @media (max-width: 768px) {
+      .mihintale {
+        width: 100px;
+        height: 100px;
+      }
+      
+      .mahinda-thero {
+        width: 80px;
+        height: 130px;
+      }
+      
+      .lantern {
+        width: 40px;
+        height: 60px;
+      }
+      
+      .dharmachakra {
+        width: 50px;
+        height: 50px;
+      }
+      
+      .full-moon {
+        width: 60px;
+        height: 60px;
+      }
+      
+      .butterfly {
+        width: 25px;
+        height: 25px;
+      }
+    }
+    
+    @media (max-width: 480px) {
+      .poson-banner {
+        height: 180px;
+      }
+      
+      .mihintale {
+        width: 70px;
+        height: 70px;
+      }
+      
+      .mahinda-thero {
+        width: 60px;
+        height: 100px;
+      }
+      
+      .lantern {
+        width: 30px;
+        height: 45px;
+      }
+      
+      .dharmachakra {
+        width: 40px;
+        height: 40px;
+      }
+      
+      .full-moon {
+        width: 50px;
+        height: 50px;
+      }
+      
+      .butterfly {
+        width: 20px;
+        height: 20px;
+      }
+      
+      .bird {
+        width: 30px;
+        height: 20px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="poson-banner">
+    <div class="poson-background"></div>
+    <div class="mihintale"></div>
+    <div class="mahinda-thero"></div>
+    <div class="dharmachakra"></div>
+    <div class="full-moon"></div>
+    
+    <div class="lantern lantern-left"></div>
+    <div class="lantern lantern-right"></div>
+    
+    <div class="butterfly butterfly-1"></div>
+    <div class="butterfly butterfly-2"></div>
+    <div class="butterfly butterfly-3"></div>
+    
+    <div class="bird bird-1"></div>
+    <div class="bird bird-2"></div>
+    <div class="bird bird-3"></div>
+    
+    <!-- Fireflies will be added dynamically -->
+  </div>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const banner = document.querySelector('.poson-banner');
+      const bannerWidth = banner.offsetWidth;
+      const bannerHeight = banner.offsetHeight;
+      
+      // Create fireflies
+      const firefliesCount = 20;
+      for (let i = 0; i < firefliesCount; i++) {
+        const firefly = document.createElement('div');
+        firefly.className = 'firefly';
+        
+        // Random position
+        const randomX = Math.floor(Math.random() * bannerWidth);
+        const randomY = Math.floor(Math.random() * bannerHeight);
+        firefly.style.left = randomX + 'px';
+        firefly.style.top = randomY + 'px';
+        
+        // Random animation delay
+        const randomDelay = Math.random() * 5;
+        firefly.style.animationDelay = randomDelay + 's';
+        
+        // Random size
+        const randomSize = Math.random() * 2 + 2;
+        firefly.style.width = randomSize + 'px';
+        firefly.style.height = randomSize + 'px';
+        
+        banner.appendChild(firefly);
+      }
+      
+      // Birds flying across screen
+      const birds = document.querySelectorAll('.bird');
+      birds.forEach(bird => {
+        bird.style.animationDuration = (15 + Math.random() * 10) + 's';
+      });
+      
+      // Interactive elements
+      const dharmachakra = document.querySelector('.dharmachakra');
+      dharmachakra.addEventListener('mouseover', function() {
+        this.style.animationDuration = '5s';
+      });
+      
+      dharmachakra.addEventListener('mouseout', function() {
+        this.style.animationDuration = '20s';
+      });
+      
+      const fullMoon = document.querySelector('.full-moon');
+      fullMoon.addEventListener('mouseover', function() {
+        this.style.filter = 'brightness(1.5) drop-shadow(0 0 25px rgba(255, 255, 255, 0.8))';
+      });
+      
+      fullMoon.addEventListener('mouseout', function() {
+        this.style.filter = '';
+      });
+    });
+  </script>
+</body>
+</html>

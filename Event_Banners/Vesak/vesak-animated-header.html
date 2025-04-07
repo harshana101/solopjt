@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Animated Vesak-Themed Header</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      overflow-x: hidden;
+      font-family: Arial, sans-serif;
+    }
+    
+    .header-container {
+      position: relative;
+      width: 100%;
+      height: 180px;
+      overflow: hidden;
+      background: linear-gradient(90deg, #33055f, #530d84);
+    }
+    
+    .pattern-background {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      background-size: cover;
+      opacity: 0.3;
+    }
+    
+    .buddha {
+      position: absolute;
+      left: 20px;
+      bottom: 0;
+      width: 150px;
+      height: 150px;
+      background-size: contain;
+      background-repeat: no-repeat;
+      animation: glow 4s infinite ease-in-out;
+    }
+    
+    .moon {
+      position: absolute;
+      right: 50px;
+      top: 30px;
+      width: 40px;
+      height: 40px;
+      background-color: #ffcc66;
+      border-radius: 50%;
+      box-shadow: 0 0 20px rgba(255, 204, 102, 0.7);
+      animation: pulse 10s infinite ease-in-out;
+    }
+    
+    .lantern {
+      position: absolute;
+      background-size: contain;
+      background-repeat: no-repeat;
+      animation: float 15s infinite ease-in-out;
+    }
+    
+    .lantern1 {
+      right: 120px;
+      top: 20px;
+      width: 40px;
+      height: 60px;
+      animation-delay: 0s;
+    }
+    
+    .lantern2 {
+      right: 40px;
+      top: 90px;
+      width: 30px;
+      height: 45px;
+      animation-delay: 2s;
+    }
+    
+    .lantern3 {
+      left: 180px;
+      top: 30px;
+      width: 35px;
+      height: 52px;
+      animation-delay: 1s;
+    }
+    
+    .lantern4 {
+      left: 70px;
+      top: 100px;
+      width: 25px;
+      height: 38px;
+      animation-delay: 3s;
+    }
+
+    .lantern5 {
+      right: 200px;
+      top: 50px;
+      width: 45px;
+      height: 68px;
+      animation-delay: 4.5s;
+    }
+
+    .stupa {
+      position: absolute;
+      right: 20px;
+      bottom: 0;
+      width: 120px;
+      height: 120px;
+      background-size: contain;
+      background-repeat: no-repeat;
+      animation: shine 8s infinite ease-in-out;
+    }
+    
+    .stars {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+    }
+    
+    .star {
+      position: absolute;
+      background-color: #fff;
+      border-radius: 50%;
+      animation: twinkle 3s infinite alternate;
+    }
+    
+    @keyframes float {
+      0%, 100% {
+        transform: translateY(0);
+      }
+      50% {
+        transform: translateY(-15px);
+      }
+    }
+    
+    @keyframes pulse {
+      0%, 100% {
+        box-shadow: 0 0 20px rgba(255, 204, 102, 0.7);
+      }
+      50% {
+        box-shadow: 0 0 30px rgba(255, 204, 102, 1);
+      }
+    }
+    
+    @keyframes glow {
+      0%, 100% {
+        filter: brightness(1);
+      }
+      50% {
+        filter: brightness(1.2);
+      }
+    }
+    
+    @keyframes shine {
+      0%, 100% {
+        filter: brightness(1);
+      }
+      50% {
+        filter: brightness(1.3);
+      }
+    }
+    
+    @keyframes twinkle {
+      0% {
+        opacity: 0.3;
+      }
+      100% {
+        opacity: 1;
+      }
+    }
+    
+    /* Responsive adjustments */
+    @media (max-width: 768px) {
+      .buddha {
+        width: 100px;
+        height: 100px;
+        left: 10px;
+      }
+      
+      .moon {
+        width: 30px;
+        height: 30px;
+        right: 30px;
+      }
+      
+      .lantern {
+        transform: scale(0.7);
+      }
+      
+      .stupa {
+        width: 80px;
+        height: 80px;
+      }
+    }
+    
+    @media (max-width: 480px) {
+      .header-container {
+        height: 120px;
+      }
+      
+      .buddha {
+        width: 80px;
+        height: 80px;
+        left: 5px;
+      }
+      
+      .moon {
+        width: 20px;
+        height: 20px;
+        right: 20px;
+      }
+      
+      .lantern {
+        transform: scale(0.5);
+      }
+      
+      .stupa {
+        width: 60px;
+        height: 60px;
+      }
+    }
+    
+    /* Demo navbar */
+    .navbar {
+      background-color: white;
+      padding: 15px 0;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+    
+    .logo-container {
+      display: flex;
+      align-items: center;
+      margin-left: 20px;
+    }
+    
+    .logo {
+      width: 50px;
+      height: 50px;
+      margin-right: 10px;
+    }
+    
+    .school-name {
+      color: #8b0000;
+      font-size: 18px;
+      font-weight: bold;
+    }
+    
+    .school-tagline {
+      color: #666;
+      font-size: 14px;
+      font-style: italic;
+    }
+    
+    .nav-links {
+      display: flex;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+    
+    .nav-links li {
+      margin: 0 15px;
+    }
+    
+    .nav-links a {
+      text-decoration: none;
+      color: #333;
+      font-weight: 500;
+      transition: color 0.3s;
+    }
+    
+    .nav-links a:hover {
+      color: #8b0000;
+    }
+    
+    .language-selector {
+      margin-right: 20px;
+      color: #8b0000;
+      font-weight: bold;
+    }
+    
+    @media (max-width: 768px) {
+      .nav-links {
+        display: none;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="header-container">
+    <div class="pattern-background"></div>
+    <div class="stars" id="stars"></div>
+    <div class="buddha">
+      <svg viewBox="0 0 100 100" xmlns="D:\Scl Project solo\New\Event Banners\Vesak\Lord Buddha.svg">
+        <circle cx="50" cy="40" r="30" fill="#fff" opacity="0.2"></circle>
+        <path d="M50 10 Q50 30 50 50 Q35 70 50 90 Q65 70 50 50" fill="#FFA500"></path>
+      </svg>
+    </div>
+    <div class="stupa">
+      <svg viewBox="0 0 100 100" xmlns="">
+        <path d="M50 0 Q30 40 30 60 L70 60 Q70 40 50 0" fill="#FFA500"></path>
+        <rect x="25" y="60" width="50" height="10" fill="#FFA500"></rect>
+        <rect x="30" y="70" width="40" height="10" fill="#FFA500"></rect>
+        <rect x="35" y="80" width="30" height="20" fill="#FFA500"></rect>
+      </svg>
+    </div>
+    <div class="moon"></div>
+    <div class="lantern lantern1">
+      <svg viewBox="0 0 100 150" xmlns="http://www.w3.org/2000/svg">
+        <path d="M50 30 L50 10 L45 5 L55 5 L50 10" fill="#FFA500"></path>
+        <path d="M30 30 Q50 10 70 30 Q70 60 50 70 Q30 60 30 30" fill="#FFA500"></path>
+        <path d="M45 70 L40 90 L60 90 L55 70" fill="#FF4500"></path>
+        <line x1="40" y1="90" x2="60" y2="90" stroke="#FF4500" stroke-width="2"></line>
+        <line x1="45" y1="100" x2="55" y2="100" stroke="#FF4500" stroke-width="1"></line>
+        <line x1="48" y1="110" x2="52" y2="110" stroke="#FF4500" stroke-width="1"></line>
+      </svg>
+    </div>
+    <div class="lantern lantern2">
+      <svg viewBox="0 0 100 150" xmlns="http://www.w3.org/2000/svg">
+        <path d="M50 30 L50 10 L45 5 L55 5 L50 10" fill="#FFA500"></path>
+        <path d="M30 30 Q50 10 70 30 Q70 60 50 70 Q30 60 30 30" fill="#FFA500"></path>
+        <path d="M45 70 L40 90 L60 90 L55 70" fill="#FF4500"></path>
+        <line x1="40" y1="90" x2="60" y2="90" stroke="#FF4500" stroke-width="2"></line>
+        <line x1="45" y1="100" x2="55" y2="100" stroke="#FF4500" stroke-width="1"></line>
+        <line x1="48" y1="110" x2="52" y2="110" stroke="#FF4500" stroke-width="1"></line>
+      </svg>
+    </div>
+    <div class="lantern lantern3">
+      <svg viewBox="0 0 100 150" xmlns="http://www.w3.org/2000/svg">
+        <path d="M50 30 L50 10 L45 5 L55 5 L50 10" fill="#FFA500"></path>
+        <path d="M30 30 Q50 10 70 30 Q70 60 50 70 Q30 60 30 30" fill="#FFA500"></path>
+        <path d="M45 70 L40 90 L60 90 L55 70" fill="#FF4500"></path>
+        <line x1="40" y1="90" x2="60" y2="90" stroke="#FF4500" stroke-width="2"></line>
+        <line x1="45" y1="100" x2="55" y2="100" stroke="#FF4500" stroke-width="1"></line>
+        <line x1="48" y1="110" x2="52" y2="110" stroke="#FF4500" stroke-width="1"></line>
+      </svg>
+    </div>
+    <div class="lantern lantern4">
+      <svg viewBox="0 0 100 150" xmlns="http://www.w3.org/2000/svg">
+        <path d="M50 30 L50 10 L45 5 L55 5 L50 10" fill="#FFA500"></path>
+        <path d="M30 30 Q50 10 70 30 Q70 60 50 70 Q30 60 30 30" fill="#FFA500"></path>
+        <path d="M45 70 L40 90 L60 90 L55 70" fill="#FF4500"></path>
+        <line x1="40" y1="90" x2="60" y2="90" stroke="#FF4500" stroke-width="2"></line>
+        <line x1="45" y1="100" x2="55" y2="100" stroke="#FF4500" stroke-width="1"></line>
+        <line x1="48" y1="110" x2="52" y2="110" stroke="#FF4500" stroke-width="1"></line>
+      </svg>
+    </div>
+    <div class="lantern lantern5">
+      <svg viewBox="0 0 100 150" xmlns="http://www.w3.org/2000/svg">
+        <path d="M50 30 L50 10 L45 5 L55 5 L50 10" fill="#FFA500"></path>
+        <path d="M30 30 Q50 10 70 30 Q70 60 50 70 Q30 60 30 30" fill="#FFA500"></path>
+        <path d="M45 70 L40 90 L60 90 L55 70" fill="#FF4500"></path>
+        <line x1="40" y1="90" x2="60" y2="90" stroke="#FF4500" stroke-width="2"></line>
+        <line x1="45" y1="100" x2="55" y2="100" stroke="#FF4500" stroke-width="1"></line>
+        <line x1="48" y1="110" x2="52" y2="110" stroke="#FF4500" stroke-width="1"></line>
+      </svg>
+    </div>
+  </div>
+  
+  <!-- Navbar (from your screenshot) -->
+  <div class="navbar">
+    <div class="logo-container">
+      <img src="/api/placeholder/50/50" alt="School Logo" class="logo" />
+      <div>
+        <div class="school-name">WP/ Hr/ Polegoda M. V.</div>
+        <div class="school-tagline">Vidya Dadathi Vinayan</div>
+      </div>
+    </div>
+    
+    <ul class="nav-links">
+      <li><a href="#">Home</a></li>
+      <li><a href="#">Mission & Vision</a></li>
+      <li><a href="#">Principal</a></li>
+      <li><a href="#">Teachers</a></li>
+      <li><a href="#">History</a></li>
+      <li><a href="#">Programs</a></li>
+      <li><a href="#">Office Hours</a></li>
+      <li><a href="#">Contact</a></li>
+    </ul>
+    
+    <div class="language-selector">EN</div>
+  </div>
+
+  <script>
+    // Create stars dynamically
+    function createStars() {
+      const starsContainer = document.getElementById('stars');
+      starsContainer.innerHTML = ''; // Clear existing stars
+      const starCount = Math.floor(window.innerWidth / 10); // Responsive star count
+      
+      for (let i = 0; i < starCount; i++) {
+        const star = document.createElement('div');
+        star.className = 'star';
+        
+        // Random position
+        const top = Math.random() * 100;
+        const left = Math.random() * 100;
+        
+        // Random size
+        const size = Math.random() * 2 + 1;
+        
+        // Random twinkle delay
+        const delay = Math.random() * 3;
+        
+        star.style.top = `${top}%`;
+        star.style.left = `${left}%`;
+        star.style.width = `${size}px`;
+        star.style.height = `${size}px`;
+        star.style.animationDelay = `${delay}s`;
+        
+        starsContainer.appendChild(star);
+      }
+    }
+    
+    // Initialize stars
+    document.addEventListener('DOMContentLoaded', function() {
+      createStars();
+      
+      // Make lanterns interactive
+      const lanterns = document.querySelectorAll('.lantern');
+      
+      lanterns.forEach(lantern => {
+        // Randomize initial positions slightly
+        const randomOffset = Math.random() * 10;
+        lantern.style.transform = `translateY(${randomOffset}px)`;
+        
+        // Add slight random movement on hover
+        lantern.addEventListener('mouseover', function() {
+          const randomX = Math.random() * 10 - 5;
+          this.style.transform = `translateY(${randomOffset}px) translateX(${randomX}px) scale(1.1)`;
+        });
+        
+        lantern.addEventListener('mouseout', function() {
+          this.style.transform = `translateY(${randomOffset}px)`;
+        });
+      });
+      
+      // Make buddha interactive
+      const buddha = document.querySelector('.buddha');
+      buddha.addEventListener('mouseover', function() {
+        this.style.filter = 'brightness(1.5)';
+      });
+      
+      buddha.addEventListener('mouseout', function() {
+        this.style.filter = '';
+      });
+    });
+    
+    // Recreate stars on resize
+    let resizeTimeout;
+    window.addEventListener('resize', () => {
+      clearTimeout(resizeTimeout);
+      resizeTimeout = setTimeout(createStars, 300);
+    });
+  </script>
+</body>
+</html>

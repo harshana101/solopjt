@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            background-color: #87CEEB; /* Light blue background */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        svg {
+            width: 100px; /* Set the size of the SVG */
+            height: 100px; /* Set the size of the SVG */
+        }
+        img {
+            position: absolute;
+        }
+        .sun {
+            top: 10px;
+            left: 10px;
+        }
+        .cloud {
+            top: 20px;
+            left: 30px;
+        }
+        .cloud2 {
+            top: 40px;
+            left: 50px;
+        }
+        .bird {
+            top: 60px;
+            left: 70px;
+        }
+        /* Add animation to the bird image */
+        .bird {
+            animation: fly 5s linear infinite;
+        }
+        @keyframes fly {
+            0% { transform: translateY(0); }
+            50% { transform: translateY(-20px); }
+            100% { transform: translateY(0); }
+        }
+        /* Add animation to the sun image */
+        .sun {
+            animation: rotate 10s linear infinite;
+        }
+        @keyframes rotate {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        /* Add animation to the clouds */
+        .cloud, .cloud2 {
+            animation: float 5s ease-in-out infinite;
+        }
+        @keyframes float {
+            0% { transform: translateX(0); }
+            50% { transform: translateX(20px); }
+            100% { transform: translateX(0); }
+        }
+        /* Add animation to the clouds */
+        .cloud2 {
+            animation-delay: 2.5s; /* Delay for the second cloud */
+        }
+        @keyframes float2 {
+            0% { transform: translateX(0); }
+            50% { transform: translateX(-20px); }
+            100% { transform: translateX(0); }
+        }
+        .cloud2 {
+            animation: float2 5s ease-in-out infinite;
+        }
+        /* Add animation to the clouds */
+        .cloud {
+            animation: float 5s ease-in-out infinite;
+        }
+        @keyframes float {
+            0% { transform: translateX(0); }
+            50% { transform: translateX(20px); }
+            100% { transform: translateX(0); }
+        }
+        .cloud2 {
+            animation-delay: 2.5s; /* Delay for the second cloud */
+        }
+        @keyframes float2 {
+            0% { transform: translateX(0); }
+            50% { transform: translateX(-20px); }
+            100% { transform: translateX(0); }
+        }
+        </style>
+</head>
+<body>
+    <svg width="100" height="100" xmlns="http://www.w3.org/2000/svg">
+        <img class="sun" src="./Sun-01.svg" alt="Sun">
+        <img class="cloud" src="./cloud 1-01.svg" alt="Cloud 1">
+        <img class="cloud2" src="./cloud 2-01.svg" alt="Cloud 2">
+        <img class="bird" src="./Bird-01.svg" alt="Bird">
+    </svg>
+</body>
+</html>

@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    .vesak-header-container {
+      position: relative;
+      width: 100%;
+      height: 300px;
+      overflow: hidden;
+      background: linear-gradient(to bottom, #1a0033 0%, #330066 70%, #660066 100%);
+    }
+    
+    .stars-container {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      z-index: 1;
+    }
+    
+    .lanterns-container {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      z-index: 2;
+    }
+    
+    .static-elements {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      z-index: 3;
+    }
+    
+    .star {
+      position: absolute;
+      background-color: #fff;
+      border-radius: 50%;
+      opacity: 0;
+      animation: twinkle 3s infinite;
+    }
+    
+    .lantern {
+      position: absolute;
+      width: 40px;
+      height: 60px;
+      animation: float 6s infinite ease-in-out;
+    }
+    
+    .lantern img {
+      width: 100%;
+      height: 100%;
+      filter: drop-shadow(0 0 5px rgba(255, 200, 50, 0.7));
+      animation: glow 4s infinite ease-in-out;
+    }
+    
+    @keyframes twinkle {
+      0% { opacity: 0.1; }
+      50% { opacity: 1; }
+      100% { opacity: 0.1; }
+    }
+    
+    @keyframes float {
+      0% { transform: translateY(0); }
+      50% { transform: translateY(-15px); }
+      100% { transform: translateY(0); }
+    }
+    
+    @keyframes glow {
+      0% { filter: drop-shadow(0 0 5px rgba(255, 200, 50, 0.5)); }
+      50% { filter: drop-shadow(0 0 10px rgba(255, 200, 50, 0.8)); }
+      100% { filter: drop-shadow(0 0 5px rgba(255, 200, 50, 0.5)); }
+    }
+    
+    #buddha {
+      position: absolute;
+      bottom: 0;
+      left: 5%;
+      height: 70%;
+      z-index: 4;
+    }
+    
+    #stupa {
+      position: absolute;
+      bottom: 0;
+      right: 5%;
+      height: 60%;
+      z-index: 4;
+    }
+    
+    #moon {
+      position: absolute;
+      top: 15%;
+      right: 15%;
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      background: radial-gradient(circle, #ffffa0 30%, #ffcc66 100%);
+      box-shadow: 0 0 20px #ffcc66;
+      z-index: 2;
+    }
+    
+    .lotus {
+      position: absolute;
+      bottom: 10px;
+      width: 30px;
+      height: 30px;
+      z-index: 3;
+      animation: sway 8s infinite ease-in-out;
+    }
+    
+    @keyframes sway {
+      0% { transform: rotate(-5deg); }
+      50% { transform: rotate(5deg); }
+      100% { transform: rotate(-5deg); }
+    }
+  </style>
+</head>
+<body>
+  <div class="vesak-header-container">
+    <!-- Stars -->
+    <div class="stars-container" id="stars"></div>
+    
+    <!-- Lanterns -->
+    <div class="lanterns-container" id="lanterns"></div>
+    
+    <!-- Moon -->
+    <div id="moon"></div>
+    
+    <!-- Buddha, Stupa (Static Elements) -->
+    <div class="static-elements">
+      <img id="buddha" src="./Lord Buddha.svg" alt="Buddha" />
+      <img id="stupa" src="./Sthupa.svg" alt="Stupa" />
+    </div>
+    
+    <!-- Lotus Flowers -->
+    <div id="lotus-container"></div>
+  </div>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      // Create stars
+      const starsContainer = document.getElementById('stars');
+      for (let i = 0; i < 50; i++) {
+        const star = document.createElement('div');
+        star.className = 'star';
+        star.style.width = Math.random() * 2 + 1 + 'px';
+        star.style.height = star.style.width;
+        star.style.left = Math.random() * 100 + '%';
+        star.style.top = Math.random() * 100 + '%';
+        star.style.animationDelay = Math.random() * 3 + 's';
+        starsContainer.appendChild(star);
+      }
+      
+      // Create lanterns
+      const lanternsContainer = document.getElementById('lanterns');
+      const lanternPositions = [
+        { left: '15%', top: '20%' },
+        { left: '25%', top: '10%' },
+        { left: '40%', top: '15%' },
+        { left: '60%', top: '10%' },
+        { left: '75%', top: '20%' },
+        { left: '85%', top: '15%' }
+      ];
+      
+      lanternPositions.forEach((position, index) => {
+        const lantern = document.createElement('div');
+        lantern.className = 'lantern';
+        lantern.style.left = position.left;
+        lantern.style.top = position.top;
+        lantern.style.animationDelay = (index * 0.5) + 's';
+        
+        const lanternImg = document.createElement('img');
+        lanternImg.src = './lantern.svg'; // Replace with your lantern image URL
+        lanternImg.alt = 'Vesak lantern';
+        lanternImg.style.animationDelay = (index * 0.5) + 's';
+        
+        lantern.appendChild(lanternImg);
+        lanternsContainer.appendChild(lantern);
+      });
+      
+      // Create lotus flowers
+      const lotusContainer = document.getElementById('lotus-container');
+      const lotusCount = 8;
+      
+      for (let i = 0; i < lotusCount; i++) {
+        const lotus = document.createElement('img');
+        lotus.className = 'lotus';
+        lotus.src = 'https://raw.githubusercontent.com/harshana101/pic4web/main/Vesak/lotus.svg';
+        lotus.alt = 'Lotus flower';
+        lotus.style.left = (i * (100 / lotusCount)) + '%';
+        lotus.style.animationDelay = (i * 0.5) + 's';
+        lotusContainer.appendChild(lotus);
+      }
+    });
+  </script>
+</body>
+</html>

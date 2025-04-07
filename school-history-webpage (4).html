@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Riverside High School History</title>
+    <style>
+        :root {
+            --primary-color: #610030;
+            --secondary-color: #b10059;
+            --bg-light: #f4f6f7;
+            --text-dark: #333;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes shimmer {
+            0% { background-position: -1000px 0; }
+            100% { background-position: 1000px 0; }
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            background-color: var(--bg-light);
+            color: var(--text-dark);
+            scroll-behavior: smooth;
+            overflow-x: hidden;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 150px;
+        }
+
+        .language-toggle {
+            position: sticky;
+            top: 0;
+            width: 100%;
+            display: flex;
+            justify-content: flex-end;
+            padding: 10px 15px;
+            background-color: #fffffff1;
+            z-index: 1000;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            margin-bottom: 50px;
+            border-bottom: 2px solid var(--primary-color);
+        }
+
+        .language-toggle button {
+            background-color: transparent;
+            color: var(--primary-color);
+            border: 1px solid white;
+            padding: 8px 15px;
+            margin-left: 10px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-weight: 600;
+            border-radius: 4px;
+        }
+
+        .language-toggle button:hover {
+            background-color: rgba(255,255,255,0.2);
+        }
+
+        .language-toggle button.active {
+            background-color: white;
+            color: var(--primary-color);
+        }
+
+        header {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            text-align: center;
+            padding: 100px 15px 50px;
+            margin-top: 150px;
+            overflow: hidden;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            position: relative;
+            border-radius: 10px 10px 0 0;
+        }
+
+        header h1 {
+            position: relative;
+            font-size: 2.5rem;
+            font-weight: 700;
+            animation: fadeIn 1s ease-out;
+        }
+
+        .section {
+            background-color: white;
+            padding: 50px 0;
+            margin-bottom: 30px;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+            border-radius: 10px;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.6s ease;
+            text-align: center;
+        }
+
+        .section.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .section h2 {
+            text-align: center;
+            margin-bottom: 30px;
+            color: var(--primary-color);
+            font-size: 2rem;
+            position: relative;
+            display: inline-block;
+        }
+
+        .section h2::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            width: 50px;
+            height: 4px;
+            background-color: var(--secondary-color);
+            transform: translateX(-50%);
+        }
+
+        .section-content {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: justify;
+        }
+
+        .section-content para {
+            text-indent: 50px;
+            display: block;
+            margin-bottom: 15px;
+            line-height: 1.8;
+            color: #555;
+            animation: fadeIn 1s ease-out;
+        }
+
+        .principal {
+            display: flex;
+            align-items: center;
+            background-color: var(--bg-light);
+            margin-bottom: 20px;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+        }
+
+        .principal:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+        }
+
+        .principal img {
+            width: 120px;
+            height: 120px;
+            object-fit: cover;
+            border-radius: 50%;
+            margin-right: 25px;
+            border: 4px solid var(--secondary-color);
+            transition: transform 0.3s ease;
+        }
+
+        .principal:hover img {
+            transform: scale(1.05);
+        }
+
+        .principal-info {
+            flex-grow: 1;
+        }
+
+        .principal-info h3 {
+            margin-bottom: 10px;
+            color: var(--primary-color);
+            font-size: 1.3rem;
+        }
+
+        a {
+            text-decoration: underline;
+            color: var(--text-dark);
+        }
+
+        @media (max-width: 768px) {
+            .principal {
+                flex-direction: column;
+                text-align: center;
+                align-items: center;
+            }
+            .principal img {
+                margin-right: 0;
+                margin-bottom: 15px;
+            }
+            header {
+                padding: 80px 15px 40px;
+            }
+            header h1 {
+                font-size: 2rem;
+            }
+            .section {
+                padding: 30px 15px;
+            }
+            .section h2 {
+                font-size: 1.8rem;
+            }
+            .section-content {
+                padding: 0 15px;
+            }
+            .section-content para {
+                text-indent: 0;
+            }
+            .language-toggle {
+                padding: 10px 5px;
+            }
+            .language-toggle button {
+                padding: 5px 10px;
+                font-size: 0.9rem;
+            }
+            .language-toggle button.active {
+                padding: 5px 10px;
+            }
+            .language-toggle button:hover {
+                padding: 5px 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="language-toggle">
+        <button onclick="changeLanguage('en')" class="active" id="en-btn">English</button>
+        <button onclick="changeLanguage('si')" id="si-btn">සිංහල</button>
+    </div>
+
+    <header class="container">
+        <h1 id="page-title">Riverside High School History</h1>
+    </header>
+
+    <section class="section container history-section">
+        <h2 id="history-title">Our School's History</h2>
+        <div class="section-content">
+            <para id="history-para-1">
+                According to the existing records of Polegoda Maha Vidyalaya, this school was started in 1926. At the
+                beginning, it consisted of eight students and three teachers and the initial principal was <a href="#">Mr. P. C. M.
+                Kularatne</a>. The initial student was Mr. Somapala Kularatne, his son. The book states that the school was
+                initially located in a house in the Kurunduwatte area and was brought to the current school site in 1929.
+                The land where the school is located was a public land where Shanthi Karma Gammadu etc. were held at
+                that time and it was later given for the construction of the school. Old records state that in 1929, a
+                Sanghagatha Dakshina was started at the current Polegoda Maha Vidyalaya location for a hundred people and
+                then the school was started. Initially, three coconut frond sheds were used for teaching.
+                <br><br>
+                Mr. Kularatne has served as the principal here for a long time. The first permanent building built here is
+                the building that currently houses the media unit and the new classroom (Mahasen Hall). The main hall was
+                built in 1972 and the other halls were built gradually in various years.
+                <br><br>
+                Among the principals who served in our school after Mr. Kularatne was a principal named Gunasena. By the
+                60s, this school received a teachers' residence and the <strong>Golden Era of Our School</strong> is
+                considered to be the service period of Principal Abeywardena. During that period, the school's
+                playground was prepared. Also, several buildings including the old laboratory and the home laboratory were
+                constructed. It is said that a Venerable Chandaloka served as the deputy principal of this school.
+                During that time, many buildings were constructed, fairs were held and films were screened.
+                <br><br>
+                It is said that former Prime Minister S. W. R. D. Bandaranaike visited this school in 1952. Initially, this
+                school was known as the South Mahagama Sucharithawardhana Swabhasha Mixed School. It was a special event
+                that a student from Polegoda Maha Vidyalaya was elected to the university for the first time in the 60s. At
+                that time, the Advanced Level classes were half-full and the Advanced Level classes started again in the
+                late 70s. Six other students entered the university at the same time in the late 70s. After Teacher
+                Abhayawardhana left this school for another School, Principal Ranatunga and then Principal Weerakoon served
+                as acting principals. During that time, Mr. Amarasena also served as a principal. In 1984, our college
+                showed an all-Ceylon level skill in throwing the hoop.
+                <br><br>
+                Anuradha Samaradiwakara served as the principal of this school from 1986 to 1996. The Buddha Hall of our
+                school was built with the patronage of Mr. Calbin and the library building was built with the patronage of
+                Mr. Piyasena. It is said that Mr. Ronnie de Mal, who was the Minister of Finance at that time, attended
+                the opening of the library building. After Samaradiwakara, Mr. Piyasena Jayananda served as the principal
+                for a while and then Principal Piyasoma also served here. After him, Principal Hemadasa passed away while
+                serving in this school.
+                <br><br>
+                Later, Principal Gunasekara served as the acting principal and then Mrs. Siriyawathi served as the acting
+                principal. Principal Jayasiri joined this school and served in this school until almost 2012. During that
+                time, the school became a secondary school and the primary school was removed. The school also got the
+                Mahindodaya Laboratory during that time.
+                <br><br>
+                From 2012, K. D. Jayapala Principal served as the principal of this school until 2018. During that time, our
+                school was also selected for the Best School Nearest School project. Several buildings were renovated with
+                the removal of the entrance hall and roofing sheets. The school received two new teachers' houses and the
+                old teachers' house was also renovated.
+                <br><br>
+                Principal Saman Rohana Karunaratne served as the principal of this school from 2018 to 2024. Several
+                buildings were renovated during that time. In 2019, ten students from this school enrolled in the
+                university.
+                <br><br><br>
+                The current Principal, Mrs. W.D.D.M. Premathilaka, will assume the position of Principal from 14th February
+                2024.
+            </p>
+    
+        </div>
+    </section>
+
+    <section class="section container principals-section">
+        <h2 id="principals-title">School Principals</h2>
+        <div class="principal">
+            <img src="/api/placeholder/150/150" alt="John Thompson">
+            <div class="principal-info">
+                <h3 id="principal-1-name">John Thompson</h3>
+                <p id="principal-1-years">Years of Service: 1932 - 1954</p>
+                <p id="principal-1-desc">The founding principal who established the school's initial vision and educational philosophy.</p>
+            </div>
+        </div>
+        <div class="principal">
+            <img src="/api/placeholder/150/150" alt="Margaret Wilson">
+            <div class="principal-info">
+                <h3 id="principal-2-name">Margaret Wilson</h3>
+                <p id="principal-2-years">Years of Service: 1954 - 1978</p>
+                <p id="principal-2-desc">Led the school during a period of significant growth and educational reform.</p>
+            </div>
+        </div>
+        <div class="principal">
+            <img src="/api/placeholder/150/150" alt="Robert Chen">
+            <div class="principal-info">
+                <h3 id="principal-3-name">Robert Chen</h3>
+                <p id="principal-3-years">Years of Service: 1978 - 2001</p>
+                <p id="principal-3-desc">Modernized curriculum and introduced advanced placement programs.</p>
+            </div>
+        </div>
+        <div class="principal">
+            <img src="/api/placeholder/150/150" alt="Elena Rodriguez">
+            <div class="principal-info">
+                <h3 id="principal-4-name">Elena Rodriguez</h3>
+                <p id="principal-4-years">Years of Service: 2001 - 2019</p>
+                <p id="principal-4-desc">Championed technology integration and community outreach programs.</p>
+            </div>
+        </div>
+        <div class="principal">
+            <img src="/api/placeholder/150/150" alt="Marcus Wright">
+            <div class="principal-info">
+                <h3 id="principal-5-name">Marcus Wright</h3>
+                <p id="principal-5-years">Years of Service: 2019 - Present</p>
+                <p id="principal-5-desc">Current principal focusing on inclusive education and student wellness.</p>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        // Translations remain the same as in the previous version
+
+        const translations = {
+            en: {
+                'page-title': 'Riverside High School: A Legacy of Excellence',
+                'history-title': 'Our School\'s History',
+                'history-para-1': 'According to the existing records of Polegoda Maha Vidyalaya, this school was started in 1926. At the beginning, it consisted of eight students and three teachers and the initial principal was Mr. P. C. M. Kularatne. The initial student was Mr. Somapala Kularatne, his son. The book states that the school was initially located in a house in the Kurunduwatte area and was brought to the current school site in 1929. The land where the school is located was a public land where Shanthi Karma Gammadu etc. were held at that time and it was later given for the construction of the school. Old records state that in 1929, a Sanghagatha Dakshina was started at the current Polegoda Maha Vidyalaya location for a hundred people and then the school was started. Initially, three coconut frond sheds were used for teaching.\n\nMr. Kularatne has served as the principal here for a long time. The first permanent building built here is the building that currently houses the media unit and the new classroom (Mahasen Hall). The main hall was built in 1972 and the other halls were built gradually in various years.\n\n Among the principals who served in our school after Mr. Kularatne was a principal named Gunasena. By the 60s, this school received a teachers residence and the <strong>Golden Era of Our School</strong> is considered to be the service period of Principal Abeywardena. During that period, the schools playground was prepared. Also, several buildings including the old laboratory and the home laboratory were constructed. It is said that a Venerable Chandaloka served as the deputy principal of this school. During that time, many buildings were constructed, fairs were held and films were screened. \n\n It is said that former Prime Minister S. W. R. D. Bandaranaike visited this school in 1952. Initially, this school was known as the South Mahagama Sucharithawardhana Swabhasha Mixed School. It was a special event that a student from Polegoda Maha Vidyalaya was elected to the university for the first time in the 60s. At that time, the Advanced Level classes were half-full and the Advanced Level classes started again in the late 70s. Six other students entered the university at the same time in the late 70s. After Teacher Abhayawardhana left this school for another School, Principal Ranatunga and then Principal Weerakoon served as acting principals. During that time, Mr. Amarasena also served as a principal. In 1984, our college showed an all-Ceylon level skill in throwing the hoop. \n\n Anuradha Samaradiwakara served as the principal of this school from 1986 to 1996. The Buddha Hall of our school was built with the patronage of Mr. Calbin and the library building was built with the patronage of Mr. Piyasena. It is said that Mr. Ronnie de Mal, who was the Minister of Finance at that time, attended opening of the library building. After Samaradiwakara, Mr. Piyasena Jayananda served as the principal for a while and then Principal Piyasoma also served here. After him, Principal Hemadasa passed away while serving in this school. \n\n Later, Principal Gunasekara served as the acting principal and then Mrs. Siriyawathi served as the acting . Principal Jayasiri joined this school and served in this school until almost 2012. During that time, the school became a secondary school and the primary school was removed. The school also got the Mahindodaya Laboratory during that time. \n\n From 2012, K. D. Jayapala Principal served as the principal of this school until 2018. During that time, our school was also selected for the Best School Nearest School project. Several buildings were renovated with the removal of the entrance hall and roofing sheets. The school received two new teachers houses and the old teachers house was also renovated. \n\n Principal Saman Rohana Karunaratne served as the principal of this school from 2018 to 2024. Several buildings were renovated during that time. In 2019, ten students from this school enrolled in the university. \n\n\n The current Principal, Mrs. W.D.D.M. Premathilaka, will assume the position of Principal from 14th February 2024.',
+                'principals-title': 'School Principals Through the Years',
+                'principal-1-name': 'John Thompson',
+                'principal-1-years': 'Years of Service: 1932 - 1954',
+                'principal-1-desc': 'The founding principal who established the school\'s initial vision and educational philosophy.',
+                'principal-2-name': 'Margaret Wilson',
+                'principal-2-years': 'Years of Service: 1954 - 1978',
+                'principal-2-desc': 'Led the school during a period of significant growth and educational reform.',
+                'principal-3-name': 'Robert Chen',
+                'principal-3-years': 'Years of Service: 1978 - 2001',
+                'principal-3-desc': 'Modernized curriculum and introduced advanced placement programs.',
+                'principal-4-name': 'Elena Rodriguez',
+                'principal-4-years': 'Years of Service: 2001 - 2019',
+                'principal-4-desc': 'Championed technology integration and community outreach programs.',
+                'principal-5-name': 'Marcus Wright',
+                'principal-5-years': 'Years of Service: 2019 - Present',
+                'principal-5-desc': 'Current principal focusing on inclusive education and student wellness.'
+            },
+            si: {
+                'page-title': 'රයිවර්සයිඩ් මාධ්‍ය පාසල: සාර්ථකත්වයේ උරුමය',
+                'history-title': 'අපේ පාසලේ ඉතිහාසය',
+                'principals-title': 'වාර්ෂික පාසල් විදුහල්පතිවරු',
+                'principal-1-name': 'ජෝන් තොම්ප්සන්',
+                'principal-1-years': 'සේවා කාලය: 1932 - 1954',
+                'principal-1-desc': 'පාසලේ මුල් දර්ශනය සහ අධ්‍යාපනික දර්ශනය සම්පාදනය කළ පළමු විදුහල්පති.',
+                'principal-2-name': 'මාර්ගරෙට් විල්සන්',
+                'principal-2-years': 'සේවා කාලය: 1954 - 1978',
+                'principal-2-desc': 'විශාල වර්ධනය සහ අධ්‍යාපන සංශෝධන කාලවකවානුවේ පාසල මෙහෙයවීය.',
+                'principal-3-name': 'රොබට් චෙන්',
+                'principal-3-years': 'සේවා කාලය: 1978 - 2001',
+                'principal-3-desc': 'පාඨමාලාව නවීකරණය කිරීම සහ උසස් තැන්පත් වැඩසටහන් ඇතුළු කිරීම.',
+                'principal-4-name': 'එලෙනා රොඩ්‍රිගේස්',
+                'principal-4-years': 'සේවා කාලය: 2001 - 2019',
+                'principal-4-desc': 'තාක්ෂණ සංකලනය සහ ප්‍රජා සම්බන්ධතා වැඩසටහන් සඳහා සහාය වූ පුද්ගලයා.',
+                'principal-5-name': 'මාර්කස් රයිට්',
+                'principal-5-years': 'සේවා කාලය: 2019 - වර්තමාන',
+                'principal-5-desc': 'වර්තමාන විදුහල්පති සමාවේශීය අධ්‍යාපනය සහ සිසු සුබසාධනය මත අවධානය යොමු කරමින්.'
+            }
+        };
+
+        function changeLanguage(lang) {
+            // Update button active states
+            document.getElementById('en-btn').classList.remove('active');
+            document.getElementById('si-btn').classList.remove('active');
+            document.getElementById(`${lang}-btn`).classList.add('active');
+
+            // Translate all elements
+            Object.keys(translations[lang]).forEach(id => {
+                const element = document.getElementById(id);
+                if (element) {
+                    element.textContent = translations[lang][id];
+                }
+            });
+        }
+
+        // Scroll-triggered animation
+        function checkSections() {
+            const sections = document.querySelectorAll('.section');
+            
+            sections.forEach(section => {
+                const sectionTop = section.getBoundingClientRect().top;
+                const windowHeight = window.innerHeight;
+
+                if (sectionTop < windowHeight * 0.75) {
+                    section.classList.add('visible');
+                }
+            });
+        }
+
+        // Add scroll event listener
+        window.addEventListener('scroll', checkSections);
+        
+        // Initial check
+        checkSections();
+    </script>
+</body>
+</html>

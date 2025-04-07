@@ -79,6 +79,7 @@ body {
 
 /* Navigation */
 header {
+  /* background: url('./Event_Banners/Poson/Poson-01.svg') no-repeat center center/cover; */
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
   position: sticky;
   top: 0;
@@ -89,9 +90,9 @@ nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  justify-self: center;
+  justify-content: center;
   padding: 20px 0;
-  position: absolute;
-  z-index: 1000;  
 }
 
 .logo {
@@ -108,12 +109,14 @@ nav {
   font-size: 24px;
   font-weight: 700;
   color: var(--primary-color);
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 }
 
 .motto {
   font-style: italic;
   font-size: 14px;
-  color: var(--gray);
+  color: #eee;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 }
 
 .nav-links {
@@ -127,9 +130,10 @@ nav {
 
 .nav-links a {
   text-decoration: none;
-  color: var(--text-color);
+  color: var(--white);
   font-weight: 600;
   transition: var(--transition);
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 }
 
 .nav-links a:hover {
@@ -230,6 +234,10 @@ nav {
     padding: 12px 20px;
     font-size: 16px;
   }
+
+  .nav-links a {
+    color: var(--primary-color);
+  }
 }
 
 /* Extra small devices */
@@ -245,6 +253,10 @@ nav {
   .hero-content p {
     font-size: 14px;
     line-height: 1.4;
+  }
+
+  .nav-links a {
+    color: var(--primary-color);
   }
 }
 

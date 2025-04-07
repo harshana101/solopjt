@@ -6,37 +6,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Teacher Profile | Mr. Lenin Priyantha Liyanage</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <style>
-        :root {
-            --maroon: #610030;
-            --gold: #FFD700;
-        }
-
-        .profile-header {
-            background: linear-gradient(135deg, var(--maroon) 0%, #b8005c 100%);
-        }
-
-        .section-title {
-            color: var(--maroon);
-            border-bottom: 2px solid var(--maroon);
-        }
-
-        .detail-row:nth-child(even) {
-            background-color: #f9f9f9;
-        }
-
-        .lang-toggle {
-            position: absolute;
-            top: 40px;
-            right: 25px;
-            color: #ffffff;
-        }
-        select, option {
-            background-color: transparent;
-            color: var(--maroon);
-            border: 2px solid #ffffff;
-        }
-    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="./profile.css">
+    <meta name="theme-color" content="#610030">
+    <link rel="icon" type="image/png" href="../logo.png">
+    <meta property="og:title" content="WP/ Hr/ Polegoda M. V.">
+    <meta property="og:description" content="Vidya Dadathi Vinayan">
+    <meta property="og:image" content="../link.jpg">
+    <meta property="og:url" content="https://harshana101.github.io/solopjt/">
+    <meta property="og:type" content="website">
+    <link rel="manifest" href="manifest.json">
 </head>
 
 <body class="bg-gray-100 text-gray-800">
@@ -56,7 +35,7 @@
                     <img src="D:\Scl Project solo\New\Teachers pics\Lenin sir.JPG" alt="Teacher Profile" class="w-full h-full object-cover">
                 </div>
                 <div>
-                    <h1 id="teacherName" class="text-3xl font-bold mb-2" data-en="Mr. Lenin Priyantha Liyanage" data-si="ලෙනින් ප්‍රියන්ත ලියනගේ මයා">Mr. Lenin Priyantha Liyanage</h1>
+                    <h1 id="teacherName" class="text-3xl font-bold mb-2" data-en="Mrs. Chamari Kanchanamala" data-si="චමරී කාංචනමාලා මිය">Mrs Chamari Kanchanamala</h1>
                     <p id="teacherPosition" class="text-xl opacity-80" data-en="" data-si=""></p>
                 </div>
             </div>
@@ -76,15 +55,14 @@
                             <div class="detail-row p-3 rounded-md">
                                 <strong class="text-[#610030]" id="subjectsLabel" data-en="Subject(s) Taught:" data-si="විෂයන්">Subject(s) Taught:</strong>
                                 <ul class="list-disc list-inside">
-                                    <li id="subjectsDetails" data-en="Drama and Theatre" data-si="නාට්‍ය හා රංගකලාව">Drana and Theatre</li>
+                                    <li id="subjectsDetails" data-en="Information and Communication Technology" data-si="තොරතුරු හා සන්නිවේදන තාක්ෂණය">Information and Communication Technology</li>
+                                    <li id="subjectsDetails" data-en="General Information Technology" data-si="සාමාන්‍ය තොරතුරු තාක්ෂණය">General Information Technology</li>
                                 </ul>
                             </div>
                             <div class="detail-row p-3 rounded-md">
                                 <strong class="text-[#610030]" id="positionLabel" data-en="Committees / Clubs / Associations:" data-si="කමිටු / සමාජ / සංගම්">Committees / Clubs / Associations:</strong>
                                 <ul class="list-disc list-inside">
-                                    <li id="subjectsDetails" data-en="Disciplinarycommittee" data-si="විනය කමිටුව">Disciplinary Committee</li>
-                                    <li id="subjectsDetails" data-en="Prefect Board" data-si="ශිෂ්‍ය නායක මණ්ඩලය">Prefect Board</li>
-                                    <li id="gradeLevelDetails" data-en="Drama Club" data-si="නාට්‍ය සංගමය">Drama Club</li>
+                                    <li id="subjectsDetails" data-en="IT Associations" data-si="තොරතුරු තාක්ෂණ සංගමය">IT Associations</li>
                                 </ul>
                             </div>
                         </div>
@@ -143,7 +121,7 @@
         </div>
     </div>
 
-    <script>
+<script>
         document.getElementById('languageSelector').addEventListener('change', function () {
             const lang = this.value;
 

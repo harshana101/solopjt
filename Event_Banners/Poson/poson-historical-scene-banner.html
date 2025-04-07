@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Poson Historical Scene Banner</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      overflow-x: hidden;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+    
+    .poson-scene {
+      position: relative;
+      width: 100%;
+      height: 180px;
+      overflow: hidden;
+      background: linear-gradient(0deg, #ff8c00, #ff4500);
+    }
+    
+    .scene-background {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      background-size: cover;
+      background-position: center bottom;
+      opacity: 0.3;
+      z-index: 2000;
+    }
+    
+    .monks-rock {
+      position: absolute;
+      right: 5px;
+      bottom: 0;
+      width: 180px;
+      height: 170px;
+      background-image: url('./monks_and_rock.svg');
+      background-size: contain;
+      background-repeat: no-repeat;
+      background-position: bottom;
+      z-index: 3;
+    }
+    
+    .king {
+      position: absolute;
+      left: 10px;
+      bottom: 0;
+      width: 80px;
+      height: 80px;
+      background-image: url('./king.svg');
+      background-size: contain;
+      background-repeat: no-repeat;
+      background-position: bottom;
+      z-index: 3;
+      animation: kingApproach 12s infinite alternate;
+    }
+    
+    .deer {
+      position: absolute;
+      left: 35%;
+      bottom: 10px;
+      width: 80px;
+      height: 70px;
+      background-image: url('./deer.svg');
+      background-size: contain;
+      background-repeat: no-repeat;
+      background-position: bottom;
+      z-index: 2;
+      animation: deerMove 15s infinite;
+    }
+    
+    .mango {
+      position: absolute;
+      right: 120px;
+      top: 0px;
+      width: 60px;
+      height: 60px;
+      background-image: url('./mango.svg');
+      background-size: contain;
+      background-repeat: no-repeat;
+      z-index: 2;
+      animation: mangoFloat 8s infinite ease-in-out;
+    }
+
+    .mango2 {
+      position: absolute;
+      left: 120px;
+      top: 0px;
+      width: 60px;
+      height: 60px;
+      background-image: url('./mango.svg');
+      background-size: contain;
+      background-repeat: no-repeat;
+      z-index: 2;
+      animation: mangoFloat 8s infinite ease-in-out;
+    }
+    
+    .firefly {
+      position: absolute;
+      width: 4px;
+      height: 4px;
+      background-color: #ffff99;
+      border-radius: 50%;
+      box-shadow: 0 0 8px 2px rgba(255, 255, 150, 0.8);
+      z-index: 1;
+      animation: flicker 4s infinite alternate;
+    }
+    
+    .moon {
+      position: absolute;
+      background-image: url('./shine.svg');
+      background-size: contain;
+      background-repeat: no-repeat;
+      animation: breathe 8s infinite alternate;
+    }
+
+    .moon1 {
+      width: 60px;
+      height: 60px;
+      z-index: 0;
+      right: 4px;
+      top: 40px;
+      opacity: 5;
+    }
+
+    .moon2 {
+      width: 80px;
+      height: 80px;
+      z-index: 0;
+      right: 30px;
+      top: 30px;
+      opacity: 1;
+    }
+
+    
+    @keyframes monksAppear {
+      0% {
+        opacity: 0.9;
+        transform: translateY(5px);
+      }
+      100% {
+        opacity: 1;
+        transform: translateY(0);
+        filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.3));
+      }
+    }
+    
+    @keyframes kingApproach {
+      0% {
+        transform: translateX(-10px) scale(0.9);
+      }
+      100% {
+        transform: translateX(0) scale(1);
+        filter: drop-shadow(0 0 10px rgba(255, 215, 0, 0.3));
+      }
+    }
+    
+    @keyframes deerMove {
+      0% {
+        transform: translateX(0) rotateY(0deg);
+      }
+      25% {
+        transform: translateX(30px) rotateY(0deg);
+      }
+      50% {
+        transform: translateX(30px);
+      }
+      75% {
+        transform: translateX(0);
+      }
+      100% {
+        transform: translateX(0) rotateY(0deg);
+      }
+    }
+    
+    @keyframes mangoFloat {
+      0%, 100% {
+        transform: translateY(0);
+      }
+      50% {
+        transform: translateY(-15px);
+      }
+    }
+    
+    @keyframes flicker {
+      0%, 100% {
+        opacity: 0.2;
+        transform: scale(0.8);
+      }
+      50% {
+        opacity: 1;
+        transform: scale(1.2);
+      }
+    }
+    
+    @keyframes moonGlow {
+      0%, 100% {
+        opacity: 0.7;
+        filter: brightness(1);
+      }
+      50% {
+        opacity: 1;
+        filter: brightness(1.3) drop-shadow(0 0 20px rgba(255, 255, 255, 0.5));
+      }
+    }
+
+    @keyframes breathe {
+      0%, 100% {
+        transform: scale(1);
+      }
+      50% {
+        transform: scale(1.2);
+      }
+    }
+
+    /* Responsive adjustments */
+    @media (max-width: 768px) {
+      .monks-rock {
+        width: 140px;
+        height: 130px;
+        right: 5%;
+      }
+      
+      .king {
+        width: 100px;
+        height: 120px;
+        left: 15%;
+      }
+      
+      .deer {
+        width: 60px;
+        height: 50px;
+      }
+      
+      .mango {
+        width: 40px;
+        height: 40px;
+      }
+      
+      .full-moon {
+        width: 60px;
+        height: 60px;
+      }
+    }
+    
+    @media (max-width: 480px) {
+      .poson-scene {
+        height: 180px;
+      }
+      
+      .monks-rock {
+        width: 100px;
+        height: 90px;
+      }
+      
+      .king {
+        width: 70px;
+        height: 90px;
+      }
+      
+      .deer {
+        width: 40px;
+        height: 35px;
+        left: 40%;
+      }
+      
+      .mango {
+        width: 30px;
+        height: 30px;
+      }
+      
+      .full-moon {
+        width: 50px;
+        height: 50px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="poson-scene">
+    <div class="scene-background"></div>
+    <div class="moon moon1"></div>
+    <div class="moon moon2"></div>
+    <div class="monks-rock"></div>
+    <div class="king"></div>
+    <div class="deer"></div>
+    <div class="mango"></div>
+    <div class="mango2"></div>
+    <div class="mango3"></div>
+    <!-- Fireflies will be added dynamically -->
+  </div>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const scene = document.querySelector('.poson-scene');
+      const sceneWidth = scene.offsetWidth;
+      const sceneHeight = scene.offsetHeight;
+      
+      // Create fireflies
+      const firefliesCount = 30; // More fireflies as requested
+      for (let i = 0; i < firefliesCount; i++) {
+        const firefly = document.createElement('div');
+        firefly.className = 'firefly';
+        
+        // Random position
+        const randomX = Math.floor(Math.random() * sceneWidth);
+        const randomY = Math.floor(Math.random() * sceneHeight);
+        firefly.style.left = randomX + 'px';
+        firefly.style.top = randomY + 'px';
+        
+        // Random animation delay
+        const randomDelay = Math.random() * 5;
+        firefly.style.animationDelay = randomDelay + 's';
+        
+        // Random size
+        const randomSize = Math.random() * 3 + 2;
+        firefly.style.width = randomSize + 'px';
+        firefly.style.height = randomSize + 'px';
+        
+        // Random brightness
+        const randomBrightness = Math.random() * 0.5 + 0.5;
+        firefly.style.opacity = randomBrightness;
+        
+        scene.appendChild(firefly);
+      }
+      
+      // Interactive elements
+      const monksRock = document.querySelector('.monks-rock');
+      monksRock.addEventListener('mouseover', function() {
+        this.style.filter = 'drop-shadow(0 0 15px rgba(255, 255, 255, 0.5))';
+      });
+      
+      monksRock.addEventListener('mouseout', function() {
+        this.style.filter = '';
+      });
+      
+      const king = document.querySelector('.king');
+      king.addEventListener('mouseover', function() {
+        this.style.filter = 'drop-shadow(0 0 15px rgba(255, 215, 0, 0.5))';
+      });
+      
+      king.addEventListener('mouseout', function() {
+        this.style.filter = '';
+      });
+      
+      const deer = document.querySelector('.deer');
+      deer.addEventListener('click', function() {
+        this.style.animationPlayState = 
+          (this.style.animationPlayState === 'paused') ? 'running' : 'paused';
+      });
+      
+      // Add subtle parallax effect
+      scene.addEventListener('mousemove', function(e) {
+        const mouseX = e.clientX / sceneWidth;
+        const mouseY = e.clientY / sceneHeight;
+        
+        const monks = document.querySelector('.monks-rock');
+        const kingElement = document.querySelector('.king');
+        const deerElement = document.querySelector('.deer');
+        const mangoElement = document.querySelector('.mango');
+        
+        const moveX = (mouseX - 0.5) * 10;
+        const moveY = (mouseY - 0.5) * 5;
+        
+        monks.style.transform = `translateX(${moveX * -0.5}px)`;
+        kingElement.style.transform = `translateX(${moveX * 0.3}px)`;
+        deerElement.style.transform = `translateX(${moveX * 0.5}px)`;
+        mangoElement.style.transform = `translate(${moveX * 0.2}px, ${moveY * 0.2 - 5}px)`;
+      });
+    });
+  </script>
+</body>
+</html>
