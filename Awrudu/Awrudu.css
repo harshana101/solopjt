@@ -177,7 +177,8 @@ body {
     .dragon {
       width: 100px;
       height: 100px;
-      left: 10px;
+      left: 40%;
+      top: 55%;
     }
     
     .sun {
@@ -204,8 +205,8 @@ body {
     .dragon {
       width: 80px;
       height: 80px;
-      left: 5px;
-      top: 5px;
+      left: 60%;
+      top: 50%;
     }
     
     .sun {
