@@ -674,6 +674,11 @@ marquee {
   margin-top: 20px;
 }
 
+.hours-list ul {
+  padding: 0;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+}
+
 .hours-list li {
   display: flex;
   justify-content: space-between;
@@ -703,6 +708,7 @@ marquee {
 .office-hours h3 {
   color: var(--primary-color);
   border-bottom: 2px solid var(--primary-color);
+  margin-top: 10px;
 }
 
 /* Footer */
