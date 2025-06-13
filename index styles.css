@@ -700,6 +700,11 @@ marquee {
   margin: 15px 0;
 }
 
+.office-hours h3 {
+  color: var(--primary-color);
+  border-bottom: 2px solid var(--primary-color);
+}
+
 /* Footer */
 footer {
   background-color: var(--primary-color);
