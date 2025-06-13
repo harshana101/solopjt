@@ -697,7 +697,7 @@ marquee {
   background-color: var(--primary-color);
   height: 2px;
   border: none;
-  margin: 15px 0;
+  margin: 20px 0;
 }
 
 .office-hours h3 {
