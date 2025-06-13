@@ -677,6 +677,8 @@ marquee {
 .hours-list ul {
   padding: 0;
   box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  border: 1px solid #eee;
 }
 
 .hours-list li {
