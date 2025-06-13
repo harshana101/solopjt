@@ -697,6 +697,7 @@ marquee {
   background-color: var(--primary-color);
   height: 2px;
   border: none;
+  margin: 20px 0;
 }
 
 /* Footer */
