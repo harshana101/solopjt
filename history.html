@@ -26,11 +26,13 @@
             background-color: #f4f4f4;
         }
 
-        header {
+        header,
+        header h1 {
             text-align: center;
             background-color: #610030;
             color: white;
             padding: 20px;
+            position: relative;
         }
 
         .language-toggle {
@@ -42,17 +44,27 @@
         }
 
         .language-toggle button {
-            background-color: #610030;
-            color: white;
-            border: none;
-            padding: 5px 10px;
+            background-color: rgba(255, 255, 255, 0.2);
+            color: #610030;
+            border: 2px solid white;
+            padding: 8px 15px;
             cursor: pointer;
-            border-radius: 4px;
+            border-radius: 20px;
+            transition: all 0.3s ease;
+            font-weight: 500;
+        }
+
+        .language-toggle button:hover {
+            background-color: white;
+            color: #610030;
+            transform: scale(1.05);
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
         }
 
         .language-toggle button.active {
-            background-color: #610030;
-            border: 2px solid white;
+            background-color: white;
+            color: #610030;
+            font-weight: bold;
         }
 
         .history-section,
@@ -69,24 +81,88 @@
             align-items: center;
             margin-bottom: 15px;
             border-bottom: 1px solid #eee;
-            padding-bottom: 10px;
+            border: #61003000 2px solid;
+            padding: 10px;
+            transition: 0.3s ease;
+            cursor: pointer;
+            border-radius: 10px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            transition: all 0.7s ease;
+        }
+
+        .principal:hover {
+            background-color: #f6f6f6;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+            transform: translateY(-2px);
+            border: #610030 2px solid;
         }
 
         .principal img {
-            width: 150px;
-            height: 150px;
+            width: 120px;
+            height: 120px;
             object-fit: cover;
             border-radius: 50%;
             margin-right: 20px;
+            border: 3px solid #610030;
         }
 
         .principal-info {
             flex-grow: 1;
         }
 
+        .principal-info h3 {
+            color: #610030;
+            margin-bottom: 5px;
+        }
+
+        .principal-info p {
+            margin: 5px 0;
+            text-align: left;
+            text-indent: 0;
+        }
+
+        .years {
+            font-weight: 600;
+            color: #666;
+        }
+
         p {
             text-align: justify;
-            text-indent: 250px;
+            text-indent: 2em;
+        }
+
+        h1,
+        h2 {
+            color: #610030;
+        }
+
+        .loading {
+            text-align: center;
+            padding: 20px;
+            color: #666;
+        }
+
+        .error {
+            background-color: #ffe6e6;
+            color: #cc0000;
+            padding: 10px;
+            border-radius: 5px;
+            margin: 10px 0;
+        }
+
+        a {
+            color: #610030;
+            text-decoration: none;
+            font-weight: bold;
+            text-decoration: underline;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        strong {
+            color: #610030;
         }
     </style>
 </head>
@@ -98,178 +174,459 @@
     </div>
 
     <header>
-        <h1 id="page-title">Polegoda M. V.  :  A Legacy of Excellence</h1>
+        <h1 id="page-title">Polegoda M. V. : A Legacy of Excellence</h1>
     </header>
 
     <section class="history-section">
         <h2 id="history-title">Our School's History</h2>
-        <p id="history-para-1">According to the existing records of Polegoda Maha Vidyalaya, Polegoda Maha Vidyalaya was established in 1926. At the time of its establishment, there were eight students and three teachers, and the founding principal was <a href=””> Mr. P. C. M. Kularatne</a>. He served as the principal for a long time. The founding student was Mr. Somapala Kularatne, P. C. M. Kularatne’s son. <br><br>
+        <p id="history-para-1">According to the existing records of Polegoda
+            Maha Vidyalaya, Polegoda Maha Vidyalaya was
+            established in 1926. At the time of its establishment, there
+            were eight students and three teachers, and the
+            founding principal was <a href="#kularatne"> Mr.
+                P.C.M.Kularatne</a>. He served as the principal for a
+            long time.
+            The founding student was Mr. Somapala Kularatne, Mr.
+            P.C.M.Kularatne’s son. <br><br>
+
+            It is mentioned in the book that our school was initially
+            located in a house in the Kurunduwatte area and
+            was brought to the current school site in 1929. Old records
+            state that in 1929, a Sanghagatha Dakshina was
+            established at the current Polegoda Maha Vidyalaya site, after
+            which the school was started. Initially,
+            three coconut frond sheds were used for teaching. <br><br>
+
+            The first permanent building built here is the building where
+            the media unit and the new Smart classroom are
+            currently located (Mahasen Hall). The main hall was built in
+            1972 and the other halls were built gradually
+            in various years. <br><br>
+
+            Among the principals who served in our school after Mr.
+            Kularatne was a principal named <a href="#gunasena">Gunasena</a>. By the 60s, this school
+            received a teachers' residence and the golden era
+            of this
+            school is considered to be the service period of Principal <a href="#abeyawardena">Abeyawardena</a>. During
+            that period,
+            the school's playground was prepared. Also, several buildings
+            including the old laboratory and the home
+            laboratory were constructed. It is said that a Lord named <a href="#chandaloka">Chandaloka</a> served as the
+            Deputy
+            Principal of this school. During that time, many buildings were
+            constructed by holding fairs and screening
+            films. <br><br>
+
+            It is said that former Prime Minister S.W.R.D.Bandaranaike
+            visited this school in 1952. Initially, this
+            school was known as the <strong>South Mahagama
+                Sucharithawardhana Swabhasha Mixed School</strong>. <br><br>
+
+            In the 60s, it was a special event that a student from Polegoda
+            Maha Vidyalaya was elected to the university
+            for the first time. At that time, the Advanced Level classes
+            were half-full, and in the late 70s, Advanced
+            Level classes were resumed. Six other students entered the
+            university at the same time in the late 70s.
+            After Teacher Abhayawardhana left this school for another
+            temple, Principal <a href="#ranathunga">Ranatunga</a> and
+            then Principal <a href="#weerakoon">Weerakoon</a> served as
+            acting principals. During that time, <a href="#amarasena">Mr. Amarasena</a> also served as a
+            principal. In 1984, our school demonstrated an
+            all-Ceylon level skill in
+            throwing the hoop. <br><br>
+
+            From 1986 to 96, Principal <a href="#anuradha">Anuradha
+                Samaradiwakara</a> served in this school. Our
+            school's Buddha Temple was built with the patronage of Mr.
+            Calvin and the library building was built with
+            the patronage of
+            Mr. M.H. Piyasena. It is said that Mr. Ronnie De Mel, who was
+            the Minister of Finance at that time, attended
+            the opening of the library building. After Principal
+            Samaradiwakara, <a href="#piyasena">Mr. Piyasena Jayananda</a>
+            served as the principal for a while and then Principal <a href="#piyasoma">Piyasoma</a> also served here.
+                    After him,
+                    Principal <a href="#hemadasa">Hemadasa</a> passed away
+                    while serving in this school. <br><br>
+
+                    Later, Principal <a href="#gunasekara">Gunasekara</a>
+                    served as the acting principal and then <a href="#siriyawathi">Mrs. Siriyawathi</a> served as
+                    the acting principal. Principal <a href="#jayasiri">Jayasiri</a> came
+                    to serve
+                    in this school and served in this school until almost
+                    2012. During that time, <strong>This school
+                        became a Secondary School and the Primary School was
+                        removed</strong>. The school also received
+                    the Mahindodaya Laboratory during this period. <br><br>
+
+                    From 2012, <a href="#jayapala">K. D. Jayapala</a> served
+                            as the principal of this school until 2018.
+                            During
+                            that period, our school was also selected for
+                            the Best School Nearest School project.
+                            Several buildings were renovated by removing the
+                            entrance hall and installing roofing
+                            sheets. The school received two new teachers'
+                            houses and the old teachers' house was also
+                            renovated. <br><br>
+
+                            Principal <a href="#saman">Saman Rohana
+                                Karunaratne</a> served as the principal of
+                            this
+                            school
+                            from 2018 to 2024. Several buildings were
+                            renovated during the same period. In 2019, ten
+                            students enrolled in the university from this
+                            school. <br><br>
+
+                            The current Principal, <a href="#duleeka">Mrs.
+                                W.D.D.M. Premathilaka</a>, will assume the
+                            position
+                            of Principal from 14th February 2024.
+
+        </p>
+    </section>
+
+    <!-- <section class="principals-section">
+        <h2 id="principals-title">School Principals Through
+            the Years</h2>
+        <div class="principal" id="kularatne">
+            <img src="/api/placeholder/150/150" alt="Mr. P.C.M.Kularatne">
+            <div class="principal-info">
+                <h3 id="principal-1-name">Mr.
+                    P.C.M.Kularatne</h3>
+                <p id="principal-1-years">Years of Service:
+                    1932 - 1954</p>
+                <p id="principal-1-desc">The founding
+                    principal who established the school's
+                    initial vision and
+                    educational philosophy.</p>
+            </div>
+        </div>
+        <div class="principal" id="gunasena">
+            <img src="/api/placeholder/150/150" alt="Mr. Gunasena">
+            <div class="principal-info">
+                <h3 id="principal-2-name">Mr. Gunasena</h3>
+                <p id="principal-2-years">Years of Service:
+                    1954 - 1978</p>
+                <p id="principal-2-desc">Led the school
+                    during a period of significant growth
+                    and educational reform.
+                </p>
+            </div>
+        </div>
+        <div class="principal" id="abeyawardena">
+            <img src="/api/placeholder/150/150" alt="Mr. Abhayawardhana">
+            <div class="principal-info">
+                <h3 id="principal-3-name">Mr.
+                    Abhayawardhana</h3>
+                <p id="principal-3-years">Years of Service:
+                    1978 - 2001</p>
+                <p id="principal-3-desc">Modernized
+                    curriculum and introduced advanced
+                    placement programs.</p>
+            </div>
+        </div>
+        <div class="principal" id="chandaloka">
+            <img src="/api/placeholder/150/150" alt="Chandaloka Thero">
+            <div class="principal-info">
+                <h3 id="principal-4-name">Chandaloka
+                    Thero</h3>
+                <p id="principal-4-years">Years of Service:
+                    2001 - 2019</p>
+                <p id="principal-4-desc">Championed
+                    technology integration and community
+                    outreach programs.</p>
+            </div>
+        </div>
+        <div class="principal" id="ranathunga">
+            <img src="/api/placeholder/150/150" alt="Mr. Ranathunga">
+            <div class="principal-info">
+                <h3 id="principal-5-name">Mr.
+                    Ranathunga</h3>
+                <p id="principal-5-years">Years of Service:
+                    2019 - Present</p>
+                <p id="principal-5-desc">Current principal
+                    focusing on inclusive education and
+                    student wellness.</p>
+            </div>
+        </div>
+        <div class="principal" id="weerakoon">
+            <img src="/api/placeholder/150/150" alt="Mr. Weerakoon">
+            <div class="principal-info">
+                <h3 id="principal-5-name">Mr. Weerakoon</h3>
+                <p id="principal-5-years">Years of Service:
+                    2019 - Present</p>
+                <p id="principal-5-desc">Current principal
+                    focusing on inclusive education and
+                    student wellness.</p>
+            </div>
+        </div>
+        <div class="principal" id="amarasena">
+            <img src="/api/placeholder/150/150" alt="Mr. Amarasena">
+            <div class="principal-info">
+                <h3 id="principal-5-name">Mr. Amarasena</h3>
+                <p id="principal-5-years">Years of Service:
+                    2019 - Present</p>
+                <p id="principal-5-desc">Current principal
+                    focusing on inclusive education and
+                    student wellness.</p>
+            </div>
+        </div>
+        <div class="principal" id="anuradha">
+            <img src="/api/placeholder/150/150" alt="Mr. Anuradha Samaradiwakara">
+            <div class="principal-info">
+                <h3 id="principal-5-name">Mr. Anuradha
+                    Samaradiwakara</h3>
+                <p id="principal-5-years">Years of Service:
+                    2019 - Present</p>
+                <p id="principal-5-desc">Current principal
+                    focusing on inclusive education and
+                    student wellness.</p>
+            </div>
+        </div>
+        <div class="principal" id="piyasena">
+            <img src="/api/placeholder/150/150" alt="Mr. Piyasena Jayananda">
+            <div class="principal-info">
+                <h3 id="principal-5-name">Mr. Piyasena
+                    Jayananda</h3>
+                <p id="principal-5-years">Years of Service:
+                    2019 - Present</p>
+                <p id="principal-5-desc">Current principal
+                    focusing on inclusive education and
+                    student wellness.</p>
+            </div>
+        </div>
+        <div class="principal" id="piyasoma">
+            <img src="/api/placeholder/150/150" alt="Mr. Piyasoma">
+            <div class="principal-info">
+                <h3 id="principal-5-name">Mr. Piyasoma</h3>
+                <p id="principal-5-years">Years of Service:
+                    2019 - Present</p>
+                <p id="principal-5-desc">Current principal
+                    focusing on inclusive education and
+                    student wellness.</p>
+            </div>
+        </div>
+        <div class="principal" id="hemadasa">
+            <img src="/api/placeholder/150/150" alt="Mr. Hemadasa">
+            <div class="principal-info">
+                <h3 id="principal-5-name">Mr. Hemadasa</h3>
+                <p id="principal-5-years">Years of Service:
+                    2019 - Present</p>
+                <p id="principal-5-desc">Current principal
+                    focusing on inclusive education and
+                    student wellness.</p>
+            </div>
+        </div>
+        <div class="principal" id="gunasekara">
+            <img src="/api/placeholder/150/150" alt="Mr. Gunasekara">
+            <div class="principal-info">
+                <h3 id="principal-5-name">Mr.
+                    Gunasekara</h3>
+                <p id="principal-5-years">Years of Service:
+                    2019 - Present</p>
+                <p id="principal-5-desc">Current principal
+                    focusing on inclusive education and
+                    student wellness.</p>
+            </div>
+        </div>
+        <div class="principal" id="siriyawathi">
+            <img src="/api/placeholder/150/150" alt="Mrs. Siriyawathi">
+            <div class="principal-info">
+                <h3 id="principal-5-name">Mrs.
+                    Siriyawathi</h3>
+                <p id="principal-5-years">Years of Service:
+                    2019 - Present</p>
+                <p id="principal-5-desc">Current principal
+                    focusing on inclusive education and
+                    student wellness.</p>
+            </div>
+        </div>
+        <div class="principal" id="jayasiri">
+            <img src="/api/placeholder/150/150" alt="Mr. Jayasiri">
+            <div class="principal-info">
+                <h3 id="principal-5-name">Mr. Jayasiri</h3>
+                <p id="principal-5-years">Years of Service:
+                    2019 - Present</p>
+                <p id="principal-5-desc">Current principal
+                    focusing on inclusive education and
+                    student wellness.</p>
+            </div>
+        </div>
+        <div class="principal" id="jayapala">
+            <img src="/api/placeholder/150/150" alt="Mr. K.D.Jayapala">
+            <div class="principal-info">
+                <h3 id="principal-5-name">Mr.
+                    K.D.Jayapala</h3>
+                <p id="principal-5-years">Years of Service:
+                    2019 - Present</p>
+                <p id="principal-5-desc">Current principal
+                    focusing on inclusive education and
+                    student wellness.</p>
+            </div>
+        </div>
+        <div class="principal" id="saman">
+            <img src="/api/placeholder/150/150" alt="Mr. Saman Rohana Karunaratne">
+            <div class="principal-info">
+                <h3 id="principal-5-name">Mr. Saman Rohana
+                    Karunaratne</h3>
+                <p id="principal-5-years">Years of Service:
+                    2019 - Present</p>
+                <p id="principal-5-desc">Current principal
+                    focusing on inclusive education and
+                    student wellness.</p>
+            </div>
+        </div>
+        <div class="principal" id="duleeka">
+            <img src="/api/placeholder/150/150" alt="Mrs. W.D.Duleeka Madhumali Premathilaka">
+            <div class="principal-info">
+                <h3 id="principal-5-name">Mrs. W.D.Duleeka
+                    Madhumali Premathilaka</h3>
+                <p id="principal-5-years">Years of Service:
+                    2019 - Present</p>
+                <p id="principal-5-desc">Current principal
+                    focusing on inclusive education and
+                    student wellness.</p>
+            </div>
+        </div>
+    </section> -->
+    <script>
+        let currentLanguage = 'en';
+
+        function changeLanguage(lang) {
+            currentLanguage = lang;
+
+            // Update button states
+            document.getElementById('en-btn').classList.remove('active');
+            document.getElementById('si-btn').classList.remove('active');
+            document.getElementById(lang + '-btn').classList.add('active');
+
+            // Update content
+            const elements = Object.keys(translations[lang]);
+            elements.forEach(elementId => {
+                const element = document.getElementById(elementId);
+                if (element) {
+                    element.innerHTML = translations[lang][elementId];
+                }
+            });
+
+            // Update document language
+            document.documentElement.lang = lang === 'si' ? 'si' : 'en';
+        }
+
+        const translations = {
+            en: {
+                'page-title': 'Polegoda M. V. : A Legacy of Excellence',
+                'history-title': 'Our School\'s History',
+                'history-para-1': `According to the existing records of Polegoda Maha Vidyalaya, Polegoda Maha Vidyalaya was established in 1926. At the time of its establishment, there were eight students and three teachers, and the founding principal was <a href="#kularatne"> Mr. P.C.M.Kularatne</a>. He served as the principal for a long time. The founding student was Mr. Somapala Kularatne, Mr. P.C.M.Kularatne's son. <br><br>
 
 It is mentioned in the book that our school was initially located in a house in the Kurunduwatte area and was brought to the current school site in 1929. Old records state that in 1929, a Sanghagatha Dakshina was established at the current Polegoda Maha Vidyalaya site, after which the school was started. Initially, three coconut frond sheds were used for teaching. <br><br>
 
 The first permanent building built here is the building where the media unit and the new Smart classroom are currently located (Mahasen Hall). The main hall was built in 1972 and the other halls were built gradually in various years. <br><br>
 
-Among the principals who served in our school after Mr. Kularatne was a principal named <a href=””>Gunasena</a>. By the 60s, this school received a teachers' residence and the golden era of this school is considered to be the service period of Principal <a href=””>Abeyawardena</a>. During that period, the school's playground was prepared. Also, several buildings including the old laboratory and the home laboratory were constructed. It is said that a Lord named <a href=””>Chandaloka</a> served as the Deputy Principal of this school. During that time, many buildings were constructed by holding fairs and screening films. <br><br>
+Among the principals who served in our school after Mr. Kularatne was a principal named <a href="#gunasena">Gunasena</a>. By the 60s, this school received a teachers' residence and the golden era of this school is considered to be the service period of Principal <a href="#abeyawardena">Abeyawardena</a>. During that period, the school's playground was prepared. Also, several buildings including the old laboratory and the home laboratory were constructed. It is said that a Lord named <a href="#chandaloka">Chandaloka</a> served as the Deputy Principal of this school. During that time, many buildings were constructed by holding fairs and screening films. <br><br>
 
-It is said that former Prime Minister S. W. R. D. Bandaranaike visited this school in 1952. Initially, this school was known as the <strong>South Mahagama Sucharithawardhana Swabhasha Mixed School</strong>. <br><br>
+It is said that former Prime Minister S.W.R.D.Bandaranaike visited this school in 1952. Initially, this school was known as the <strong>South Mahagama Sucharithawardhana Swabhasha Mixed School</strong>. <br><br>
 
-In the 60s, it was a special event that a student from Polegoda Maha Vidyalaya was elected to the university for the first time. At that time, the Advanced Level classes were half-full, and in the late 70s, Advanced Level classes were resumed. Six other students entered the university at the same time in the late 70s. After Teacher Abhayawardhana left this school for another temple, Principal <a href=””>Ranatunga</a> and then Principal <a href=””>Weerakoon</a> served as acting principals. During that time, <a href=””>Mr. Amarasena</a> also served as a principal. In 1984, our school demonstrated an all-Ceylon level skill in throwing the hoop. <br><br>
+In the 60s, it was a special event that a student from Polegoda Maha Vidyalaya was elected to the university for the first time. At that time, the Advanced Level classes were half-full, and in the late 70s, Advanced Level classes were resumed. Six other students entered the university at the same time in the late 70s. After Teacher Abhayawardhana left this school for another temple, Principal <a href="#ranathunga">Ranatunga</a> and then Principal <a href="#weerakoon">Weerakoon</a> served as acting principals. During that time, <a href="#amarasena">Mr. Amarasena</a> also served as a principal. In 1984, our school demonstrated an all-Ceylon level skill in throwing the hoop. <br><br>
 
-From 1986 to 96, Principal <a href=””>Anuradha Samaradiwakara</a> served in this school. Our school's Buddha Medura was built with the patronage of Mr. Calvin and the library building was built with the patronage of Mr. M.H. Piyasena. It is said that Mr. Ronnie de Mel, who was the Minister of Finance at that time, attended the opening of the library building. After Principal Samaradiwakara, <a href=””>Mr. Piyasena Jayananda</a> served as the principal for a while and then Principal <a href=””>Piyasoma<a> also served here. After him, Principal <a href=””>Hemadasa</a> passed away while serving in this school. <br><br>
+From 1986 to 96, Principal <a href="#anuradha">Anuradha Samaradiwakara</a> served in this school. Our school's Buddha Temple was built with the patronage of Mr. Calvin and the library building was built with the patronage of Mr. M.H. Piyasena. It is said that Mr. Ronnie De Mel, who was the Minister of Finance at that time, attended the opening of the library building. After Principal Samaradiwakara, <a href="#piyasena">Mr. Piyasena Jayananda</a> served as the principal for a while and then Principal <a href="#piyasoma">Piyasoma</a> also served here. After him, Principal <a href="#hemadasa">Hemadasa</a> passed away while serving in this school. <br><br>
 
-Later, Principal <a href=””>Gunasekara</a> served as the acting principal and then <a href=””>Mrs. Siriyawathi</a> served as the acting principal. Principal <a href=””>Jayasiri</a> came to serve in this school and served in this school until almost 2012. During that <strong>time, this school became a secondary school and the primary school was removed</strong>. The school also received the Mahindodaya Laboratory during this period. <br><br>
+Later, Principal <a href="#gunasekara">Gunasekara</a> served as the acting principal and then <a href="#siriyawathi">Mrs. Siriyawathi</a> served as the acting principal. Principal <a href="#jayasiri">Jayasiri</a> came to serve in this school and served in this school until almost 2012. During that <strong>time, this school became a secondary school and the primary school was removed</strong>. The school also received the Mahindodaya Laboratory during this period. <br><br>
 
-From 2012, <a href=””>K. D. Jayapala<a> served as the principal of this school until 2018. During that period, our school was also selected for the Best School Nearest School project. Several buildings were renovated by removing the entrance hall and installing roofing sheets. The school received two new teachers' houses and the old teachers' house was also renovated. <br><br>
+From 2012, <a href="#jayapala">K. D. Jayapala</a> served as the principal of this school until 2018. During that period, our school was also selected for the Best School Nearest School project. Several buildings were renovated by removing the entrance hall and installing roofing sheets. The school received two new teachers' houses and the old teachers' house was also renovated. <br><br>
 
-Principal <a href=””>Saman Rohana Karunaratne</a> served as the principal of this school from 2018 to 2024. Several buildings were renovated during the same period. In 2019, ten students enrolled in the university from this school. <br><br>
+Principal <a href="#saman">Saman Rohana Karunaratne</a> served as the principal of this school from 2018 to 2024. Several buildings were renovated during the same period. In 2019, ten students enrolled in the university from this school. <br><br>
 
-The current Principal, <a href=””>Mrs. W.D.D.M. Premathilaka</a>, will assume the position of Principal from 14th February 2024.
+The current Principal, <a href="#duleeka">Mrs. W.D.D.M. Premathilaka</a>, will assume the position of Principal from 14th February 2024.`,
+                'principals-title': 'School Principals Through the Years',
+                'principal-1-name': 'Mr. P.C.M.Kularatne',
+                'principal-1-years': 'Years of Service: 1926 - 1954',
+                'principal-2-name': 'Mr. Gunasena',
+                'principal-2-years': 'Years of Service: 1954 - 1960s',
+                'principal-3-name': 'Mr. Abhayawardhana',
+                'principal-3-years': 'Years of Service: 1960s - 1980s',
+                'principal-4-name': 'Mr. Anuradha Samaradiwakara',
+                'principal-4-years': 'Years of Service: 1986 - 1996',
+                'principal-5-name': 'Mr. Jayasiri',
+                'principal-5-years': 'Years of Service: ~2000 - 2012',
+                'principal-6-name': 'Mr. K.D.Jayapala',
+                'principal-6-years': 'Years of Service: 2012 - 2018',
+                'principal-7-name': 'Mr. Saman Rohana Karunaratne',
+                'principal-7-years': 'Years of Service: 2018 - 2024',
+                'principal-8-name': 'Mrs. W.D.D.M. Premathilaka',
+                'principal-8-years': 'Years of Service: 2024 - Present',
+            },
+            si: {
+                'page-title': 'පොලේගොඩ ම. වි. : විශිෂ්ටත්වයේ උරුමය',
+                'history-title': 'අපේ පාසලේ ඉතිහාසය',
+                'history-para-1': `පොලේගොඩ මහා විද්‍යාලයේ පවතින වාර්තාවලට අනුව, පොලේගොඩ මහා විද්‍යාලය 1926 දී ආරම්භ කරන ලදී. එය ආරම්භ කරන විට සිසුන් අට
+දෙනෙකු සහ ගුරුවරුන් තිදෙනෙකු සිටි අතර, ආරම්භක විදුහල්පතිවරයා <a href="#kularatne">පී.සී.එම්.කුලරත්න</a> මහතා විය. ඔහු
+දිගු කලක් විදුහල්පති ලෙස සේවය කළේය. ආරම්භක ශිෂ්‍යයා පී.සී.එම්.කුලරත්න මහතාගේ පුත් සෝමපාල කුලරත්න මහතා ය. <br><br>
 
-        </p>
-    </section>
+අපගේ පාසල මුලින් කුරුඳුවත්ත ප්‍රදේශයේ නිවසක පිහිටා තිබූ බවත් 1929 දී වත්මන් පාසල් භූමියට ගෙන එන ලද බවත් පොතේ සඳහන් වේ.
+පැරණි වාර්තාවල සඳහන් වන්නේ 1929 දී වත්මන් පොලේගොඩ මහා විද්‍යාල භූමියේ සංඝගත දක්ෂිණාවක් සිදුකර, පසුව පාසල
+ආරම්භ කරන ලද බවත්ය. මුලදී, ඉගැන්වීම සඳහා පොල් අතු මඩු තුනක් භාවිතා කරන ලදී. <br><br>
 
-    <section class="principals-section">
-        <h2 id="principals-title">School Principals Through the Years</h2>
-        <div class="principal">
-            <img src="/api/placeholder/150/150" alt="Mr. P.C.M.Kularatne">
-            <div class="principal-info">
-                <h3 id="principal-1-name">Mr. P.C.M.Kularatne</h3>
-                <p id="principal-1-years">Years of Service: 1932 - 1954</p>
-                <p id="principal-1-desc">The founding principal who established the school's initial vision and
-                    educational philosophy.</p>
-            </div>
-        </div>
-        <div class="principal">
-            <img src="/api/placeholder/150/150" alt="Mr. Gunasena">
-            <div class="principal-info">
-                <h3 id="principal-2-name">Mr. Gunasena</h3>
-                <p id="principal-2-years">Years of Service: 1954 - 1978</p>
-                <p id="principal-2-desc">Led the school during a period of significant growth and educational reform.
-                </p>
-            </div>
-        </div>
-        <div class="principal">
-            <img src="/api/placeholder/150/150" alt="Mr. Abhayawardhana">
-            <div class="principal-info">
-                <h3 id="principal-3-name">Mr. Abhayawardhana</h3>
-                <p id="principal-3-years">Years of Service: 1978 - 2001</p>
-                <p id="principal-3-desc">Modernized curriculum and introduced advanced placement programs.</p>
-            </div>
-        </div>
-        <div class="principal">
-            <img src="/api/placeholder/150/150" alt="Chandaloka Thero">
-            <div class="principal-info">
-                <h3 id="principal-4-name">Chandaloka Thero</h3>
-                <p id="principal-4-years">Years of Service: 2001 - 2019</p>
-                <p id="principal-4-desc">Championed technology integration and community outreach programs.</p>
-            </div>
-        </div>
-        <div class="principal">
-            <img src="/api/placeholder/150/150" alt="Mr. Ranathunga">
-            <div class="principal-info">
-                <h3 id="principal-5-name">Mr. Ranathunga</h3>
-                <p id="principal-5-years">Years of Service: 2019 - Present</p>
-                <p id="principal-5-desc">Current principal focusing on inclusive education and student wellness.</p>
-            </div>
-        </div>
-        <div class="principal">
-            <img src="/api/placeholder/150/150" alt="Mr. Weerakoon">
-            <div class="principal-info">
-                <h3 id="principal-5-name">Mr. Weerakoon</h3>
-                <p id="principal-5-years">Years of Service: 2019 - Present</p>
-                <p id="principal-5-desc">Current principal focusing on inclusive education and student wellness.</p>
-            </div>
-        </div>
-        <div class="principal">
-            <img src="/api/placeholder/150/150" alt="Mr. Amarasena">
-            <div class="principal-info">
-                <h3 id="principal-5-name">Mr. Amarasena</h3>
-                <p id="principal-5-years">Years of Service: 2019 - Present</p>
-                <p id="principal-5-desc">Current principal focusing on inclusive education and student wellness.</p>
-            </div>
-        </div>
-        <div class="principal">
-            <img src="/api/placeholder/150/150" alt="Mr. Anuradha Samaradiwakara">
-            <div class="principal-info">
-                <h3 id="principal-5-name">Mr. Anuradha Samaradiwakara</h3>
-                <p id="principal-5-years">Years of Service: 2019 - Present</p>
-                <p id="principal-5-desc">Current principal focusing on inclusive education and student wellness.</p>
-            </div>
-        </div>
-        <div class="principal">
-            <img src="/api/placeholder/150/150" alt="Mr. Piyasena Jayananda">
-            <div class="principal-info">
-                <h3 id="principal-5-name">Mr. Piyasena Jayananda</h3>
-                <p id="principal-5-years">Years of Service: 2019 - Present</p>
-                <p id="principal-5-desc">Current principal focusing on inclusive education and student wellness.</p>
-            </div>
-        </div>
-        <div class="principal">
-            <img src="/api/placeholder/150/150" alt="Mr. Piyasoma">
-            <div class="principal-info">
-                <h3 id="principal-5-name">Mr. Piyasoma</h3>
-                <p id="principal-5-years">Years of Service: 2019 - Present</p>
-                <p id="principal-5-desc">Current principal focusing on inclusive education and student wellness.</p>
-            </div>
-        </div>
-        <div class="principal">
-            <img src="/api/placeholder/150/150" alt="Mr. Hemadasa">
-            <div class="principal-info">
-                <h3 id="principal-5-name">Mr. Hemadasa</h3>
-                <p id="principal-5-years">Years of Service: 2019 - Present</p>
-                <p id="principal-5-desc">Current principal focusing on inclusive education and student wellness.</p>
-            </div>
-        </div>
-        <div class="principal">
-            <img src="/api/placeholder/150/150" alt="Mr. Gunasekara">
-            <div class="principal-info">
-                <h3 id="principal-5-name">Mr. Gunasekara</h3>
-                <p id="principal-5-years">Years of Service: 2019 - Present</p>
-                <p id="principal-5-desc">Current principal focusing on inclusive education and student wellness.</p>
-            </div>
-        </div>
-        <div class="principal">
-            <img src="/api/placeholder/150/150" alt="Mrs. Siriyawathi">
-            <div class="principal-info">
-                <h3 id="principal-5-name">Mrs. Siriyawathi</h3>
-                <p id="principal-5-years">Years of Service: 2019 - Present</p>
-                <p id="principal-5-desc">Current principal focusing on inclusive education and student wellness.</p>
-            </div>
-        </div>
-        <div class="principal">
-            <img src="/api/placeholder/150/150" alt="Mr. Jayasiri">
-            <div class="principal-info">
-                <h3 id="principal-5-name">Mr. Jayasiri</h3>
-                <p id="principal-5-years">Years of Service: 2019 - Present</p>
-                <p id="principal-5-desc">Current principal focusing on inclusive education and student wellness.</p>
-            </div>
-        </div>
-        <div class="principal">
-            <img src="/api/placeholder/150/150" alt="Mr. K.D.Jayapala">
-            <div class="principal-info">
-                <h3 id="principal-5-name">Mr. K.D.Jayapala</h3>
-                <p id="principal-5-years">Years of Service: 2019 - Present</p>
-                <p id="principal-5-desc">Current principal focusing on inclusive education and student wellness.</p>
-            </div>
-        </div>
-        <div class="principal">
-            <img src="/api/placeholder/150/150" alt="Mr. Saman Rohana Karunaratne">
-            <div class="principal-info">
-                <h3 id="principal-5-name">Mr. Saman Rohana Karunaratne</h3>
-                <p id="principal-5-years">Years of Service: 2019 - Present</p>
-                <p id="principal-5-desc">Current principal focusing on inclusive education and student wellness.</p>
-            </div>
-        </div>
-        <div class="principal">
-            <img src="/api/placeholder/150/150" alt="Mrs. W.D.Duleeka Madhumali Premathilaka">
-            <div class="principal-info">
-                <h3 id="principal-5-name">Mrs. W.D.Duleeka Madhumali Premathilaka</h3>
-                <p id="principal-5-years">Years of Service: 2019 - Present</p>
-                <p id="principal-5-desc">Current principal focusing on inclusive education and student wellness.</p>
-            </div>
-        </div>
-    </section>
+මෙහි ඉදිකරන ලද පළමු ස්ථිර ගොඩනැගිල්ල වන්නේ මාධ්‍ය ඒකකය සහ නව ස්මාර්ට් පන්ති කාමරය දැනට පිහිටා ඇති ගොඩනැගිල්ලයි (මහසෙන්
+ශාලාව). ප්‍රධාන ශාලාව 1972 දී ඉදිකරන ලද අතර අනෙකුත් ශාලා විවිධ වසරවලදී ක්‍රමයෙන් ඉදිකරන ලදී. <br><br>
 
+කුලරත්න මහතාගෙන් පසු අපගේ පාසලේ සේවය කළ විදුහල්පතිවරුන් අතර <a href="#gunasena">ගුණසේන</a> නම් විදුහල්පතිවරයෙක් සිටියේය.
+60 දශකය වන විට මෙම පාසලට ගුරු නිවසක් ලැබුණු අතර මෙම පාසලේ ස්වර්ණමය යුගය විදුහල්පති <a href="#abeyawardena">අබේවර්ධන</a>
+මහතාගේ සේවා කාලය ලෙස සැලකේ. එම කාලය තුළ පාසලේ ක්‍රීඩා පිටිය සකස් කරන ලදී. එසේම පැරණි රසායනාගාරය සහ ගෘහ රසායනාගාරය ඇතුළු
+ගොඩනැගිලි කිහිපයක් ඉදිකරන ලදී. මෙම පාසලේ නියෝජ්‍ය විදුහල්පතිවරයා ලෙස <a href="#chandaloka">ඡන්දාලෝක</a> නම් ස්වාමීන්
+වහන්සේ සේවය කළ බව කියනු ලැබේ. එම කාලය තුළ පොළවල් පවත්වා චිත්‍රපට ප්‍රදර්ශනය කිරීමෙන් බොහෝ ගොඩනැගිලි ඉදිකරන ලදී. <br><br>
+
+1952 දී හිටපු අගමැති එස්.ඩබ්ලිව්.ආර්.ඩී. බණ්ඩාරනායක මහතා මෙම පාසලට පැමිණි බව කියනු ලැබේ. මුලදී, මෙම පාසල <strong>දකුණු මහගම
+සුචරිතවර්ධන ස්වභාෂා මිශ්‍ර පාසල</strong> ලෙස හැඳින්විණි. <br><br>
+
+60 දශකයේ දී, පොලේගොඩ මහා විද්‍යාලයෙන් ශිෂ්‍යයෙකු පළමු වරට විශ්ව විද්‍යාලයට තේරී පත්වීම විශේෂ සිදුවීමක් විය. ඒ කාලයේදී
+උසස් පෙළ පන්ති අඩක් පිරී තිබූ අතර 70 දශකයේ අගභාගයේදී උසස් පෙළ පන්ති නැවත ආරම්භ කරන ලදී. 70 දශකයේ අගභාගයේදී තවත් සිසුන්
+හය දෙනෙකු විශ්වවිද්‍යාලයට ඇතුළත් විය. විදුහල්පති අභයවර්ධන මහතා මෙම පාසලෙන් ඉවත් වී වෙනත් පන්සලකට ගිය පසු, විදුහල්පති <a href="#ranathunga">රණතුංග</a> සහ
+පසුව විදුහල්පති <a href="#weerakoon">වීරකෝන්</a> වැඩබලන විදුහල්පතිවරුන් ලෙස සේවය කළහ. එම කාලය තුළ <a href="#amarasena">අමරසේන</a> මහතා
+විදුහල්පතිවරයෙකු ලෙසද සේවය කළේය. 1984 දී, අපගේ පාසලේ සමස්ත ලංකා මට්ටමේ කුසලතාවයක් පෙන්නුම් කළේය. <br><br>
+
+1986 සිට 96 දක්වා, විදුහල්පති <a href="#anuradha">අනුරාධ සමරදිවාකර</a> මෙම පාසලේ සේවය කළේය. අපගේ පාසලේ බුද්ධ මන්දිරය
+කැල්වින් මහතාගේ අනුග්‍රහයෙන් ඉදිකරන ලද අතර පුස්තකාල ගොඩනැගිල්ල එම්.එච්. පියසේන මහතාගේ අනුග්‍රහයෙන් ඉදිකරන ලදී. එවකට
+මුදල් අමාත්‍යවරයා වූ රොනී ද මෙල් මහතා පුස්තකාල ගොඩනැගිල්ල විවෘත කිරීමේ අවස්ථාවට සහභාගී වූ බව කියනු ලැබේ. විදුහල්පති
+සමරදිවාකර මහතාගෙන් පසු, <a  href="#piyasena">පියසේන ජයනන්ද</a> මහතා ටික කලක් විදුහල්පති ලෙස සේවය කළ අතර පසුව විදුහල්පති <a
+    href="#piyasoma">පියසෝම</a> මහතා ද මෙහි සේවය කළේය. ඔහුගෙන් පසු, මෙම පාසලේ සේවය කරමින් සිටියදී විදුහල්පති <a href="#hemadasa">හේමදාස</a> මහතා අභාවප්‍රාප්ත විය. <br><br>
+
+පසුව, විදුහල්පති <a href="#gunasekara">ගුණසේකර</a> වැඩබලන විදුහල්පතිනිය ලෙස සේවය කළ අතර පසුව <a href="siriyawathi">සිරියාවතී මහත්මිය</a> වැඩබලන
+විදුහල්පතිනිය ලෙස සේවය කළාය. විදුහල්පති <a href="#jayasiri">ජයසිරි</a> මහතා මෙම පාසලේ සේවය කිරීමට පැමිණ 2012 වසරට ආසන්න කාලයක් මෙම පාසලේ සේවය කළේය.
+එම කාලය තුළ මෙම පාසල ද්විතීයික පාසලක් බවට පත් වූ අතර ප්‍රාථමික පාසල ඉවත් කරන ලදී. මෙම කාලය තුළ පාසලට මහින්දෝදය
+විද්‍යාගාරයක් ද අප පාසලට ලැබුණි. <br><br>
+
+2012 සිට 2018 දක්වා මෙම පාසලේ විදුහල්පතිවරයා ලෙස <a href="#jayapala">කේ.ඩී.ජයපාල</a> මහතා සේවය කළේය. එම කාලය තුළ අපගේ
+පාසල ළඟම පාසල සඳහා හොඳම පාසල ව්‍යාපෘතිය සඳහා ද තෝරා ගන්නා ලදී. පිවිසුම් ශාලාව ඉවත් කර වහල තහඩු සවි කිරීමෙන් ගොඩනැගිලි
+කිහිපයක් ප්‍රතිසංස්කරණය කරන ලදී. පාසලට නව ගුරු නිවාස දෙකක් ලැබුණු අතර පැරණි ගුරු නිවස ද ප්‍රතිසංස්කරණය කරන ලදී. <br><br>
+
+2018 සිට 2024 දක්වා මෙම පාසලේ විදුහල්පති ලෙස විදුහල්පති <a href="#saman">සමන් රෝහණ කරුණාරත්න</a> සේවය කළේය. එම කාලය තුළ
+ගොඩනැගිලි කිහිපයක් ප්‍රතිසංස්කරණය කරන ලදී. 2019 දී මෙම පාසලෙන් සිසුන් දස දෙනෙකු විශ්ව විද්‍යාලයට ඇතුළත් විය. <br><br>
+
+වත්මන් විදුහල්පතිනි, <a href="#duleeka">ඩබ්.ඩී.ඩී.එම්.ප්‍රේමතිලක</a> මිය, 2024 පෙබරවාරි 14 වන දින සිට විදුහල්පතිනිය ලෙස වැඩ භාර ගන්නා ලදී.`,
+                'principals-title': 'වර්ෂ පුරාවටම සේවය කළ විදුහල්පතිවරු',
+                'principal-1-name': 'පී.සී.එම්.කුලරත්න මහතා',
+                'principal-1-years': 'සේවා කාලය: 1926 - 1954',
+                'principal-2-name': 'ගුණසේන මහතා',
+                'principal-2-years': 'සේවා කාලය: 1954 - 1960 දශකය',
+                'principal-3-name': 'අභයවර්ධන මහතා',
+                'principal-3-years': 'සේවා කාලය: 1960 දශකය - 1980 දශකය',
+                'principal-4-name': 'අනුරාධ සමරදිවාකර මහතා',
+                'principal-4-years': 'සේවා කාලය: 1986 - 1996',
+                'principal-5-name': 'ජයසිරි මහතා',
+                'principal-5-years': 'සේවා කාලය: ~2000 - 2012',
+                'principal-6-name': 'කේ.ඩී.ජයපාල මහතා',
+                'principal-6-years': 'සේවා කාලය: 2012 - 2018',
+                'principal-7-name': 'සමන් රෝහණ කරුණාරත්න මහතා',
+                'principal-7-years': 'සේවා කාලය: 2018 - 2024',
+                'principal-8-name': 'ඩබ්.ඩී.ඩී.එම්.ප්‍රේමතිලක මහත්මිය',
+                'principal-8-years': 'සේවා කාලය: 2024 - දැනට',
+            }
+        };
+    </script>
 </body>
 
 </html>

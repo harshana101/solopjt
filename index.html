@@ -24,7 +24,8 @@
   <!-- Event Header Styles -->
   <!-- <link rel="stylesheet" href="./Awrudu/Awrudu.css"> -->
   <!-- <link rel="stylesheet" href="./Event_Banners/Test Event Index/Vesak.css"> -->
-  <link rel="stylesheet" href="./Event_Banners/Test Event Index/poson.css">
+  <!-- <link rel="stylesheet" href="./Event_Banners/Test Event Index/poson.css"> -->
+  <link rel="stylesheet" href="./Event_Banners/Esala/esala.css">
 
   <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-796S4JXDEK">
@@ -49,7 +50,6 @@
     <div id="loading-percentage" class="loading-percentage">0%</div>
     <div class="school-name">WP/ Hr/ Polegoda M. V.</div>
   </div>
-  <!-- Loading end -->
 
   <!-- Main content -->
   <div id="content">
@@ -58,7 +58,7 @@
       <div class="pattern-background">
         <div class="container">
           <nav>
-            <div class="logo">
+            <div class="logo" id="logo">
               <img src="./logo.png" alt="School Logo">
               <div>
                 <div class="logo-text" id="logo-text">WP/ Hr/ Polegoda M. V.</div>
@@ -124,6 +124,26 @@
       <div class="mango2"></div>
       <div class="mango3"></div>
 
+      <!-- Esala -->
+      <div class="scene-background"></div>
+      <div class="perahera perahera01"></div>
+      <div class="perahera perahera02"></div>
+      <div class="perahera perahera03"></div>
+      <div class="perahera perahera04"></div>
+      <div class="kingdom"></div>
+      <div class="palapethi palapethi1"></div>
+      <div class="palapethi palapethi2"></div>
+      <div class="palapethi palapethi3"></div>
+      <div class="palapethi palapethi4"></div>
+      <div class="palapethi palapethi5"></div>
+      <div class="palapethi palapethi6"></div>
+      <div class="palapethi palapethi7"></div>
+      <div class="clouds cloud01"></div>
+      <div class="clouds cloud02"></div>
+      <div class="clouds cloud03"></div>
+      <div class="clouds cloud05"></div>
+      <div class="clouds cloud06"></div>
+      <div class="clouds cloud07"></div>
 
       <!-- end -->
 
@@ -151,9 +171,12 @@
       </div>
     </section>
 
-    <marquee direction="left" loop="1">WP/ Hr/ Polegoda M. V.&nbsp; &nbsp; &ndash; &nbsp; &nbsp; Official Website..
-      &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Powerd by <strong>Media Unit of Polegoda M. V.
-        (PMVMU)</strong> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &copy; PMV | PMVMU 2025</marquee>
+    <marquee direction="left" class="maqtxt" id="marquee">
+      <div><span id="marquee-text">WP/ Hr/ Polegoda M. V.</span>&nbsp; &nbsp; &ndash; &nbsp; &nbsp; <span
+          id="marquee-text2">Official Website.. </span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span
+          id="marquee-text3">Powerd by :</span> <span id="marquee-text4">Media Unit of Polegoda M. V. (PMVMU)</span>
+        &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &copy;PMV | PMVMU 2025</div>
+    </marquee>
 
     <!-- Mission & Vision -->
     <section class="mission-vision-section" id="mv">
@@ -213,7 +236,7 @@
         <div class="deputy-principals">
           <div class="teacher-card animate-fade-up">
             <div class="teacher-img">
-              <img src="./Profiles/avatar-m.png" alt="Deputy Principal 1">
+              <img src="./webhero-01.jpg" alt="Deputy Principal 1">
             </div>
             <div class="teacher-info">
               <h3>Mr. Ruwan P. Kumara</h3>
@@ -222,7 +245,7 @@
           </div>
           <div class="teacher-card animate-fade-up">
             <div class="teacher-img">
-              <img src="./Profiles/avatar-f.png" alt="Deputy Principal 2">
+              <img src="./webhero-01.jpg" alt="Deputy Principal 2">
             </div>
             <div class="teacher-info">
               <h3>Mrs. Dushanthi Duleeka</h3>
@@ -231,7 +254,7 @@
           </div>
         </div>
         <div class="view-all-teachers animate-fade-up">
-          <a href="teachers.html" class="btn" id="view-all-teachers-btn">View All Teachers</a>
+          <a href="./About blank.html" class="btn" id="view-all-teachers-btn">View All Teachers</a>
         </div>
       </div>
     </section>
@@ -332,7 +355,7 @@
           <div id="slide2" class="slide">
             <div class="slide-overlay"></div>
             <div class="slide-content">
-              <span class="badge">COMPLEATED EVENT</span>
+              <span class="badge">UPCOMING EVENT</span>
               <h1 class="slide-title">PoyaDay Musical Program</h1>
               <h2 class="slide-subtitle">Celebrating Cultural Heritage Through Music</h2>
               <p class="slide-description">Join us for a special evening of traditional and contemporary music
@@ -379,7 +402,7 @@
             </div>
           </div>
 
-          <!-- Slide 3: Annual Science Exhibition
+          <!-- Slide 3: Annual Science Exhibition -->
           <div id="slide3" class="slide">
             <div class="slide-overlay"></div>
             <div class="slide-content">
@@ -409,9 +432,9 @@
                 </div>
               </div>
             </div>
-          </div> -->
+          </div>
 
-          <!-- Slide 4: Sports Tournament
+          <!-- Slide 4: Sports Tournament -->
           <div id="slide4" class="slide">
             <div class="slide-overlay"></div>
             <div class="slide-content">
@@ -441,7 +464,7 @@
                 </div>
               </div>
             </div>
-          </div> -->
+          </div>
 
           <!-- Navigation Buttons -->
           <button class="prev-btn" onclick="changeSlide(-1)">&#10094;</button>
@@ -572,6 +595,7 @@
     <script src="./Awrudu/Events-theme.js"></script>
     <script src="./Event_Banners/Test Event Index/Vesak.js"></script>
     <script src="./Event_Banners/Test Event Index/poson.js"></script>
+    <script src="./Event_Banners/Esala/esala.js"></script>
 </body>
 
 </html>

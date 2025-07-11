@@ -3,6 +3,13 @@ document.addEventListener('DOMContentLoaded', function () {
   // All translations organized by section
   const translations = {
     // ... (paste the entire translations object from the original script)
+
+    // Logo Text
+    logo: {
+      text: "බප/හො/පොලේගොඩ ම.වි.",
+      motto: "විද්‍යා දදාති විනයං"
+    },
+
     // Navigation
     navigation: {
       homeNav: "මුල් පිටුව",
@@ -21,6 +28,14 @@ document.addEventListener('DOMContentLoaded', function () {
       subtitle: "",
       learnMoreBtn: "තව දැනගන්න"
     },
+
+    // Marquee Section
+    marquee: {
+      text: "බප/ හො/ පොලේගොඩ මහා විද්‍යාලය",
+      text2: "නිල වෙබ් අඩවිය..",
+      text3: "බලගැන්වීම : ",
+      text4: "පොලේගොඩ මහා විද්‍යාලයීය මාධ්‍ය ඒකකය"
+      },
 
     // Mission-Vision Section
     mv: {
@@ -159,6 +174,10 @@ document.addEventListener('DOMContentLoaded', function () {
   // Function to apply Sinhala translations
   function applySinhalaTranslations() {
     // ... (paste the entire applySinhalaTranslations function from the original script)
+    // Logo Text
+    document.getElementById('logo-text').textContent = translations.logo.text;
+    document.getElementById('logo-motto').textContent = translations.logo.motto;
+
     // Navigation
     document.getElementById('home-nav').textContent = translations.navigation.homeNav;
     document.getElementById('mv-nav').textContent = translations.navigation.mvNav;
@@ -173,6 +192,12 @@ document.addEventListener('DOMContentLoaded', function () {
     document.getElementById('hero-title').textContent = translations.hero.title;
     document.getElementById('hero-subtitle').textContent = translations.hero.subtitle;
     document.getElementById('learn-more-btn').textContent = translations.hero.learnMoreBtn;
+
+    // Marquee Section
+    document.getElementById('marquee-text').textContent = translations.marquee.text;
+    document.getElementById('marquee-text2').textContent = translations.marquee.text2;
+    document.getElementById('marquee-text3').textContent = translations.marquee.text3;
+    document.getElementById('marquee-text4').textContent = translations.marquee.text4;
 
     // Mission-Vision Section
     document.getElementById('mv-section-title').textContent = translations.mv.sectionTitle;

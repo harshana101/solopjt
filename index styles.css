@@ -28,7 +28,7 @@ body {
 
 .container {
   width: 90%;
-  max-width: 1200px;
+  max-width: 1300px;
   margin: 0 auto;
   padding: 0 20px;
 }
@@ -79,7 +79,9 @@ body {
 
 /* Navigation */
 header {
-  /* background: url('./Event_Banners/Poson/Poson-01.svg') no-repeat center center/cover; */
+  /* background: url('./Event_Banners/Esala/Esala-01.jpg'); */
+  background-size: contain;
+  background-repeat: no-repeat;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
   position: sticky;
   top: 0;
@@ -92,7 +94,7 @@ nav {
   align-items: center;
   justify-self: center;
   justify-content: center;
-  padding: 20px 0;
+  padding: 30px 0;
 }
 
 .logo {
@@ -108,7 +110,7 @@ nav {
 .logo-text {
   font-size: 24px;
   font-weight: 700;
-  color: var(--primary-color);
+  color: var(--white);
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 }
 
@@ -145,6 +147,9 @@ nav {
   align-items: center;
   margin-left: 20px;
   transition: var(--transition);
+}
+
+.language-switch button {
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
   color: var(--white);
 }
@@ -246,6 +251,10 @@ nav {
   .nav-links a {
     color: var(--primary-color);
   }
+
+  .language-switch button {
+    color: var(--primary-color);
+  }
 }
 
 /* Extra small devices */
@@ -264,6 +273,10 @@ nav {
   }
 
   .nav-links a {
+    color: var(--primary-color);
+  }
+
+  .language-switch button {
     color: var(--primary-color);
   }
 }
@@ -287,7 +300,19 @@ marquee {
   color: #ffffff;
   background: linear-gradient(to right, #61003000 0%, #610030, #61003000);
   margin-top: 10px;
+  justify-content: center;
+  display: flex;
+  flex-direction: row;
 }
+
+#marquee-text3 {
+  font-size: smaller;
+}
+
+#marquee-text4, #marquee-text2, #marquee-text {
+  font-weight: bold;
+}
+
 
 /* Principal Section */
 .principal-section {
@@ -344,6 +369,7 @@ marquee {
   border-radius: var(--radius);
   border: var(--border-width) solid transparent;
   padding: 1%;
+  text-align: justify;
 }
 
 .principal-content:hover:before {
@@ -568,7 +594,7 @@ marquee {
   transform: scale(1.1);
 }
 
-/* Programs and Events */
+/* Programs & Events */
 .programs-section {
   padding: 80px 0;
 }
@@ -674,13 +700,6 @@ marquee {
   margin-top: 20px;
 }
 
-.hours-list ul {
-  padding: 0;
-  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
-  border-radius: 10px;
-  border: 1px solid #eee;
-}
-
 .hours-list li {
   display: flex;
   justify-content: space-between;
@@ -694,17 +713,6 @@ marquee {
 
 .day {
   font-weight: 600;
-}
-
-.times-tab2 {
-  margin-top: 20px;
-}
-
-.office-hours hr {
-  background-color: var(--primary-color);
-  height: 2px;
-  border: none;
-  margin: 20px 0;
 }
 
 .office-hours h3 {
